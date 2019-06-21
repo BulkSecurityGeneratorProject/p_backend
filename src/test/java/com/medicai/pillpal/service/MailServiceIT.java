@@ -2,7 +2,7 @@ package com.medicai.pillpal.service;
 
 import com.medicai.pillpal.config.Constants;
 
-import com.medicai.pillpal.PillpallApp;
+import com.medicai.pillpal.PillpalApp;
 import com.medicai.pillpal.domain.User;
 import io.github.jhipster.config.JHipsterProperties;
 import org.junit.jupiter.api.BeforeEach;
@@ -42,7 +42,7 @@ import static org.mockito.Mockito.*;
 /**
  * Integration tests for {@link MailService}.
  */
-@SpringBootTest(classes = PillpallApp.class)
+@SpringBootTest(classes = PillpalApp.class)
 public class MailServiceIT {
 
     private static String[] languages = {

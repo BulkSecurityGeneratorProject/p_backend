@@ -1,6 +1,6 @@
 package com.medicai.pillpal.config.timezone;
 
-import com.medicai.pillpal.PillpallApp;
+import com.medicai.pillpal.PillpalApp;
 import com.medicai.pillpal.repository.timezone.DateTimeWrapper;
 import com.medicai.pillpal.repository.timezone.DateTimeWrapperRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,7 +20,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Integration tests for the UTC Hibernate configuration.
  */
-@SpringBootTest(classes = PillpallApp.class)
+@SpringBootTest(classes = PillpalApp.class)
 public class HibernateTimeZoneIT {
 
     @Autowired

@@ -1,6 +1,6 @@
 package com.medicai.pillpal.web.rest;
 
-import com.medicai.pillpal.PillpallApp;
+import com.medicai.pillpal.PillpalApp;
 import com.medicai.pillpal.config.Constants;
 import com.medicai.pillpal.domain.Authority;
 import com.medicai.pillpal.domain.User;
@@ -43,7 +43,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Integration tests for the {@link AccountResource} REST controller.
  */
-@SpringBootTest(classes = PillpallApp.class)
+@SpringBootTest(classes = PillpalApp.class)
 public class AccountResourceIT {
 
     @Autowired

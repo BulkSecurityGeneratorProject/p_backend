@@ -1,6 +1,6 @@
 package com.medicai.pillpal.web.rest;
 
-import com.medicai.pillpal.PillpallApp;
+import com.medicai.pillpal.PillpalApp;
 import com.medicai.pillpal.domain.Authority;
 import com.medicai.pillpal.domain.User;
 import com.medicai.pillpal.repository.UserRepository;
@@ -37,7 +37,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Integration tests for the {@link UserResource} REST controller.
  */
-@SpringBootTest(classes = PillpallApp.class)
+@SpringBootTest(classes = PillpalApp.class)
 public class UserResourceIT {
 
     private static final String DEFAULT_LOGIN = "johndoe";

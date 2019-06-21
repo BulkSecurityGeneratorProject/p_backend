@@ -22,18 +22,18 @@ import java.util.Collection;
 
 @SpringBootApplication
 @EnableConfigurationProperties({LiquibaseProperties.class, ApplicationProperties.class})
-public class PillpallApp implements InitializingBean {
+public class PillpalApp implements InitializingBean {
 
-    private static final Logger log = LoggerFactory.getLogger(PillpallApp.class);
+    private static final Logger log = LoggerFactory.getLogger(PillpalApp.class);
 
     private final Environment env;
 
-    public PillpallApp(Environment env) {
+    public PillpalApp(Environment env) {
         this.env = env;
     }
 
     /**
-     * Initializes pillpall.
+     * Initializes pillpal.
      * <p>
      * Spring profiles can be configured with a program argument --spring.profiles.active=your-active-profile
      * <p>
@@ -58,7 +58,7 @@ public class PillpallApp implements InitializingBean {
      * @param args the command line arguments.
      */
     public static void main(String[] args) {
-        SpringApplication app = new SpringApplication(PillpallApp.class);
+        SpringApplication app = new SpringApplication(PillpalApp.class);
         DefaultProfileUtil.addDefaultProfile(app);
         Environment env = app.run(args).getEnvironment();
         logApplicationStartup(env);

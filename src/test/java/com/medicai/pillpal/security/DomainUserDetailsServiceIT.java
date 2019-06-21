@@ -1,6 +1,6 @@
 package com.medicai.pillpal.security;
 
-import com.medicai.pillpal.PillpallApp;
+import com.medicai.pillpal.PillpalApp;
 import com.medicai.pillpal.domain.User;
 import com.medicai.pillpal.repository.UserRepository;
 
@@ -22,7 +22,7 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 /**
  * Integrations tests for {@link DomainUserDetailsService}.
  */
-@SpringBootTest(classes = PillpallApp.class)
+@SpringBootTest(classes = PillpalApp.class)
 @Transactional
 public class DomainUserDetailsServiceIT {
 

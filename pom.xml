@@ -4,10 +4,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.medicai.pillpal</groupId>
-    <artifactId>pillpall</artifactId>
+    <artifactId>pillpal</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
-    <name>Pillpall</name>
+    <name>pillpal</name>
 
     <repositories>
         <!-- jhipster-needle-maven-repository -->
@@ -523,7 +523,7 @@
                             <image>adoptopenjdk:11-jre-hotspot</image>
                         </from>
                         <to>
-                            <image>pillpall:latest</image>
+                            <image>pillpal:latest</image>
                         </to>
                         <container>
                             <entrypoint>
@@ -550,9 +550,9 @@
                         <changeLogFile>${project.basedir}/src/main/resources/config/liquibase/master.xml</changeLogFile>
                         <diffChangeLogFile>${project.basedir}/src/main/resources/config/liquibase/changelog/${maven.build.timestamp}_changelog.xml</diffChangeLogFile>
                         <driver>org.h2.Driver</driver>
-                        <url>jdbc:h2:file:${project.build.directory}/h2db/db/pillpall</url>
+                        <url>jdbc:h2:file:${project.build.directory}/h2db/db/pillpal</url>
                         <defaultSchemaName></defaultSchemaName>
-                        <username>pillpall</username>
+                        <username>pillpal</username>
                         <password></password>
                         <referenceUrl>hibernate:spring:com.medicai.pillpal.domain?dialect=org.hibernate.dialect.H2Dialect&amp;hibernate.physical_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy&amp;hibernate.implicit_naming_strategy=org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy</referenceUrl>
                         <verbose>true</verbose>

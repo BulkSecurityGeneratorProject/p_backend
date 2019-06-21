@@ -1,6 +1,6 @@
 package com.medicai.pillpal.web.rest;
 
-import com.medicai.pillpal.PillpallApp;
+import com.medicai.pillpal.PillpalApp;
 import com.medicai.pillpal.domain.User;
 import com.medicai.pillpal.repository.UserRepository;
 import com.medicai.pillpal.security.jwt.TokenProvider;
@@ -27,7 +27,7 @@ import static org.hamcrest.Matchers.not;
 /**
  * Integration tests for the {@link UserJWTController} REST controller.
  */
-@SpringBootTest(classes = PillpallApp.class)
+@SpringBootTest(classes = PillpalApp.class)
 public class UserJWTControllerIT {
 
     @Autowired

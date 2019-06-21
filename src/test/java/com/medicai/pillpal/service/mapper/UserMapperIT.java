@@ -1,7 +1,7 @@
 package com.medicai.pillpal.service.mapper;
 
 
-import com.medicai.pillpal.PillpallApp;
+import com.medicai.pillpal.PillpalApp;
 import com.medicai.pillpal.domain.User;
 import com.medicai.pillpal.service.dto.UserDTO;
 import org.apache.commons.lang3.RandomStringUtils;
@@ -20,7 +20,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * Integration tests for {@link UserMapper}.
  */
-@SpringBootTest(classes = PillpallApp.class)
+@SpringBootTest(classes = PillpalApp.class)
 public class UserMapperIT {
 
     private static final String DEFAULT_LOGIN = "johndoe";

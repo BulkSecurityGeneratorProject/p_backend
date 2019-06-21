@@ -1,6 +1,6 @@
 package com.medicai.pillpal.service;
 
-import com.medicai.pillpal.PillpallApp;
+import com.medicai.pillpal.PillpalApp;
 import com.medicai.pillpal.config.Constants;
 import com.medicai.pillpal.domain.User;
 import com.medicai.pillpal.repository.UserRepository;
@@ -31,7 +31,7 @@ import static org.mockito.Mockito.when;
 /**
  * Integration tests for {@link UserService}.
  */
-@SpringBootTest(classes = PillpallApp.class)
+@SpringBootTest(classes = PillpalApp.class)
 @Transactional
 public class UserServiceIT {
 

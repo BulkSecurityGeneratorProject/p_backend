@@ -1,7 +1,7 @@
 {
-  "name": "pillpall",
+  "name": "pillpal",
   "version": "0.0.0",
-  "description": "Description for pillpall",
+  "description": "Description for pillpal",
   "private": true,
   "license": "UNLICENSED",
   "cacheDirectories": [

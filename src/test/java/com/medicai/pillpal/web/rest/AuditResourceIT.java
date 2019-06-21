@@ -1,6 +1,6 @@
 package com.medicai.pillpal.web.rest;
 
-import com.medicai.pillpal.PillpallApp;
+import com.medicai.pillpal.PillpalApp;
 import com.medicai.pillpal.config.audit.AuditEventConverter;
 import com.medicai.pillpal.domain.PersistentAuditEvent;
 import com.medicai.pillpal.repository.PersistenceAuditEventRepository;
@@ -30,7 +30,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 /**
  * Integration tests for the {@link AuditResource} REST controller.
  */
-@SpringBootTest(classes = PillpallApp.class)
+@SpringBootTest(classes = PillpalApp.class)
 @Transactional
 public class AuditResourceIT {
 

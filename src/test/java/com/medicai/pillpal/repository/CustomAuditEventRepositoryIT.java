@@ -1,6 +1,6 @@
 package com.medicai.pillpal.repository;
 
-import com.medicai.pillpal.PillpallApp;
+import com.medicai.pillpal.PillpalApp;
 import com.medicai.pillpal.config.Constants;
 import com.medicai.pillpal.config.audit.AuditEventConverter;
 import com.medicai.pillpal.domain.PersistentAuditEvent;
@@ -27,7 +27,7 @@ import static com.medicai.pillpal.repository.CustomAuditEventRepository.EVENT_DA
 /**
  * Integration tests for {@link CustomAuditEventRepository}.
  */
-@SpringBootTest(classes = PillpallApp.class)
+@SpringBootTest(classes = PillpalApp.class)
 @Transactional
 public class CustomAuditEventRepositoryIT {
 

@@ -37,8 +37,8 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:h2:file:./target/h2db/db/pillpall;DB_CLOSE_DELAY=-1
-    username: pillpall
+    url: jdbc:h2:file:./target/h2db/db/pillpal;DB_CLOSE_DELAY=-1
+    username: pillpal
     password:
     hikari:
       poolName: Hikari
@@ -100,7 +100,7 @@ jhipster:
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000
   mail: # specific JHipster mail property, for standard properties see MailProperties
-    from: pillpall@localhost
+    from: pillpal@localhost
     base-url: http://127.0.0.1:8080
   metrics:
     logs: # Reports metrics in the logs
