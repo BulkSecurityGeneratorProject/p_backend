@@ -1,0 +1,34 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.medicai.pillpal"
+    },
+    "jhipsterVersion": "6.1.0",
+    "applicationType": "monolith",
+    "baseName": "pillpall",
+    "packageName": "com.medicai.pillpal",
+    "packageFolder": "com/medicai/pillpal",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "ehcache",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "mysql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": false,
+    "jwtSecretKey": "YjVmMmNkNDQ3ZGNiN2FjZjU1ZTFlMDM3MWQ0YzAyNzMzOTcyZTg5OGFiMzBlMzgzMDgzMzVmNDFhYzM5Y2UyMWRjZDgzMDQ3MGU0MDYyZWRkYzg3M2E4MTY1NDYzMTVjNDJmOWQ5NGM3MDNjMGJiMTFiNTA2YjA0MWJhYzQ4OGU=",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": [],
+    "enableTranslation": false,
+    "clientPackageManager": "npm",
+    "skipClient": true
+  }
+}
