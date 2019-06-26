@@ -1,0 +1,195 @@
+
+
+/** Are used in mediacal classification 
+*to uniquely identify medication */
+entity PharmaceuticalCode {
+    name String,
+    address String,
+    phoneNumber String
+    
+}
+/** a reaction between two (or more) drugs or between
+*a drug and a food, beverage, or supplement. */
+entity Interaction {
+    recommendationType RecommendayionType required ,
+    description String
+}
+
+
+/** Information about medicine */
+entity ApplicationInfo {
+	applicationNumber String required,
+    name String,
+    genericName String,
+    brandName String,
+    form String,
+    overView String,
+    strengthAmount Float
+    strengthUnit String,
+    productNumber Integer,
+    activeIngredient String,
+    forms Forms,
+    routsOfAdministration RoutsOfAdministration
+}
+ /** How to use medicine */
+entity ConsumptionDosing {
+    conclusion String , 
+    dosing String
+}
+
+entity ConsumptionMissedDose {
+    conclusion String ,
+    missedDose String
+}
+
+entity UseAndStorage {
+    conclusion String ,
+    useAndStorage String
+}
+
+entity ConsumptionBbeforeUsing {
+    conclusion String ,
+    beforeUsing String
+}
+
+entity ConsumptionPrecoution {
+    conclusion String ,
+    precoution String
+}
+
+entity ConsumptionProperUse {
+    conclusion String ,
+    properUse String
+}
+
+/**
+ * some information about producer 
+ */
+entity ProductionInfo {
+    producerName String,
+    manufacturingCountry String
+}
+
+/**
+ * Some information using drug while pregnancy
+ */
+entity Pregnancy {
+    preCategory String,
+    preExplanation String
+}
+ /**
+ * Information about allergic reactions
+ */
+entity Allergy {
+    allergy String,
+}
+
+/** Information about using drug in childern younger than 10 */
+entity Pediatric {
+    pediatric String
+}
+/** Information about using drug in  the eldery */
+entity Geriatric {
+    geriatic String
+}
+ 
+/** Drug Information in women breast feeding*/ 
+entity BreastFeeding{
+	breastFeeding String
+}
+
+entity SideEffect {
+	description String required
+}
+
+entity ApplInfoSideEffect {
+ sideEffectType SideEffectType
+}
+
+enum RecommendayionType {
+	NOT_RECOMMENDED, 
+    USUALLY_NOT_RECOMMENDED
+}
+
+enum SideEffectType {
+	COMMON , RARE
+}
+enum Forms {
+   AEROSOL, BAR, CAPSULE, CLOTH, CONCENTRATE, 
+   CREAM, DISC, DRESSING, ELIXIR, EMULSION, 
+   ENEMA, FIBER, FILM, FOR_SOLUTION, FOR_SUSPENSION,
+   GAS, GEL, GRANULE, GUM, IMPLANT, INHALANT,
+   INJECTABLE, INJECTION, INSERT,
+   INTRAUTERINE_DEVICE, JELLY, LIQUID,
+   LOTION, LOTION_SHAMPOO, N_A, OIL,
+   OIL_DROPS, OINTMENT, PASTE,
+   PASTILLE, PATCH, PELLET,
+   PELLETS, POWDER, POWDER_FOR_ORAL_SOLUTION,
+   RING, SHAMPOO, SOAP, SOLUTION, SOLUTION_DROPS,
+   SOLUTION_FOR_SLUSH, SPONGE, SPRAY,
+   SUPPOSITORY, SUSPENSION, SUSPENSION_DROPS,
+   SWAB, SYRINGE, SYRUP, SYSTEM, TABLET,
+   TAMPON, TAPE, TROCHE_LOZENGE, UNKNOWN, VIAL
+}
+
+enum RoutsOfAdministration{
+	BLOCK_INFILTRATION, BUCCAL, DENTAL, DIALYSIS, 
+    DISINFECTANT_BARN, DISINFECTANT, DISINFECTANT_DOMESTIC,
+    DISINFECTANT_FOOD_PREMISES, DISINFECTANT_HOSPITAL_HC_FACILITIES,
+    DISINFECTANT_INSTITUTIONAL_INDUSTRIAL,
+    DISINFECTANT_MEDICAL_INSTRUMENTS, EPIDURAL,
+    EXTRACORPOREAL, INFILTRATION, INHALATION,
+    INSTILLATION, INTRA_AMNIOTIC, INTRA_ARTERIAL, 
+    INTRA_ARTICULAR, INTRABRANCHIAL, INTRABURSAL, INTRACARDIAC, 
+    INTRACAUDAL, INTRACAVERNOSAL, INTRACEREBROVENTRICULAR, 
+    INTRACERVICAL, INTRACORONARY, INTRACRANIAL, 
+    INTRADERMAL, INTRADISCAL, INTRAGANGLIONAL, 
+    INTRAINTESTINAL, INTRALESIONAL, INTRAMAMMARY, INTRAMUSCULAR, 
+    INTRAOCULAR, INTRAPERITONEAL, INTRAPLEURAL, 
+    INTRAPULMONARY, INTRARUMINAL, INTRASPINAL, 
+    INTRASYNOVIAL, INTRATENDINOUS, INTRATHECAL, 
+    INTRATHORACIC, INTRATRACHEAL, INTRAUTERINE,
+    INTRAVASCULAR, INTRAVENOUS, INTRAVENTRICULAR, 
+    INTRAVITREAL, INTUBING, IRRIGATION, NASAL,
+    NASOGASTRIC, NERVE_BLOCK, OPHTHALMIC, ORAL, OTIC,
+    PARENTERAL_UNSPECIFIED, PERCUTANEOUS, PERIARTICULAR,
+    PERIOSTEAL, RECTAL, RETROBULBAR, SOFT_TISSUE_INJECTION, 
+    SUBARACHNOIDAL, SUBCUTANEOUS, SUBGINGIVAL, SUBLINGUAL,
+    SUBMUCOSAL, SURGICAL, TOPICAL, TOPICAL_COMMERCIAL, 
+    TOPICAL_FOOD_PREMISES, TOPICAL_HOSPITAL_HC_FACILITIES, 
+    TOPICAL_HOUSEHOLD, TRANSDERMAL, UDDER_WASH, URETHRAL,
+    VAGINAL
+} 
+
+ relationship OneToMany {
+ 	ApplicationInfo{productionInfo} to ProductionInfo
+    ApplicationInfo{pharmaceuticalcode} to PharmaceuticalCode
+    ApplicationInfo{baseInteraction} to Interaction
+    ApplicationInfo{descInteraction} to Interaction
+    ApplicationInfo{dosing} to ConsumptionDosing
+	ApplicationInfo{missedDose} to ConsumptionMissedDose 
+	ApplicationInfo{useAndStorage} to UseAndStorage 
+	ApplicationInfo{beforeUse} to ConsumptionBbeforeUsing 
+	ApplicationInfo{precoution} to ConsumptionPrecoution 
+	ApplicationInfo{properUse} to ConsumptionProperUse 
+    ApplicationInfo{pregnancy} to Pregnancy
+    ApplicationInfo{allergy} to Allergy
+    ApplicationInfo{pediatric} to Pediatric
+    ApplicationInfo{geriatric} to Geriatric
+    ApplicationInfo{breastfeeding} to BreastFeeding
+    ApplicationInfo{applInfoSideEffect} to ApplInfoSideEffect
+    SideEffect{SideEffet} to ApplInfoSideEffect
+ }
+ 
+ 
+ 
+ paginate all with pagination
+ service ApplicationInfo, PharmacuticalCode, SideEffect, Consumption with serviceImpl 
+ 
+ 
+
+
+ 
+ 
+ 
+ 
