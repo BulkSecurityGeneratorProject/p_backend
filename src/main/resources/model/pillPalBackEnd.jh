@@ -1,5 +1,3 @@
-
-
 /** Are used in mediacal classification 
 *to uniquely identify medication */
 entity PharmaceuticalCode {
@@ -11,24 +9,23 @@ entity PharmaceuticalCode {
 /** a reaction between two (or more) drugs or between
 *a drug and a food, beverage, or supplement. */
 entity Interaction {
-    recommendationType RecommendayionType required ,
+    recommendationType RecommendaionType required ,
     description String
 }
 
 
 /** Information about medicine */
 entity ApplicationInfo {
-	applicationNumber String required,
+	fdaApplicationNo String required,
     name String,
     genericName String,
     brandName String,
-    form String,
     overView String,
-    strengthAmount Float
+    strengthAmount Float,
     strengthUnit String,
     productNumber Integer,
     activeIngredient String,
-    forms Forms,
+    form Form,
     routsOfAdministration RoutsOfAdministration
 }
  /** How to use medicine */
@@ -47,7 +44,7 @@ entity UseAndStorage {
     useAndStorage String
 }
 
-entity ConsumptionBbeforeUsing {
+entity ConsumptionBeforeUsing {
     conclusion String ,
     beforeUsing String
 }
@@ -106,7 +103,7 @@ entity ApplInfoSideEffect {
  sideEffectType SideEffectType
 }
 
-enum RecommendayionType {
+enum RecommendationType {
 	NOT_RECOMMENDED, 
     USUALLY_NOT_RECOMMENDED
 }
@@ -114,7 +111,7 @@ enum RecommendayionType {
 enum SideEffectType {
 	COMMON , RARE
 }
-enum Forms {
+enum Form {
    AEROSOL, BAR, CAPSULE, CLOTH, CONCENTRATE, 
    CREAM, DISC, DRESSING, ELIXIR, EMULSION, 
    ENEMA, FIBER, FILM, FOR_SOLUTION, FOR_SUSPENSION,
@@ -169,7 +166,7 @@ enum RoutsOfAdministration{
     ApplicationInfo{dosing} to ConsumptionDosing
 	ApplicationInfo{missedDose} to ConsumptionMissedDose 
 	ApplicationInfo{useAndStorage} to UseAndStorage 
-	ApplicationInfo{beforeUse} to ConsumptionBbeforeUsing 
+	ApplicationInfo{beforeUse} to ConsumptionBeforeUsing 
 	ApplicationInfo{precoution} to ConsumptionPrecoution 
 	ApplicationInfo{properUse} to ConsumptionProperUse 
     ApplicationInfo{pregnancy} to Pregnancy
@@ -185,11 +182,4 @@ enum RoutsOfAdministration{
  
  paginate all with pagination
  service ApplicationInfo, PharmacuticalCode, SideEffect, Consumption with serviceImpl 
- 
- 
-
-
- 
- 
- 
- 
+ dto all with mapstruct
