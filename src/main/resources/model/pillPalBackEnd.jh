@@ -9,7 +9,7 @@ entity PharmaceuticalCode {
 /** a reaction between two (or more) drugs or between
 *a drug and a food, beverage, or supplement. */
 entity Interaction {
-    recommendationType RecommendaionType required ,
+    recommendationType RecommendationType required ,
     description String
 }
 
@@ -181,5 +181,5 @@ enum RoutsOfAdministration{
  
  
  paginate all with pagination
- service ApplicationInfo, PharmacuticalCode, SideEffect, Consumption with serviceImpl 
+ service all with serviceImpl except ConsumptionDosing, ConsumptionMissedDose, UseAndStorage, ConsumptionBeforeUsing, ConsumptionPrecoution, ConsumptionProperUse, Allergy, Pediatric,Geriatric,BreastFeeding
  dto all with mapstruct
