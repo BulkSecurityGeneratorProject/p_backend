@@ -1,0 +1,29 @@
+{
+    "name": "SideEffect",
+    "fields": [
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "applInfoSideEffect",
+            "otherEntityRelationshipName": "sideEffect",
+            "relationshipName": "sideEffet"
+        }
+    ],
+    "changelogDate": "20190627115149",
+    "entityTableName": "side_effect",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

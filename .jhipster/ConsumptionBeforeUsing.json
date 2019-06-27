@@ -1,0 +1,30 @@
+{
+    "name": "ConsumptionBeforeUsing",
+    "fields": [
+        {
+            "fieldName": "conclusion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "beforeUsing",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "applicationInfo",
+            "otherEntityName": "applicationInfo",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190627115140",
+    "entityTableName": "consumption_before_using",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

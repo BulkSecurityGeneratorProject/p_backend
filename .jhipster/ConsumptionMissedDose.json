@@ -1,0 +1,30 @@
+{
+    "name": "ConsumptionMissedDose",
+    "fields": [
+        {
+            "fieldName": "conclusion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "missedDose",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "applicationInfo",
+            "otherEntityName": "applicationInfo",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190627115138",
+    "entityTableName": "consumption_missed_dose",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

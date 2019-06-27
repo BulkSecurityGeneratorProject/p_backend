@@ -1,0 +1,31 @@
+{
+    "name": "Pregnancy",
+    "fields": [
+        {
+            "fieldName": "preCategory",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "preExplanation",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "applicationInfo",
+            "otherEntityName": "applicationInfo",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190627114837",
+    "javadoc": "Some information using drug while pregnancy",
+    "entityTableName": "pregnancy",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

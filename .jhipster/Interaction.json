@@ -1,0 +1,28 @@
+{
+    "name": "Interaction",
+    "fields": [
+        {
+            "fieldName": "recommendationType",
+            "fieldType": "RecommendationType",
+            "fieldValues": "NOT_RECOMMENDED,USUALLY_NOT_RECOMMENDED",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190627115135",
+    "javadoc": "a reaction between two (or more) drugs or between\na drug and a food, beverage, or supplement.",
+    "entityTableName": "interaction",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
