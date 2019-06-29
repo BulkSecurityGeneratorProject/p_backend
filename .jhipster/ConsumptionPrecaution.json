@@ -1,0 +1,30 @@
+{
+    "name": "ConsumptionPrecaution",
+    "fields": [
+        {
+            "fieldName": "conclusion",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "precaution",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "applicationInfo",
+            "otherEntityName": "applicationInfo",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190629120108",
+    "entityTableName": "consumption_precaution",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}
