@@ -137,7 +137,7 @@
             "relationshipName": "applInfoSideEffect"
         }
     ],
-    "changelogDate": "20190627115136",
+    "changelogDate": "20190629081235",
     "javadoc": "Information about medicine",
     "entityTableName": "application_info",
     "dto": "mapstruct",

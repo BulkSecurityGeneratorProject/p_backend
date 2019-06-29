@@ -21,7 +21,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20190629070512",
+    "changelogDate": "20190629081249",
     "entityTableName": "appl_info_side_effect",
     "dto": "mapstruct",
     "pagination": "pagination",

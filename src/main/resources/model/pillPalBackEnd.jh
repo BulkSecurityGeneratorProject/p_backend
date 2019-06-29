@@ -161,8 +161,8 @@ enum RoutsOfAdministration{
  relationship OneToMany {
  	ApplicationInfo{productionInfo} to ProductionInfo
     ApplicationInfo{pharmaceuticalcode} to PharmaceuticalCode
-    ApplicationInfo{baseInteraction} to Interaction
-    ApplicationInfo{descInteraction} to Interaction
+    //ApplicationInfo{baseInteraction} to Interaction
+    //ApplicationInfo{descInteraction} to Interaction
     ApplicationInfo{dosing} to ConsumptionDosing
 	ApplicationInfo{missedDose} to ConsumptionMissedDose 
 	ApplicationInfo{useAndStorage} to UseAndStorage 

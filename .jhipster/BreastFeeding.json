@@ -14,7 +14,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20190627114841",
+    "changelogDate": "20190629081247",
     "javadoc": "Drug Information in women breast feeding",
     "entityTableName": "breast_feeding",
     "dto": "mapstruct",

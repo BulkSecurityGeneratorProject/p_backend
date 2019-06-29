@@ -15,7 +15,7 @@
         }
     ],
     "relationships": [],
-    "changelogDate": "20190627115135",
+    "changelogDate": "20190629081234",
     "javadoc": "a reaction between two (or more) drugs or between\na drug and a food, beverage, or supplement.",
     "entityTableName": "interaction",
     "dto": "mapstruct",
