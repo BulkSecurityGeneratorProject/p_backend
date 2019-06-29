@@ -1,0 +1,27 @@
+{
+    "name": "BreastFeeding",
+    "fields": [
+        {
+            "fieldName": "breastFeeding",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipName": "applicationInfo",
+            "otherEntityName": "applicationInfo",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190629083530",
+    "javadoc": "Drug Information in women breast feeding",
+    "entityTableName": "breast_feeding",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

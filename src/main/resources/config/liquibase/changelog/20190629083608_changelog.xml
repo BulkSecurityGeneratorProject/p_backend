@@ -1,0 +1,311 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet author="mjv (generated)" id="1561797404727-1">
+        <createTable tableName="allergy">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="allergyPK"/>
+            </column>
+            <column name="allergy" type="VARCHAR(255)"/>
+            <column name="application_info_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-2">
+        <createTable tableName="appl_info_side_effect">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="appl_info_side_effectPK"/>
+            </column>
+            <column name="side_effect_type" type="VARCHAR(255)"/>
+            <column name="application_info_id" type="BIGINT"/>
+            <column name="side_effect_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-3">
+        <createTable tableName="application_info">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="application_infoPK"/>
+            </column>
+            <column name="active_ingredient" type="VARCHAR(255)"/>
+            <column name="brand_name" type="VARCHAR(255)"/>
+            <column name="fda_application_no" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="form" type="VARCHAR(255)"/>
+            <column name="generic_name" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="over_view" type="VARCHAR(255)"/>
+            <column name="product_number" type="INT"/>
+            <column name="routs_of_administration" type="VARCHAR(255)"/>
+            <column name="strength_amount" type="FLOAT"/>
+            <column name="strength_unit" type="VARCHAR(255)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-4">
+        <createTable tableName="breast_feeding">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="breast_feedingPK"/>
+            </column>
+            <column name="breast_feeding" type="VARCHAR(255)"/>
+            <column name="application_info_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-5">
+        <createTable tableName="consumption_before_using">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="consumption_before_usingPK"/>
+            </column>
+            <column name="before_using" type="VARCHAR(255)"/>
+            <column name="conclusion" type="VARCHAR(255)"/>
+            <column name="application_info_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-6">
+        <createTable tableName="consumption_dosing">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="consumption_dosingPK"/>
+            </column>
+            <column name="conclusion" type="VARCHAR(255)"/>
+            <column name="dosing" type="VARCHAR(255)"/>
+            <column name="application_info_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-7">
+        <createTable tableName="consumption_missed_dose">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="consumption_missed_dosePK"/>
+            </column>
+            <column name="conclusion" type="VARCHAR(255)"/>
+            <column name="missed_dose" type="VARCHAR(255)"/>
+            <column name="application_info_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-8">
+        <createTable tableName="consumption_precoution">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="consumption_precoutionPK"/>
+            </column>
+            <column name="conclusion" type="VARCHAR(255)"/>
+            <column name="precoution" type="VARCHAR(255)"/>
+            <column name="application_info_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-9">
+        <createTable tableName="consumption_proper_use">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="consumption_proper_usePK"/>
+            </column>
+            <column name="conclusion" type="VARCHAR(255)"/>
+            <column name="proper_use" type="VARCHAR(255)"/>
+            <column name="application_info_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-10">
+        <createTable tableName="geriatric">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="geriatricPK"/>
+            </column>
+            <column name="geriatic" type="VARCHAR(255)"/>
+            <column name="application_info_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-11">
+        <createTable tableName="interaction">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="interactionPK"/>
+            </column>
+            <column name="description" type="VARCHAR(255)"/>
+            <column name="recommendation_type" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-12">
+        <createTable tableName="jhi_authority">
+            <column name="name" type="VARCHAR(50)">
+                <constraints primaryKey="true" primaryKeyName="jhi_authorityPK"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-13">
+        <createTable tableName="jhi_persistent_audit_event">
+            <column autoIncrement="true" name="event_id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="jhi_persistent_audit_eventPK"/>
+            </column>
+            <column name="event_date" type="TIMESTAMP"/>
+            <column name="event_type" type="VARCHAR(255)"/>
+            <column name="principal" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-14">
+        <createTable tableName="jhi_persistent_audit_evt_data">
+            <column name="event_id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="value" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)">
+                <constraints primaryKey="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-15">
+        <createTable tableName="jhi_user">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="jhi_userPK"/>
+            </column>
+            <column name="created_by" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="created_date" type="TIMESTAMP"/>
+            <column name="last_modified_by" type="VARCHAR(50)"/>
+            <column name="last_modified_date" type="TIMESTAMP"/>
+            <column name="activated" type="BOOLEAN">
+                <constraints nullable="false"/>
+            </column>
+            <column name="activation_key" type="VARCHAR(20)"/>
+            <column name="email" type="VARCHAR(254)"/>
+            <column name="first_name" type="VARCHAR(50)"/>
+            <column name="image_url" type="VARCHAR(256)"/>
+            <column name="lang_key" type="VARCHAR(10)"/>
+            <column name="last_name" type="VARCHAR(50)"/>
+            <column name="login" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="password_hash" type="VARCHAR(60)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="reset_date" type="TIMESTAMP"/>
+            <column name="reset_key" type="VARCHAR(20)"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-16">
+        <createTable tableName="jhi_user_authority">
+            <column name="user_id" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="authority_name" type="VARCHAR(50)">
+                <constraints primaryKey="true"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-17">
+        <createTable tableName="pediatric">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="pediatricPK"/>
+            </column>
+            <column name="pediatric" type="VARCHAR(255)"/>
+            <column name="application_info_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-18">
+        <createTable tableName="pharmaceutical_code">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="pharmaceutical_codePK"/>
+            </column>
+            <column name="address" type="VARCHAR(255)"/>
+            <column name="name" type="VARCHAR(255)"/>
+            <column name="phone_number" type="VARCHAR(255)"/>
+            <column name="application_info_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-19">
+        <createTable tableName="pregnancy">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="pregnancyPK"/>
+            </column>
+            <column name="pre_category" type="VARCHAR(255)"/>
+            <column name="pre_explanation" type="VARCHAR(255)"/>
+            <column name="application_info_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-20">
+        <createTable tableName="production_info">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="production_infoPK"/>
+            </column>
+            <column name="manufacturing_country" type="VARCHAR(255)"/>
+            <column name="producer_name" type="VARCHAR(255)"/>
+            <column name="application_info_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-21">
+        <createTable tableName="side_effect">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="side_effectPK"/>
+            </column>
+            <column name="description" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-22">
+        <createTable tableName="use_and_storage">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="use_and_storagePK"/>
+            </column>
+            <column name="conclusion" type="VARCHAR(255)"/>
+            <column name="use_and_storage" type="VARCHAR(255)"/>
+            <column name="application_info_id" type="BIGINT"/>
+        </createTable>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-23">
+        <addUniqueConstraint columnNames="email" constraintName="UC_JHI_USEREMAIL_COL" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-24">
+        <addUniqueConstraint columnNames="login" constraintName="UC_JHI_USERLOGIN_COL" tableName="jhi_user"/>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-25">
+        <addForeignKeyConstraint baseColumnNames="application_info_id" baseTableName="consumption_before_using" constraintName="FK2754jlugwwtt0gxhgro40x071" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="application_info" validate="true"/>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-26">
+        <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="jhi_user_authority" constraintName="FK290okww5jujghp4el5i7mgwu0" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="jhi_user" validate="true"/>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-27">
+        <addForeignKeyConstraint baseColumnNames="event_id" baseTableName="jhi_persistent_audit_evt_data" constraintName="FK2ehnyx2si4tjd2nt4q7y40v8m" deferrable="false" initiallyDeferred="false" referencedColumnNames="event_id" referencedTableName="jhi_persistent_audit_event" validate="true"/>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-28">
+        <addForeignKeyConstraint baseColumnNames="application_info_id" baseTableName="consumption_proper_use" constraintName="FK3unqve0odxykd8dccj4ucs5hl" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="application_info" validate="true"/>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-29">
+        <addForeignKeyConstraint baseColumnNames="application_info_id" baseTableName="consumption_missed_dose" constraintName="FK4pa4efjwr71jvbarntb5nl07r" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="application_info" validate="true"/>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-30">
+        <addForeignKeyConstraint baseColumnNames="authority_name" baseTableName="jhi_user_authority" constraintName="FK4psxl0jtx6nr7rhqbynr6itoc" deferrable="false" initiallyDeferred="false" referencedColumnNames="name" referencedTableName="jhi_authority" validate="true"/>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-31">
+        <addForeignKeyConstraint baseColumnNames="side_effect_id" baseTableName="appl_info_side_effect" constraintName="FK53y6d56u21ebkxran08r68rpg" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="side_effect" validate="true"/>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-32">
+        <addForeignKeyConstraint baseColumnNames="application_info_id" baseTableName="geriatric" constraintName="FK90oiljxo27456dpa9rh7uh0x7" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="application_info" validate="true"/>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-33">
+        <addForeignKeyConstraint baseColumnNames="application_info_id" baseTableName="production_info" constraintName="FK9ksgw7i9cbxu89b47i45g3k0h" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="application_info" validate="true"/>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-34">
+        <addForeignKeyConstraint baseColumnNames="application_info_id" baseTableName="pharmaceutical_code" constraintName="FKa0rm78ygvgxhr2ty33u4ahjo2" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="application_info" validate="true"/>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-35">
+        <addForeignKeyConstraint baseColumnNames="application_info_id" baseTableName="pediatric" constraintName="FKewkmc8ac2wb88noq2ijffcdps" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="application_info" validate="true"/>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-36">
+        <addForeignKeyConstraint baseColumnNames="application_info_id" baseTableName="use_and_storage" constraintName="FKmbew6mtkuu6fm6nm4fyvio1i3" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="application_info" validate="true"/>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-37">
+        <addForeignKeyConstraint baseColumnNames="application_info_id" baseTableName="consumption_precoution" constraintName="FKoacgstxxg6mla1mhmo6ifio42" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="application_info" validate="true"/>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-38">
+        <addForeignKeyConstraint baseColumnNames="application_info_id" baseTableName="pregnancy" constraintName="FKp413x13rsdw0xhdw0qmgrucvj" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="application_info" validate="true"/>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-39">
+        <addForeignKeyConstraint baseColumnNames="application_info_id" baseTableName="allergy" constraintName="FKqvvnwe4xw6gc8lmpfkxiu4b72" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="application_info" validate="true"/>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-40">
+        <addForeignKeyConstraint baseColumnNames="application_info_id" baseTableName="breast_feeding" constraintName="FKqx66hu04on9hh1j0bn09sdttp" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="application_info" validate="true"/>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-41">
+        <addForeignKeyConstraint baseColumnNames="application_info_id" baseTableName="appl_info_side_effect" constraintName="FKrdqoousasd4uv6j9cysygmmuh" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="application_info" validate="true"/>
+    </changeSet>
+    <changeSet author="mjv (generated)" id="1561797404727-42">
+        <addForeignKeyConstraint baseColumnNames="application_info_id" baseTableName="consumption_dosing" constraintName="FKxvjrit4q4hcak8sbgnev5bde" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="application_info" validate="true"/>
+    </changeSet>
+</databaseChangeLog>
