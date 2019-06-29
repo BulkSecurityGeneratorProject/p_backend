@@ -18,7 +18,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20190627115141",
+    "changelogDate": "20190629070503",
     "entityTableName": "consumption_precoution",
     "dto": "mapstruct",
     "pagination": "pagination",

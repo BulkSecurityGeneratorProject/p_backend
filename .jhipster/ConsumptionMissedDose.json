@@ -18,7 +18,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20190627115138",
+    "changelogDate": "20190629070500",
     "entityTableName": "consumption_missed_dose",
     "dto": "mapstruct",
     "pagination": "pagination",

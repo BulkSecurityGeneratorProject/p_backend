@@ -40,6 +40,13 @@
     <include file="config/liquibase/changelog/20190627115142_added_entity_ConsumptionProperUse.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190627115149_added_entity_SideEffect.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190627115150_added_entity_ApplInfoSideEffect.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190629070500_added_entity_ConsumptionMissedDose.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190629070501_added_entity_UseAndStorage.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190629070502_added_entity_ConsumptionBeforeUsing.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190629070503_added_entity_ConsumptionPrecoution.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190629070504_added_entity_ConsumptionProperUse.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190629070511_added_entity_SideEffect.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190629070512_added_entity_ApplInfoSideEffect.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20190627114827_added_entity_constraints_PharmaceuticalCode.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190627114828_added_entity_constraints_Interaction.xml" relativeToChangelogFile="false"/>
@@ -62,5 +69,11 @@
     <include file="config/liquibase/changelog/20190627115141_added_entity_constraints_ConsumptionPrecoution.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190627115142_added_entity_constraints_ConsumptionProperUse.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20190627115150_added_entity_constraints_ApplInfoSideEffect.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190629070500_added_entity_constraints_ConsumptionMissedDose.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190629070501_added_entity_constraints_UseAndStorage.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190629070502_added_entity_constraints_ConsumptionBeforeUsing.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190629070503_added_entity_constraints_ConsumptionPrecoution.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190629070504_added_entity_constraints_ConsumptionProperUse.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20190629070512_added_entity_constraints_ApplInfoSideEffect.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>
