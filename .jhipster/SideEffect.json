@@ -17,7 +17,7 @@
             "relationshipName": "sideEffet"
         }
     ],
-    "changelogDate": "20190629083531",
+    "changelogDate": "20190629095512",
     "entityTableName": "side_effect",
     "dto": "mapstruct",
     "pagination": "pagination",

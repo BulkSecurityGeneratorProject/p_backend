@@ -14,7 +14,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20190629083529",
+    "changelogDate": "20190629095510",
     "javadoc": "Information about using drug in  the eldery",
     "entityTableName": "geriatric",
     "dto": "mapstruct",

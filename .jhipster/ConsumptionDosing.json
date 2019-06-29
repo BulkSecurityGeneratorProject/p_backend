@@ -18,7 +18,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20190629083519",
+    "changelogDate": "20190629095500",
     "javadoc": "How to use medicine",
     "entityTableName": "consumption_dosing",
     "dto": "mapstruct",

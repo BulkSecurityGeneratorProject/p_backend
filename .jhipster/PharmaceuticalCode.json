@@ -22,7 +22,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20190629083516",
+    "changelogDate": "20190629095457",
     "javadoc": "Are used in mediacal classification\nto uniquely identify medication",
     "entityTableName": "pharmaceutical_code",
     "dto": "mapstruct",

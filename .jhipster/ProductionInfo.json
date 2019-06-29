@@ -18,7 +18,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20190629083525",
+    "changelogDate": "20190629095506",
     "javadoc": "some information about producer",
     "entityTableName": "production_info",
     "dto": "mapstruct",

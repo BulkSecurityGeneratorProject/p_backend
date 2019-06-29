@@ -14,7 +14,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20190629083528",
+    "changelogDate": "20190629095509",
     "javadoc": "Information about using drug in childern younger than 10",
     "entityTableName": "pediatric",
     "dto": "mapstruct",

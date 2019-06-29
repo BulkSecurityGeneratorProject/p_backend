@@ -14,7 +14,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20190629083527",
+    "changelogDate": "20190629095508",
     "javadoc": "Information about allergic reactions",
     "entityTableName": "allergy",
     "dto": "mapstruct",
