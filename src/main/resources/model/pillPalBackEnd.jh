@@ -1,4 +1,4 @@
-/** Are used in mediacal classification 
+/** Are used in medical classification
 *to uniquely identify medication */
 entity PharmaceuticalCode {
     name String,
@@ -49,9 +49,9 @@ entity ConsumptionBeforeUsing {
     beforeUsing String
 }
 
-entity ConsumptionPrecoution {
+entity ConsumptionPrecaution {
     conclusion String ,
-    precoution String
+    precaution String
 }
 
 entity ConsumptionProperUse {
@@ -81,13 +81,13 @@ entity Allergy {
     allergy String,
 }
 
-/** Information about using drug in childern younger than 10 */
+/** Information about using drug in children younger than 10 */
 entity Pediatric {
     pediatric String
 }
-/** Information about using drug in  the eldery */
+/** Information about using drug in  the elderly */
 entity Geriatric {
-    geriatic String
+    geriatric String
 }
  
 /** Drug Information in women breast feeding*/ 
@@ -167,7 +167,7 @@ enum RoutsOfAdministration{
 	ApplicationInfo{missedDose} to ConsumptionMissedDose 
 	ApplicationInfo{useAndStorage} to UseAndStorage 
 	ApplicationInfo{beforeUse} to ConsumptionBeforeUsing 
-	ApplicationInfo{precoution} to ConsumptionPrecoution 
+	ApplicationInfo{precaution} to ConsumptionPrecaution
 	ApplicationInfo{properUse} to ConsumptionProperUse 
     ApplicationInfo{pregnancy} to Pregnancy
     ApplicationInfo{allergy} to Allergy
@@ -175,7 +175,7 @@ enum RoutsOfAdministration{
     ApplicationInfo{geriatric} to Geriatric
     ApplicationInfo{breastfeeding} to BreastFeeding
     ApplicationInfo{applInfoSideEffect} to ApplInfoSideEffect
-    SideEffect{SideEffet} to ApplInfoSideEffect
+    SideEffect{SideEffect} to ApplInfoSideEffect
  }
  
  
