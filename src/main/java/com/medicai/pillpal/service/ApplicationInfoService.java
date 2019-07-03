@@ -45,5 +45,11 @@ public interface ApplicationInfoService {
      */
     void delete(Long id);
 
+    /**
+     *  Save a list of applicationInfos
+     *
+     * @param applicationInfoDTO list of entities.
+     * @return list of persisted entities
+     */
     List<ApplicationInfoDTO> saveAll(List<ApplicationInfoDTO> applicationInfoDTO);
 }

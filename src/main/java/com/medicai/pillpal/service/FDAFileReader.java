@@ -16,15 +16,16 @@ import java.util.List;
 public class FDAFileReader {
 
     private final Logger log = LoggerFactory.getLogger(FDAFileReader.class);
-
+    private final ApplicationInfoService applicationInfoService;
     private final FileService fileService;
 
     private final ApplicationProperties applicationProperties;
     private Object Connection;
 
-    public FDAFileReader(FileService fileReaderService, ApplicationProperties applicationProperties) {
+    public FDAFileReader(FileService fileReaderService, ApplicationProperties applicationProperties, ApplicationInfoService applicationInfoService) {
         this.fileService = fileReaderService;
         this.applicationProperties = applicationProperties;
+        this.applicationInfoService = applicationInfoService;
     }
 
     public boolean readFile() {
@@ -33,9 +34,13 @@ public class FDAFileReader {
             List<String> lines = fileService.readLinesOfFile(path);
             List<ApplicationInfoDTO> arrayApp = new ArrayList<>();
 
-            for (String line :lines) {
+            boolean firstLine = true;
+            for (String line : lines) {
+                if (firstLine) {
+                    firstLine = false;
+                    continue;
+                }
                 String[] split = line.split("\t");
-
                 ApplicationInfoDTO applicationInfoDTO = new ApplicationInfoDTO();
                 applicationInfoDTO.setFdaApplicationNo(split[0]);
                 applicationInfoDTO.setProductNumber(Integer.valueOf(split[1]));
@@ -45,6 +50,7 @@ public class FDAFileReader {
                 applicationInfoDTO.setActiveIngredient(split[6]);
                 arrayApp.add(applicationInfoDTO);
             }
+            applicationInfoService.saveAll(arrayApp);
 
             log.info("Line Number: {}", lines.size());
             return Boolean.TRUE;

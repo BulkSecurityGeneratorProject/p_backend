@@ -88,6 +88,12 @@ public class ApplicationInfoServiceImpl implements ApplicationInfoService {
         applicationInfoRepository.deleteById(id);
     }
 
+    /**
+     *  Save a list of applicationInfos
+     *
+     * @param applicationInfoDTO list of entities..
+     * @return list of persisted entities
+     */
     @Override
     public List<ApplicationInfoDTO> saveAll(List<ApplicationInfoDTO> applicationInfoDTO) {
         log.debug("Request to save ApplicationInfo : {}", applicationInfoDTO);
