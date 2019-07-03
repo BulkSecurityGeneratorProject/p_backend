@@ -12,7 +12,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 public class ApplicationProperties {
 
     //TODO move to .yml file
-    private final String FDA_FILE_PATH = "/home/amir/Desktop/class/uml drog/drugsatfda_3/Products.txt";
+    private final String FDA_FILE_PATH = "/drugsatfda_3/Products.txt";
 
     public String getFDA_FILE_PATH() {
         return FDA_FILE_PATH;

@@ -1,6 +1,6 @@
 package com.medicai.pillpal.web.rest;
 
-import com.medicai.pillpal.service.FDAFileReader;
+import com.medicai.pillpal.service.component.FDAFileReader;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

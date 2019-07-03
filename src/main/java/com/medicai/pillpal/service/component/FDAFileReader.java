@@ -1,7 +1,9 @@
-package com.medicai.pillpal.service;
+package com.medicai.pillpal.service.component;
 
 import com.medicai.pillpal.config.ApplicationProperties;
 import com.medicai.pillpal.domain.enumeration.Form;
+import com.medicai.pillpal.service.ApplicationInfoService;
+import com.medicai.pillpal.service.FileService;
 import com.medicai.pillpal.service.dto.ApplicationInfoDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,11 +18,11 @@ import java.util.List;
 public class FDAFileReader {
 
     private final Logger log = LoggerFactory.getLogger(FDAFileReader.class);
-    private final ApplicationInfoService applicationInfoService;
-    private final FileService fileService;
 
     private final ApplicationProperties applicationProperties;
-    private Object Connection;
+
+    private final FileService fileService;
+    private final ApplicationInfoService applicationInfoService;
 
     public FDAFileReader(FileService fileReaderService, ApplicationProperties applicationProperties, ApplicationInfoService applicationInfoService) {
         this.fileService = fileReaderService;
