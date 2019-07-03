@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -38,18 +39,23 @@ public class FDAFileReader {
             for (String line :lines) {
                 String[] split = line.split("\t");
             }
-            ApplicationInfoDTO applicationInfoDTO = new ApplicationInfoDTO();
-            applicationInfoDTO.setFdaApplicationNo(0,);
-            applicationInfoDTO.setName(1,);
-            applicationInfoDTO.setGenericName();
-            applicationInfoDTO.setBrandName();
-            applicationInfoDTO.setActiveIngredient();
-            applicationInfoDTO.setForm();
-            applicationInfoDTO.setOverView();
-            applicationInfoDTO.setStrengthAmount();
-            applicationInfoDTO.setStrengthUnit();
-            applicationInfoDTO.setProductNumber();
-            applicationInfoDTO.setRoutsOfAdministration();
+            List<ApplicationInfoDTO> appInfoList = new ArrayList<>();
+            lines.stream().skip(1).forEach(str -> {
+                ApplicationInfoDTO applicationInfoDTO = new ApplicationInfoDTO();
+                applicationInfoDTO.setFdaApplicationNo(0,);
+                applicationInfoDTO.setName(1,);
+                applicationInfoDTO.setGenericName();
+                applicationInfoDTO.setBrandName();
+                applicationInfoDTO.setActiveIngredient();
+                applicationInfoDTO.setForm();
+                applicationInfoDTO.setOverView();
+                applicationInfoDTO.setStrengthAmount();
+                applicationInfoDTO.setStrengthUnit();
+                applicationInfoDTO.setProductNumber();
+                applicationInfoDTO.setRoutsOfAdministration();
+                appInfoList.add(applicationInfoDTO);
+            });
+
 
 
             log.info("Line Number: {}", lines.size());
