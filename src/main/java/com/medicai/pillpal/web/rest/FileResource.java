@@ -16,7 +16,7 @@ public class FileResource {
         this.FDAFileReader = FDAFileReader;
     }
 
-    @GetMapping("/file/read_fda_file")
+    @GetMapping("/files")
     public ResponseEntity<Boolean> readFile() {
         return ResponseEntity.ok().body(FDAFileReader.readFile());
     }

@@ -5,6 +5,7 @@ import com.medicai.pillpal.service.dto.ApplicationInfoDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -43,4 +44,6 @@ public interface ApplicationInfoService {
      * @param id the id of the entity.
      */
     void delete(Long id);
+
+    List<ApplicationInfoDTO> saveAll(List<ApplicationInfoDTO> applicationInfoDTO);
 }

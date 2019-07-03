@@ -13,6 +13,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -85,5 +86,13 @@ public class ApplicationInfoServiceImpl implements ApplicationInfoService {
     public void delete(Long id) {
         log.debug("Request to delete ApplicationInfo : {}", id);
         applicationInfoRepository.deleteById(id);
+    }
+
+    @Override
+    public List<ApplicationInfoDTO> saveAll(List<ApplicationInfoDTO> applicationInfoDTO) {
+        log.debug("Request to save ApplicationInfo : {}", applicationInfoDTO);
+        List<ApplicationInfo> applicationInfo = applicationInfoMapper.toEntity(applicationInfoDTO);
+        applicationInfo = applicationInfoRepository.saveAll(applicationInfo);
+        return applicationInfoMapper.toDto(applicationInfo);
     }
 }

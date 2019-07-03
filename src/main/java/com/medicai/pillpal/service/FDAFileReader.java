@@ -1,15 +1,13 @@
 package com.medicai.pillpal.service;
 
 import com.medicai.pillpal.config.ApplicationProperties;
+import com.medicai.pillpal.domain.enumeration.Form;
 import com.medicai.pillpal.service.dto.ApplicationInfoDTO;
-import com.mysql.cj.protocol.Resultset;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -33,30 +31,20 @@ public class FDAFileReader {
         String path = applicationProperties.getFDA_FILE_PATH();
         try {
             List<String> lines = fileService.readLinesOfFile(path);
-
-
+            List<ApplicationInfoDTO> arrayApp = new ArrayList<>();
 
             for (String line :lines) {
                 String[] split = line.split("\t");
-            }
-            List<ApplicationInfoDTO> appInfoList = new ArrayList<>();
-            lines.stream().skip(1).forEach(str -> {
+
                 ApplicationInfoDTO applicationInfoDTO = new ApplicationInfoDTO();
-                applicationInfoDTO.setFdaApplicationNo(0,);
-                applicationInfoDTO.setName(1,);
-                applicationInfoDTO.setGenericName();
-                applicationInfoDTO.setBrandName();
-                applicationInfoDTO.setActiveIngredient();
-                applicationInfoDTO.setForm();
-                applicationInfoDTO.setOverView();
-                applicationInfoDTO.setStrengthAmount();
-                applicationInfoDTO.setStrengthUnit();
-                applicationInfoDTO.setProductNumber();
-                applicationInfoDTO.setRoutsOfAdministration();
-                appInfoList.add(applicationInfoDTO);
-            });
-
-
+                applicationInfoDTO.setFdaApplicationNo(split[0]);
+                applicationInfoDTO.setProductNumber(Integer.valueOf(split[1]));
+                applicationInfoDTO.setForm(Form.valueOf(split[2].split("/|;|,")[0]));
+                applicationInfoDTO.setStrengthUnit(split[3]);
+                applicationInfoDTO.setName(split[5]);
+                applicationInfoDTO.setActiveIngredient(split[6]);
+                arrayApp.add(applicationInfoDTO);
+            }
 
             log.info("Line Number: {}", lines.size());
             return Boolean.TRUE;
