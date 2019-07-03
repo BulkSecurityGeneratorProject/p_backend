@@ -17,7 +17,11 @@ public class FileServiceImpl implements FileService {
     public List<String> readLinesOfFile(String filePath) throws IOException {
 
         BufferedReader br = Files.newBufferedReader(Paths.get(filePath));
-        //br returns as stream and convert it into a List
+        br.readLine(); // this will read the first line
+        String line1 = null;
+        while ((line1 = br.readLine()) != null) { //loop will run from 2nd line
+            return null;
+        }
         return br.lines().collect(Collectors.toList());
     }
 }
