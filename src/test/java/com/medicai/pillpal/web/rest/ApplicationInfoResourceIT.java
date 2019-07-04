@@ -66,9 +66,9 @@ public class ApplicationInfoResourceIT {
     private static final String UPDATED_ACTIVE_INGREDIENT = "BBBBBBBBBB";
 
     private static final Form DEFAULT_FORM = Form.AEROSOL;
-    private static final Form UPDATED_FORM = Form.BAR;
+    private static final Form UPDATED_FORM = Form.AEROSOL;
 
-    private static final RoutsOfAdministration DEFAULT_ROUTS_OF_ADMINISTRATION = RoutsOfAdministration.BLOCK_INFILTRATION;
+    private static final RoutsOfAdministration DEFAULT_ROUTS_OF_ADMINISTRATION = RoutsOfAdministration.BUCCAL_SUBLINGUAL;
     private static final RoutsOfAdministration UPDATED_ROUTS_OF_ADMINISTRATION = RoutsOfAdministration.BUCCAL;
 
     @Autowired

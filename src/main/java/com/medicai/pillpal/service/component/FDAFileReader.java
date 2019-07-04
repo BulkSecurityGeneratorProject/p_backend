@@ -2,6 +2,7 @@ package com.medicai.pillpal.service.component;
 
 import com.medicai.pillpal.config.ApplicationProperties;
 import com.medicai.pillpal.domain.enumeration.Form;
+import com.medicai.pillpal.domain.enumeration.RoutsOfAdministration;
 import com.medicai.pillpal.service.ApplicationInfoService;
 import com.medicai.pillpal.service.FileService;
 import com.medicai.pillpal.service.dto.ApplicationInfoDTO;
@@ -43,14 +44,15 @@ public class FDAFileReader {
                     firstLine = false;
                     continue;
                 }
-                String[] split = line.split("\t");
+                String[] split = line.split(",");
                 ApplicationInfoDTO applicationInfoDTO = new ApplicationInfoDTO();
                 applicationInfoDTO.setFdaApplicationNo(split[0]);
                 applicationInfoDTO.setProductNumber(Integer.valueOf(split[1]));
-                applicationInfoDTO.setForm(Form.valueOf(split[2].split("/|;|,")[0]));
-                applicationInfoDTO.setStrengthUnit(split[3]);
-                applicationInfoDTO.setName(split[5]);
-                applicationInfoDTO.setActiveIngredient(split[6]);
+                applicationInfoDTO.setForm(Form.valueOf(split[2]));
+                applicationInfoDTO.setRoutsOfAdministration(RoutsOfAdministration.valueOf(split[3]));
+                applicationInfoDTO.setStrengthUnit(split[4]);
+                applicationInfoDTO.setName(split[6]);
+                applicationInfoDTO.setActiveIngredient(split[7]);
                 arrayApp.add(applicationInfoDTO);
             }
             applicationInfoService.saveAll(arrayApp);
