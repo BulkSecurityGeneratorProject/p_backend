@@ -32,6 +32,7 @@ public class FDAFileReader {
 
     public boolean readFile() {
         String path = applicationProperties.getFDA_FILE_PATH();
+        log.info("path: {}", path);
         try {
             List<String> lines = fileService.readLinesOfFile(path);
             List<ApplicationInfoDTO> arrayApp = new ArrayList<>();
