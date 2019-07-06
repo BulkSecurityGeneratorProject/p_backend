@@ -1,5 +1,6 @@
 package com.medicai.pillpal.web.rest;
 
+import com.medicai.pillpal.domain.ApplicationInfo;
 import com.medicai.pillpal.service.ApplicationInfoService;
 import com.medicai.pillpal.web.rest.errors.BadRequestAlertException;
 import com.medicai.pillpal.service.dto.ApplicationInfoDTO;
@@ -13,7 +14,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.util.MultiValueMap;
 import org.springframework.web.util.UriComponentsBuilder;
 import org.springframework.http.ResponseEntity;
@@ -41,6 +41,7 @@ public class ApplicationInfoResource {
     private String applicationName;
 
     private final ApplicationInfoService applicationInfoService;
+    private Object List;
 
     public ApplicationInfoResource(ApplicationInfoService applicationInfoService) {
         this.applicationInfoService = applicationInfoService;
@@ -126,5 +127,17 @@ public class ApplicationInfoResource {
         log.debug("REST request to delete ApplicationInfo : {}", id);
         applicationInfoService.delete(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString())).build();
+    }
+    //TODO modify comments
+    /**
+     *{@Code get the neme of application
+     * @param name
+     * @return
+     */
+    @GetMapping("/application-infos/byName/{name}")
+    public java.util.List<ApplicationInfo> getApplicationName(@PathVariable String name) {
+        log.debug("REST request to get ApplicationInfo : {}", name);
+        List<ApplicationInfo> applicationInfoDTO = applicationInfoService.findByName(name);
+        return applicationInfoDTO;
     }
 }

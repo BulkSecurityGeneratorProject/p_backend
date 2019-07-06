@@ -59,8 +59,8 @@ public class ApplicationInfoResourceIT {
     private static final String DEFAULT_STRENGTH_UNIT = "AAAAAAAAAA";
     private static final String UPDATED_STRENGTH_UNIT = "BBBBBBBBBB";
 
-    private static final Integer DEFAULT_PRODUCT_NUMBER = 1;
-    private static final Integer UPDATED_PRODUCT_NUMBER = 2;
+    private static final Integer DEFAULT_PRODUCT_NUMBER = Integer.valueOf( String.valueOf(1) );
+    private static final Integer UPDATED_PRODUCT_NUMBER = Integer.valueOf( String.valueOf(2) );
 
     private static final String DEFAULT_ACTIVE_INGREDIENT = "AAAAAAAAAA";
     private static final String UPDATED_ACTIVE_INGREDIENT = "BBBBBBBBBB";
@@ -92,7 +92,7 @@ public class ApplicationInfoResourceIT {
     @Autowired
     private EntityManager em;
 
-    @Autowired
+
     private Validator validator;
 
     private MockMvc restApplicationInfoMockMvc;

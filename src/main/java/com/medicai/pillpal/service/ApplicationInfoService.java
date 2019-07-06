@@ -58,5 +58,5 @@ public interface ApplicationInfoService {
      * get a list of applications names
      * @return list of persisted entites
      */
-   // List<ApplicationInfo> findByName(String name);
+    List<ApplicationInfo> findByName(String name);
 }
