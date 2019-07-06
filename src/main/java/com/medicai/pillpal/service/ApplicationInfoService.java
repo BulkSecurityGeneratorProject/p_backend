@@ -1,5 +1,6 @@
 package com.medicai.pillpal.service;
 
+import com.medicai.pillpal.domain.ApplicationInfo;
 import com.medicai.pillpal.service.dto.ApplicationInfoDTO;
 
 import org.springframework.data.domain.Page;
@@ -52,4 +53,10 @@ public interface ApplicationInfoService {
      * @return list of persisted entities
      */
     List<ApplicationInfoDTO> saveAll(List<ApplicationInfoDTO> applicationInfoDTO);
+
+    /**
+     * get a list of applications names
+     * @return list of persisted entites
+     */
+   // List<ApplicationInfo> findByName(String name);
 }
