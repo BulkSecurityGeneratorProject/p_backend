@@ -47,7 +47,7 @@ public interface ApplicationInfoService {
     void delete(Long id);
 
     /**
-     *  Save a list of applicationInfos
+     * Save a list of applicationInfos
      *
      * @param applicationInfoDTO list of entities.
      * @return list of persisted entities
@@ -55,8 +55,11 @@ public interface ApplicationInfoService {
     List<ApplicationInfoDTO> saveAll(List<ApplicationInfoDTO> applicationInfoDTO);
 
     /**
-     * get a list of applications names
+     * get a list of applications genericNames
+     *
      * @return list of persisted entites
      */
-    List<ApplicationInfo> findByName(String name);
+    Page<ApplicationInfoDTO> findByGenericNameList(Pageable pageable,List<String> genericNameList);
+
+
 }

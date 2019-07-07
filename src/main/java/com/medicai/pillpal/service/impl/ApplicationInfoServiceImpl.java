@@ -102,14 +102,9 @@ public class ApplicationInfoServiceImpl implements ApplicationInfoService {
         return applicationInfoMapper.toDto(applicationInfo);
     }
 
-    /**
-     * Find a list of names
-     * @param name
-     * @return list of persisted entites
-     */
     @Override
-    public List<ApplicationInfo> findByName(String name) {
-        log.debug("Request to get ApplicationInfo : {}", name);
-        return applicationInfoRepository.findByName(name);
+    public Page<ApplicationInfoDTO> findByGenericNameList(Pageable pageable, List<String> genericNameList) {
+        log.debug("Request to get ApplicationInfo : {}", pageable);
+        return applicationInfoRepository.findByGenericNameList( pageable, genericNameList );
     }
-}
+ }
