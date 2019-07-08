@@ -105,6 +105,7 @@ public class ApplicationInfoServiceImpl implements ApplicationInfoService {
     @Override
     public Page<ApplicationInfoDTO> findByGenericNameList(Pageable pageable, List<String> genericNameList) {
         log.debug("Request to get ApplicationInfo : {}", pageable);
-        return applicationInfoRepository.findByGenericNameList( pageable, genericNameList );
+        return applicationInfoRepository.findByGenericNameList( pageable, genericNameList )
+            .map(applicationInfoMapper::toDto);
     }
  }
