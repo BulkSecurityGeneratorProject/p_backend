@@ -18,7 +18,7 @@ import java.util.List;
 @Repository
 public interface GeriatricRepository extends JpaRepository<Geriatric, Long> {
 
-    @Query("select geriatric from Gerriatric geriatric where geriatric.genericName in:genericNameList")
+    @Query("select geriatric from Gerriatric geriatric where geriatric.genericName in :genericNameList")
     Page<Geriatric> findByGenericNameListGeriatric(Pageable pageable , @Param("genericNameList")List<String>genericName);
 
 }

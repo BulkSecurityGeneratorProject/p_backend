@@ -18,7 +18,7 @@ import java.util.List;
 @Repository
 public interface AllergyRepository extends JpaRepository<Allergy, Long> {
 
-    @Query("select allergy from Allergy allergy where allergy.genericName in: genericNameList ")
+    @Query("select allergy from Allergy allergy where allergy.genericName in :genericNameList ")
     Page<Allergy> findByGenericNameListAllergy(Pageable pageable , @Param("genericNameList")List<String> genericNameList);
 
 }
