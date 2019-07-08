@@ -1,9 +1,10 @@
 package com.medicai.pillpal.web.rest;
 
 import com.medicai.pillpal.service.SideEffectService;
-import com.medicai.pillpal.web.rest.errors.BadRequestAlertException;
+import com.medicai.pillpal.service.dto.AllergyDTO;
+import com.medicai.pillpal.service.dto.GeriatricDTO;
 import com.medicai.pillpal.service.dto.SideEffectDTO;
-
+import com.medicai.pillpal.web.rest.errors.BadRequestAlertException;
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.PaginationUtil;
 import io.github.jhipster.web.util.ResponseUtil;
@@ -13,16 +14,14 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.util.MultiValueMap;
-import org.springframework.web.util.UriComponentsBuilder;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.MultiValueMap;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.util.UriComponentsBuilder;
 
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
-
 import java.util.List;
 import java.util.Optional;
 
@@ -89,9 +88,9 @@ public class SideEffectResource {
     /**
      * {@code GET  /side-effects} : get all the sideEffects.
      *
-     * @param pageable the pagination information.
+     * @param pageable    the pagination information.
      * @param queryParams a {@link MultiValueMap} query parameters.
-     * @param uriBuilder a {@link UriComponentsBuilder} URI builder.
+     * @param uriBuilder  a {@link UriComponentsBuilder} URI builder.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of sideEffects in body.
      */
     @GetMapping("/side-effects")
@@ -126,5 +125,38 @@ public class SideEffectResource {
         log.debug("REST request to delete SideEffect : {}", id);
         sideEffectService.delete(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString())).build();
+    }
+
+    /**
+     * Get List of Generic Name
+     *
+     * @param pageable
+     * @param genericName
+     * @param uriBuilder
+     * @return the ResponseEntity with status 200 (OK) and the list of notificationHistories in body
+     */
+    @GetMapping("/side-effect/allergy")
+    public ResponseEntity<List<AllergyDTO>> getGenericNameAllergy(Pageable pageable,
+                                                                  @RequestBody List<String> genericName, UriComponentsBuilder uriBuilder) {
+        log.debug("REST request to delete SideEffect : {}");
+        Page<AllergyDTO> page = sideEffectService.findByGenericNameListAllergy(pageable, genericName);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(uriBuilder, page);
+        return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+
+    /**
+     * Get List of Generic Name
+     * @param pageable
+     * @param genericName
+     * @param uriBuilder
+     * @return the ResponseEntity with status 200 (OK) and the list of notificationHistories in body
+     */
+    @GetMapping("/side-effects/geriatric")
+    public ResponseEntity<List<GeriatricDTO>> getGenericNemeListGeriatric(Pageable pageable,
+                                                                          @RequestBody List<String> genericName, UriComponentsBuilder uriBuilder) {
+        log.debug("REST request to delete SideEffect : {}");
+        Page<GeriatricDTO> page = sideEffectService.findByGenericNameListGeriatric(pageable, genericName);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(uriBuilder, page);
+        return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 }

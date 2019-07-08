@@ -1,10 +1,13 @@
 package com.medicai.pillpal.service;
 
+import com.medicai.pillpal.service.dto.AllergyDTO;
+import com.medicai.pillpal.service.dto.GeriatricDTO;
 import com.medicai.pillpal.service.dto.SideEffectDTO;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -43,4 +46,22 @@ public interface SideEffectService {
      * @param id the id of the entity.
      */
     void delete(Long id);
+
+
+    /**
+     * Get the List of GenericName
+     *
+     * @param
+     * @return the list of entities.
+     */
+    Page<AllergyDTO> findByGenericNameListAllergy(Pageable pageable , List<String> genericNameList);
+
+    /**
+     * Get the List of GenericName
+     *
+     * @param
+     * @return the list of entities.
+     */
+    Page<GeriatricDTO> findByGenericNameListGeriatric(Pageable pageable , List<String> genericNameList);
+
 }
