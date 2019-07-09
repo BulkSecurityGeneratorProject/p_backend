@@ -111,7 +111,7 @@ public class SideEffectServiceImpl implements SideEffectService {
     @Override
     public Page<AllergyDTO> findAllergyByGenericName(Pageable pageable, String genericName) {
         log.debug( "Request to get ApplicationInfo : {}", pageable );
-        return allergyRepository.findAllergyByGenericName( pageable, genericName )
+        return allergyRepository.findByGenericName( pageable, genericName )
             .map( allergyMapper::toDto );
     }
 
@@ -125,7 +125,7 @@ public class SideEffectServiceImpl implements SideEffectService {
     @Override
     public Page<AllergyDTO> findAllergyByGenericNameList(Pageable pageable, List<String> genericNameList) {
         log.debug( "Request to get ApplicationInfo : {}", pageable );
-        return allergyRepository.findAllergyByGenericNameList( pageable, genericNameList )
+        return allergyRepository.findByGenericNameList( pageable, genericNameList )
             .map( allergyMapper::toDto );
     }
 
@@ -140,7 +140,7 @@ public class SideEffectServiceImpl implements SideEffectService {
     @Override
     public Page<GeriatricDTO> findGeriatricByGenericNameList(Pageable pageable, List<String> genericNameList) {
         log.debug( "Request to get ApplicationInfo : {}", pageable );
-        return geriatricRepository.findGeriatricByGenericNameList( pageable, genericNameList )
+        return geriatricRepository.findByGenericNameList( pageable, genericNameList )
             .map( geriatricMapper::toDto );
     }
 
