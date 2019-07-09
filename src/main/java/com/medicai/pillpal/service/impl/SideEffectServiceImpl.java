@@ -28,7 +28,7 @@ import java.util.Optional;
 @Transactional
 public class SideEffectServiceImpl implements SideEffectService {
 
-    private final Logger log = LoggerFactory.getLogger( SideEffectServiceImpl.class );
+    private final Logger log = LoggerFactory.getLogger(SideEffectServiceImpl.class);
     private final SideEffectRepository sideEffectRepository;
     private final SideEffectMapper sideEffectMapper;
     private final AllergyRepository allergyRepository;
@@ -55,10 +55,10 @@ public class SideEffectServiceImpl implements SideEffectService {
      */
     @Override
     public SideEffectDTO save(SideEffectDTO sideEffectDTO) {
-        log.debug( "Request to save SideEffect : {}", sideEffectDTO );
-        SideEffect sideEffect = sideEffectMapper.toEntity( sideEffectDTO );
-        sideEffect = sideEffectRepository.save( sideEffect );
-        return sideEffectMapper.toDto( sideEffect );
+        log.debug("Request to save SideEffect : {}", sideEffectDTO);
+        SideEffect sideEffect = sideEffectMapper.toEntity(sideEffectDTO);
+        sideEffect = sideEffectRepository.save(sideEffect);
+        return sideEffectMapper.toDto(sideEffect);
     }
 
     /**
@@ -70,9 +70,9 @@ public class SideEffectServiceImpl implements SideEffectService {
     @Override
     @Transactional(readOnly = true)
     public Page<SideEffectDTO> findAll(Pageable pageable) {
-        log.debug( "Request to get all SideEffects" );
-        return sideEffectRepository.findAll( pageable )
-            .map( sideEffectMapper::toDto );
+        log.debug("Request to get all SideEffects");
+        return sideEffectRepository.findAll(pageable)
+            .map(sideEffectMapper::toDto);
     }
 
 
@@ -85,9 +85,9 @@ public class SideEffectServiceImpl implements SideEffectService {
     @Override
     @Transactional(readOnly = true)
     public Optional<SideEffectDTO> findOne(Long id) {
-        log.debug( "Request to get SideEffect : {}", id );
-        return sideEffectRepository.findById( id )
-            .map( sideEffectMapper::toDto );
+        log.debug("Request to get SideEffect : {}", id);
+        return sideEffectRepository.findById(id)
+            .map(sideEffectMapper::toDto);
     }
 
     /**
@@ -97,22 +97,21 @@ public class SideEffectServiceImpl implements SideEffectService {
      */
     @Override
     public void delete(Long id) {
-        log.debug( "Request to delete SideEffect : {}", id );
-        sideEffectRepository.deleteById( id );
+        log.debug("Request to delete SideEffect : {}", id);
+        sideEffectRepository.deleteById(id);
     }
 
     /**
      * get a generic names
      *
-     * @param pageable
      * @param genericName
      * @return a persisted entity
      */
     @Override
-    public Page<AllergyDTO> findAllergyByGenericName(Pageable pageable, String genericName) {
-        log.debug( "Request to get ApplicationInfo : {}", pageable );
-        return allergyRepository.findByGenericName( pageable, genericName )
-            .map( allergyMapper::toDto );
+    public Optional<AllergyDTO> findAllergyByGenericName(String genericName) {
+        log.debug("Request to get ApplicationInfo : {}", genericName);
+        return allergyRepository.findByGenericName(genericName)
+            .map(allergyMapper::toDto);
     }
 
     /**
@@ -124,9 +123,9 @@ public class SideEffectServiceImpl implements SideEffectService {
      */
     @Override
     public Page<AllergyDTO> findAllergyByGenericNameList(Pageable pageable, List<String> genericNameList) {
-        log.debug( "Request to get ApplicationInfo : {}", pageable );
-        return allergyRepository.findByGenericNameList( pageable, genericNameList )
-            .map( allergyMapper::toDto );
+        log.debug("Request to get ApplicationInfo : {}", pageable);
+        return allergyRepository.findByGenericNameList(pageable, genericNameList)
+            .map(allergyMapper::toDto);
     }
 
 
@@ -139,9 +138,9 @@ public class SideEffectServiceImpl implements SideEffectService {
      */
     @Override
     public Page<GeriatricDTO> findGeriatricByGenericNameList(Pageable pageable, List<String> genericNameList) {
-        log.debug( "Request to get ApplicationInfo : {}", pageable );
-        return geriatricRepository.findByGenericNameList( pageable, genericNameList )
-            .map( geriatricMapper::toDto );
+        log.debug("Request to get ApplicationInfo : {}", pageable);
+        return geriatricRepository.findByGenericNameList(pageable, genericNameList)
+            .map(geriatricMapper::toDto);
     }
 
 

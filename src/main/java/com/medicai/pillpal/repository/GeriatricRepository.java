@@ -22,6 +22,6 @@ public interface GeriatricRepository extends JpaRepository<Geriatric, Long> {
         "inner join geriatric.applicationInfo ai " +
         "where ai.genericName in :genericNameList ")
     Page<Geriatric> findByGenericNameList(Pageable pageable,
-                                                   @Param("genericNameList") List<String> genericNameList);
+                                          @Param("genericNameList") List<String> genericNameList);
 
 }

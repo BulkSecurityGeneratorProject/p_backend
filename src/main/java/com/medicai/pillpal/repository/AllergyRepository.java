@@ -9,6 +9,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 
 /**
@@ -21,14 +22,13 @@ public interface AllergyRepository extends JpaRepository<Allergy, Long> {
     @Query("select allergy from Allergy allergy " +
         "inner join allergy.applicationInfo ai  " +
         "where ai.genericName = :genericName ")
-    Page<Allergy> findByGenericName(Pageable pageable,
-                                           @Param("genericName") String genericName);
+    Optional<Allergy> findByGenericName(@Param("genericName") String genericName);
 
     @Query("select allergy from Allergy allergy " +
         "inner join allergy.applicationInfo ai  " +
         "where ai.genericName in :genericNameList ")
     Page<Allergy> findByGenericNameList(Pageable pageable,
-                                               @Param("genericNameList") List<String> genericNameList);
+                                        @Param("genericNameList") List<String> genericNameList);
 
 
 }
