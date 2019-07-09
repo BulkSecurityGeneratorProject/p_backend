@@ -2,6 +2,7 @@ package com.medicai.pillpal.service;
 
 import com.medicai.pillpal.service.dto.AllergyDTO;
 import com.medicai.pillpal.service.dto.GeriatricDTO;
+import com.medicai.pillpal.service.dto.PediatricDTO;
 import com.medicai.pillpal.service.dto.SideEffectDTO;
 
 import org.checkerframework.checker.nullness.Opt;
@@ -72,6 +73,25 @@ public interface SideEffectService {
      * @return the list of entities.
      */
     Page<GeriatricDTO> findGeriatricByGenericNameList(Pageable pageable, List<String> genericNameList);
+
+
+
+    /**
+     * Get a GenericName
+     *
+     * @param
+     * @return persisted entity.
+     */
+    Optional<PediatricDTO> findPediatricByGenericName(String genericName);
+
+    /**
+     * Get the List of GenericName
+     *
+     * @param
+     * @return the list of entities.
+     */
+    Page<PediatricDTO> findPediatricByGenericNameList(Pageable pageable, List<String> genericNameList);
+
 
 
 }

@@ -3,13 +3,16 @@ package com.medicai.pillpal.service.impl;
 import com.medicai.pillpal.domain.SideEffect;
 import com.medicai.pillpal.repository.AllergyRepository;
 import com.medicai.pillpal.repository.GeriatricRepository;
+import com.medicai.pillpal.repository.PediatricRepository;
 import com.medicai.pillpal.repository.SideEffectRepository;
 import com.medicai.pillpal.service.SideEffectService;
 import com.medicai.pillpal.service.dto.AllergyDTO;
 import com.medicai.pillpal.service.dto.GeriatricDTO;
+import com.medicai.pillpal.service.dto.PediatricDTO;
 import com.medicai.pillpal.service.dto.SideEffectDTO;
 import com.medicai.pillpal.service.mapper.AllergyMapper;
 import com.medicai.pillpal.service.mapper.GeriatricMapper;
+import com.medicai.pillpal.service.mapper.PediatricMapper;
 import com.medicai.pillpal.service.mapper.SideEffectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -30,21 +33,36 @@ public class SideEffectServiceImpl implements SideEffectService {
 
     private final Logger log = LoggerFactory.getLogger(SideEffectServiceImpl.class);
     private final SideEffectRepository sideEffectRepository;
-    private final SideEffectMapper sideEffectMapper;
     private final AllergyRepository allergyRepository;
-    private final AllergyMapper allergyMapper;
     private final GeriatricRepository geriatricRepository;
-    private final GeriatricMapper geriatricMapper;
+    private final PediatricRepository pediatricRepository;
 
-    public SideEffectServiceImpl(SideEffectRepository sideEffectRepository, SideEffectMapper sideEffectMapper,
-                                 AllergyRepository allergyRepository, AllergyMapper allergyMapper,
-                                 GeriatricRepository geriatricRepository, GeriatricMapper geriatricMapper) {
+
+    private final AllergyMapper allergyMapper;
+    private final SideEffectMapper sideEffectMapper;
+    private final GeriatricMapper geriatricMapper;
+    private final PediatricMapper pediatricMapper;
+
+    public SideEffectServiceImpl(SideEffectRepository sideEffectRepository,
+                                 AllergyRepository allergyRepository,
+                                 GeriatricRepository geriatricRepository,
+                                 PediatricRepository pediatricRepository,
+
+                                 SideEffectMapper sideEffectMapper,
+                                 AllergyMapper allergyMapper,
+                                 GeriatricMapper geriatricMapper,
+                                 PediatricMapper pediatricMapper
+
+    ) {
         this.sideEffectRepository = sideEffectRepository;
-        this.sideEffectMapper = sideEffectMapper;
         this.allergyRepository = allergyRepository;
-        this.allergyMapper = allergyMapper;
         this.geriatricRepository = geriatricRepository;
+        this.pediatricRepository = pediatricRepository;
+
+        this.sideEffectMapper = sideEffectMapper;
+        this.allergyMapper = allergyMapper;
         this.geriatricMapper = geriatricMapper;
+        this.pediatricMapper = pediatricMapper;
     }
 
     /**
@@ -143,5 +161,32 @@ public class SideEffectServiceImpl implements SideEffectService {
             .map(geriatricMapper::toDto);
     }
 
+
+    /**
+     * get a generic names
+     *
+     * @param genericName
+     * @return a persisted entity
+     */
+    @Override
+    public Optional<PediatricDTO> findPediatricByGenericName(String genericName) {
+        log.debug("Request to get ApplicationInfo : {}", genericName);
+        return pediatricRepository.findByGenericName(genericName)
+            .map(pediatricMapper::toDto);
+    }
+
+    /**
+     * get a list of generic names
+     *
+     * @param pageable
+     * @param genericNameList
+     * @return list of persisted entities
+     */
+    @Override
+    public Page<PediatricDTO> findPediatricByGenericNameList(Pageable pageable, List<String> genericNameList) {
+        log.debug("Request to get ApplicationInfo : {}", pageable);
+        return pediatricRepository.findByGenericNameList(pageable, genericNameList)
+            .map(pediatricMapper::toDto);
+    }
 
 }
