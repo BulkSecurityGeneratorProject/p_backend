@@ -3,10 +3,12 @@ package com.medicai.pillpal.service.mapper;
 import com.medicai.pillpal.domain.Authority;
 import com.medicai.pillpal.domain.User;
 import com.medicai.pillpal.service.dto.UserDTO;
-
 import org.springframework.stereotype.Service;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 /**

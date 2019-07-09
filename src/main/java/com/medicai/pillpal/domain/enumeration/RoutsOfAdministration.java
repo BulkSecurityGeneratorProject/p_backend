@@ -1,8 +1,5 @@
 package com.medicai.pillpal.domain.enumeration;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
-
 /**
  * The RoutsOfAdministration enumeration.
  */

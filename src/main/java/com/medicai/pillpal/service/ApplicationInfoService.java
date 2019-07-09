@@ -1,8 +1,6 @@
 package com.medicai.pillpal.service;
 
-import com.medicai.pillpal.domain.ApplicationInfo;
 import com.medicai.pillpal.service.dto.ApplicationInfoDTO;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

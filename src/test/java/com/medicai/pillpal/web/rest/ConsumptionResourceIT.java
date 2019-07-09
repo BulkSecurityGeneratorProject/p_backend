@@ -1,13 +1,8 @@
 package com.medicai.pillpal.web.rest;
 
 import com.medicai.pillpal.PillpalApp;
-
-import org.springframework.boot.test.context.SpringBootTest;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.hamcrest.Matchers.hasItem;
-
 import com.medicai.pillpal.domain.enumeration.SideEffectType;
+import org.springframework.boot.test.context.SpringBootTest;
 /**
  * Integration tests for the Consumption REST controller.
  */

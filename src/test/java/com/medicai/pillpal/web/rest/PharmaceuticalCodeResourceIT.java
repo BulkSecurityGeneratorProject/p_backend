@@ -7,7 +7,6 @@ import com.medicai.pillpal.service.PharmaceuticalCodeService;
 import com.medicai.pillpal.service.dto.PharmaceuticalCodeDTO;
 import com.medicai.pillpal.service.mapper.PharmaceuticalCodeMapper;
 import com.medicai.pillpal.web.rest.errors.ExceptionTranslator;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockitoAnnotations;

@@ -1,9 +1,6 @@
 package com.medicai.pillpal.service;
 
-import com.medicai.pillpal.domain.Pregnancy;
 import com.medicai.pillpal.service.dto.PregnancyDTO;
-
-import com.medicai.pillpal.service.dto.ProductionInfoDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

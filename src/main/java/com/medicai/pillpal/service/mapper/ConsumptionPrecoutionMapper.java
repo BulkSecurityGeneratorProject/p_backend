@@ -1,9 +1,9 @@
 package com.medicai.pillpal.service.mapper;
 
-import com.medicai.pillpal.domain.*;
+import com.medicai.pillpal.domain.ConsumptionPrecoution;
 import com.medicai.pillpal.service.dto.ConsumptionPrecoutionDTO;
-
-import org.mapstruct.*;
+import org.mapstruct.Mapper;
+import org.mapstruct.Mapping;
 
 /**
  * Mapper for the entity {@link ConsumptionPrecoution} and its DTO {@link ConsumptionPrecoutionDTO}.

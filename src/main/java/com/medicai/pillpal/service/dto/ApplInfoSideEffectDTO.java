@@ -1,9 +1,10 @@
 package com.medicai.pillpal.service.dto;
-import java.io.Serializable;
-import java.util.Objects;
 
 import com.medicai.pillpal.domain.AppInfoSideEffect;
 import com.medicai.pillpal.domain.enumeration.SideEffectType;
+
+import java.io.Serializable;
+import java.util.Objects;
 
 /**
  * A DTO for the {@link AppInfoSideEffect} entity.

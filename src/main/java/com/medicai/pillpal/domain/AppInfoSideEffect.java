@@ -1,19 +1,18 @@
 package com.medicai.pillpal.domain;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.medicai.pillpal.domain.enumeration.SideEffectType;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
-
 import java.io.Serializable;
-
-import com.medicai.pillpal.domain.enumeration.SideEffectType;
 
 /**
  * A AppInfoSideEffect.
  */
 @Entity
-@Table(name = "appl_info_side_effect")
+@Table(name = "app_info_side_effect")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class AppInfoSideEffect implements Serializable {
 

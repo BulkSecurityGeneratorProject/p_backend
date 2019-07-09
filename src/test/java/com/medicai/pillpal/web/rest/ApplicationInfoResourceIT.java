@@ -2,12 +2,13 @@ package com.medicai.pillpal.web.rest;
 
 import com.medicai.pillpal.PillpalApp;
 import com.medicai.pillpal.domain.ApplicationInfo;
+import com.medicai.pillpal.domain.enumeration.Form;
+import com.medicai.pillpal.domain.enumeration.RoutsOfAdministration;
 import com.medicai.pillpal.repository.ApplicationInfoRepository;
 import com.medicai.pillpal.service.ApplicationInfoService;
 import com.medicai.pillpal.service.dto.ApplicationInfoDTO;
 import com.medicai.pillpal.service.mapper.ApplicationInfoMapper;
 import com.medicai.pillpal.web.rest.errors.ExceptionTranslator;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockitoAnnotations;
@@ -29,9 +30,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
-
-import com.medicai.pillpal.domain.enumeration.Form;
-import com.medicai.pillpal.domain.enumeration.RoutsOfAdministration;
 /**
  * Integration tests for the {@Link ApplicationInfoResource} REST controller.
  */

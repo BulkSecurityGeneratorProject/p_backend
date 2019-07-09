@@ -1,7 +1,6 @@
 package com.medicai.pillpal.web.rest;
 
 import com.medicai.pillpal.service.AuditEventService;
-
 import io.github.jhipster.web.util.PaginationUtil;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.springframework.boot.actuate.audit.AuditEvent;

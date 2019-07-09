@@ -1,13 +1,12 @@
 package com.medicai.pillpal.service.impl;
 
-import com.medicai.pillpal.service.InteractionService;
 import com.medicai.pillpal.domain.Interaction;
 import com.medicai.pillpal.repository.InteractionRepository;
+import com.medicai.pillpal.service.InteractionService;
 import com.medicai.pillpal.service.dto.InteractionDTO;
 import com.medicai.pillpal.service.mapper.InteractionMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;

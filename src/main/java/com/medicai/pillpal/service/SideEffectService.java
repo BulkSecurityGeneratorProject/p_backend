@@ -1,10 +1,6 @@
 package com.medicai.pillpal.service;
 
-import com.medicai.pillpal.domain.AppInfoSideEffect;
-import com.medicai.pillpal.domain.Geriatric;
 import com.medicai.pillpal.service.dto.*;
-
-import org.checkerframework.checker.nullness.Opt;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 

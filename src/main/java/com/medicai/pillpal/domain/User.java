@@ -1,8 +1,7 @@
 package com.medicai.pillpal.domain;
 
-import com.medicai.pillpal.config.Constants;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.medicai.pillpal.config.Constants;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.annotations.BatchSize;
 import org.hibernate.annotations.Cache;

@@ -4,7 +4,6 @@ import com.medicai.pillpal.PillpalApp;
 import com.medicai.pillpal.config.audit.AuditEventConverter;
 import com.medicai.pillpal.domain.PersistentAuditEvent;
 import com.medicai.pillpal.repository.PersistenceAuditEventRepository;
-
 import com.medicai.pillpal.service.AuditEventService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
