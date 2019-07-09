@@ -9,7 +9,7 @@
     <property name="autoIncrement" value="true"/>
 
     <!--
-        Added the entity ApplInfoSideEffect.
+        Added the entity AppInfoSideEffect.
     -->
     <changeSet id="20190629095212-1" author="jhipster">
         <createTable tableName="appl_info_side_effect">

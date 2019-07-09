@@ -1,10 +1,12 @@
 package com.medicai.pillpal.service.dto;
 import java.io.Serializable;
 import java.util.Objects;
+
+import com.medicai.pillpal.domain.AppInfoSideEffect;
 import com.medicai.pillpal.domain.enumeration.SideEffectType;
 
 /**
- * A DTO for the {@link com.medicai.pillpal.domain.ApplInfoSideEffect} entity.
+ * A DTO for the {@link AppInfoSideEffect} entity.
  */
 public class ApplInfoSideEffectDTO implements Serializable {
 

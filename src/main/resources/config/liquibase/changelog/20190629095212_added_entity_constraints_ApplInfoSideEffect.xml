@@ -4,7 +4,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
     <!--
-        Added the constraints for entity ApplInfoSideEffect.
+        Added the constraints for entity AppInfoSideEffect.
     -->
     <changeSet id="20190629095212-2" author="jhipster">
         

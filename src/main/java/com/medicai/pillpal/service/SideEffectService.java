@@ -1,10 +1,8 @@
 package com.medicai.pillpal.service;
 
+import com.medicai.pillpal.domain.AppInfoSideEffect;
 import com.medicai.pillpal.domain.Geriatric;
-import com.medicai.pillpal.service.dto.AllergyDTO;
-import com.medicai.pillpal.service.dto.GeriatricDTO;
-import com.medicai.pillpal.service.dto.PediatricDTO;
-import com.medicai.pillpal.service.dto.SideEffectDTO;
+import com.medicai.pillpal.service.dto.*;
 
 import org.checkerframework.checker.nullness.Opt;
 import org.springframework.data.domain.Page;
@@ -73,8 +71,14 @@ public interface SideEffectService {
      * @param
      * @return the list of entities.
      */
-    Page<GeriatricDTO> findGeriatricByGenericNameList(Pageable pageable,List<String> genericName);
+    Page<GeriatricDTO> findGeriatricByGenericNameList(Pageable pageable, List<String> genericName);
 
+    /**
+     * Get a GenericName
+     *
+     * @param
+     * @return persisted entity.
+     */
     Optional<GeriatricDTO> findGeriatricByGenericName(String genericName);
 
 
@@ -94,6 +98,22 @@ public interface SideEffectService {
      */
     Page<PediatricDTO> findPediatricByGenericNameList(Pageable pageable, List<String> genericNameList);
 
+
+    /**
+     * Get a GenericName
+     *
+     * @param
+     * @return persisted entity.
+     */
+    Optional<ApplInfoSideEffectDTO> findAppInfoSideEffectByGenericName(String genericName);
+
+    /**
+     * Get the List of GenericName
+     *
+     * @param
+     * @return the list of entities.
+     */
+    Page<ApplInfoSideEffectDTO> findAppInfoSideEffectByGenericNameList(Pageable pageable, List<String> genericNameList);
 
 
 }

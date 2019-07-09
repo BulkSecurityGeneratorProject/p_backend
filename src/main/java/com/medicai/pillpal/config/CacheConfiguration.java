@@ -2,6 +2,7 @@ package com.medicai.pillpal.config;
 
 import java.time.Duration;
 
+import com.medicai.pillpal.domain.AppInfoSideEffect;
 import org.ehcache.config.builders.*;
 import org.ehcache.jsr107.Eh107Configuration;
 
@@ -47,7 +48,7 @@ public class CacheConfiguration {
             createCache(cm, com.medicai.pillpal.domain.Interaction.class.getName());
             createCache(cm, com.medicai.pillpal.domain.ApplicationInfo.class.getName());
             createCache(cm, com.medicai.pillpal.domain.ApplicationInfo.class.getName() + ".productionInfos");
-            createCache(cm, com.medicai.pillpal.domain.ApplicationInfo.class.getName() + ".pharmaceuticalcodes");
+            createCache(cm, com.medicai.pillpal.domain.ApplicationInfo.class.getName() + ".pharmaceuticalCodes");
             createCache(cm, com.medicai.pillpal.domain.ApplicationInfo.class.getName() + ".baseInteractions");
             createCache(cm, com.medicai.pillpal.domain.ApplicationInfo.class.getName() + ".descInteractions");
             createCache(cm, com.medicai.pillpal.domain.ApplicationInfo.class.getName() + ".dosings");
@@ -76,7 +77,7 @@ public class CacheConfiguration {
             createCache(cm, com.medicai.pillpal.domain.BreastFeeding.class.getName());
             createCache(cm, com.medicai.pillpal.domain.SideEffect.class.getName());
             createCache(cm, com.medicai.pillpal.domain.SideEffect.class.getName() + ".sideEffets");
-            createCache(cm, com.medicai.pillpal.domain.ApplInfoSideEffect.class.getName());
+            createCache(cm, AppInfoSideEffect.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
