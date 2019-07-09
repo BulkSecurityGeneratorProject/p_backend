@@ -47,6 +47,13 @@ public interface SideEffectService {
      */
     void delete(Long id);
 
+    /**
+     * Get a GenericName
+     *
+     * @param
+     * @return persisted entity.
+     */
+    Page<AllergyDTO> findAllergyByGenericName(Pageable pageable, String genericName);
 
     /**
      * Get the List of GenericName
@@ -54,7 +61,8 @@ public interface SideEffectService {
      * @param
      * @return the list of entities.
      */
-    Page<AllergyDTO> findByGenericNameListAllergy(Pageable pageable , List<String> genericNameList);
+    Page<AllergyDTO> findAllergyByGenericNameList(Pageable pageable, List<String> genericNameList);
+
 
     /**
      * Get the List of GenericName
@@ -62,6 +70,7 @@ public interface SideEffectService {
      * @param
      * @return the list of entities.
      */
-    Page<GeriatricDTO> findByGenericNameListGeriatric(Pageable pageable , List<String> genericNameList);
+    Page<GeriatricDTO> findGeriatricByGenericNameList(Pageable pageable, List<String> genericNameList);
+
 
 }
