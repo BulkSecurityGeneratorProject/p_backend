@@ -28,7 +28,7 @@ public interface AppInfoSideEffectRepository extends JpaRepository<AppInfoSideEf
     @Query("select appInfoSideEffect from AppInfoSideEffect appInfoSideEffect " +
         "inner join appInfoSideEffect.applicationInfo ai  " +
         "inner join appInfoSideEffect.sideEffect se " +
-        "where ai.genericName in :genericName ")
+        "where ai.genericName in :genericNameList ")
     Page<AppInfoSideEffect> findByGenericNameList(Pageable pageable,
                                         @Param("genericNameList") List<String> genericNameList);
 

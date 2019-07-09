@@ -9,7 +9,7 @@ import java.util.Objects;
 /**
  * A DTO for the {@link AppInfoSideEffect} entity.
  */
-public class ApplInfoSideEffectDTO implements Serializable {
+public class AppInfoSideEffectDTO implements Serializable {
 
     private Long id;
 
@@ -61,11 +61,11 @@ public class ApplInfoSideEffectDTO implements Serializable {
             return false;
         }
 
-        ApplInfoSideEffectDTO applInfoSideEffectDTO = (ApplInfoSideEffectDTO) o;
-        if (applInfoSideEffectDTO.getId() == null || getId() == null) {
+        AppInfoSideEffectDTO appInfoSideEffectDTO = (AppInfoSideEffectDTO) o;
+        if (appInfoSideEffectDTO.getId() == null || getId() == null) {
             return false;
         }
-        return Objects.equals(getId(), applInfoSideEffectDTO.getId());
+        return Objects.equals(getId(), appInfoSideEffectDTO.getId());
     }
 
     @Override
@@ -75,7 +75,7 @@ public class ApplInfoSideEffectDTO implements Serializable {
 
     @Override
     public String toString() {
-        return "ApplInfoSideEffectDTO{" +
+        return "AppInfoSideEffectDTO{" +
             "id=" + getId() +
             ", sideEffectType='" + getSideEffectType() + "'" +
             ", applicationInfo=" + getApplicationInfoId() +
