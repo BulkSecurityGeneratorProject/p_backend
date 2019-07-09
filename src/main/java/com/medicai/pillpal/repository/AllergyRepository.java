@@ -20,13 +20,13 @@ public interface AllergyRepository extends JpaRepository<Allergy, Long> {
 
     @Query("select allergy from Allergy allergy " +
         "inner join allergy.applicationInfo ai  " +
-        "where ai.applicationInfo.genericName in :genericName ")
+        "where ai.genericName = :genericName ")
     Page<Allergy> findAllergyByGenericName(Pageable pageable,
                                            @Param("genericName") String genericName);
 
     @Query("select allergy from Allergy allergy " +
         "inner join allergy.applicationInfo ai  " +
-        "where ai.applicationInfo.genericName in :genericNameList ")
+        "where ai.genericName in :genericNameList ")
     Page<Allergy> findAllergyByGenericNameList(Pageable pageable,
                                         @Param("genericNameList") List<String> genericNameList);
 

@@ -101,6 +101,13 @@ public class SideEffectServiceImpl implements SideEffectService {
         sideEffectRepository.deleteById( id );
     }
 
+    @Override
+    public Page<AllergyDTO> findAllergyByGenericName(Pageable pageable, String genericName) {
+        log.debug( "Request to get ApplicationInfo : {}", pageable );
+        return allergyRepository.findAllergyByGenericName( pageable, genericName )
+            .map( allergyMapper::toDto );
+    }
+
     /**
      * get a generic names
      *
@@ -108,12 +115,7 @@ public class SideEffectServiceImpl implements SideEffectService {
      * @param genericName
      * @return a persisted entity
      */
-    @Override
-    public Page<AllergyDTO> findAllergyByGenericName(Pageable pageable, String genericName) {
-        log.debug( "Request to get ApplicationInfo : {}", pageable );
-        return allergyRepository.findAllergyByGenericName( pageable, genericName )
-            .map( allergyMapper::toDto );
-    }
+
 
     /**
      * get a list of generic names
@@ -134,13 +136,13 @@ public class SideEffectServiceImpl implements SideEffectService {
      * get a list of generic names
      *
      * @param pageable
-     * @param genericNameList
+     * @param genericName
      * @return list of persisted entities
      */
     @Override
-    public Page<GeriatricDTO> findGeriatricByGenericNameList(Pageable pageable, List<String> genericNameList) {
+    public Page<GeriatricDTO> findGeriatricByGenericName(Pageable pageable, String genericName) {
         log.debug( "Request to get ApplicationInfo : {}", pageable );
-        return geriatricRepository.findGeriatricByGenericNameList( pageable, genericNameList )
+        return geriatricRepository.findGeriatricByGenericName( pageable, genericName )
             .map( geriatricMapper::toDto );
     }
 

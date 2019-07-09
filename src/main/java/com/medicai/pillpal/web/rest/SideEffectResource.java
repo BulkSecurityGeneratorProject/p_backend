@@ -129,6 +129,7 @@ public class SideEffectResource {
 
     /**
      * Get a Generic Name
+     *
      * @param pageable
      * @param genericName
      * @param uriComponentsBuilder
@@ -170,9 +171,9 @@ public class SideEffectResource {
      */
     @GetMapping("/side-effects/geriatric")
     public ResponseEntity<List<GeriatricDTO>> getGenericNemeListGeriatric(Pageable pageable,
-                                                                          @RequestBody List<String> genericName, UriComponentsBuilder uriBuilder) {
+                                                                          @RequestBody String genericName, UriComponentsBuilder uriBuilder) {
         log.debug( "REST request to delete SideEffect : {}" );
-        Page<GeriatricDTO> page = sideEffectService.findGeriatricByGenericNameList( pageable, genericName );
+        Page<GeriatricDTO> page = sideEffectService.findGeriatricByGenericName( pageable, genericName );
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders( uriBuilder, page );
         return ResponseEntity.ok().headers( headers ).body( page.getContent() );
     }
