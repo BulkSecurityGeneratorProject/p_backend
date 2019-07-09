@@ -101,7 +101,7 @@ public interface SideEffectService {
      * @param
      * @return persisted entity.
      */
-    Optional<ApplInfoSideEffectDTO> findAppInfoSideEffectByGenericName(String genericName);
+    Optional<AppInfoSideEffectDTO> findAppInfoSideEffectByGenericName(String genericName);
 
     /**
      * Get the List of GenericName
@@ -109,7 +109,7 @@ public interface SideEffectService {
      * @param
      * @return the list of entities.
      */
-    Page<ApplInfoSideEffectDTO> findAppInfoSideEffectByGenericNameList(Pageable pageable, List<String> genericNameList);
+    Page<AppInfoSideEffectDTO> findAppInfoSideEffectByGenericNameList(Pageable pageable, List<String> genericNameList);
 
     /**
      * Get a GenericName

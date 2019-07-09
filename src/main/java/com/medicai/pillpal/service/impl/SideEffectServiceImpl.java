@@ -208,7 +208,7 @@ public class SideEffectServiceImpl implements SideEffectService {
      * @return a persisted entity
      */
     @Override
-    public Optional<ApplInfoSideEffectDTO> findAppInfoSideEffectByGenericName(String genericName) {
+    public Optional<AppInfoSideEffectDTO> findAppInfoSideEffectByGenericName(String genericName) {
         log.debug("Request to get ApplicationInfo : {}", genericName);
         return appInfoSideEffectRepository.findByGenericName(genericName)
             .map(appInfoSideEffectMapper::toDto);
@@ -222,7 +222,7 @@ public class SideEffectServiceImpl implements SideEffectService {
      * @return list of persisted entities
      */
     @Override
-    public Page<ApplInfoSideEffectDTO> findAppInfoSideEffectByGenericNameList(Pageable pageable, List<String> genericNameList) {
+    public Page<AppInfoSideEffectDTO> findAppInfoSideEffectByGenericNameList(Pageable pageable, List<String> genericNameList) {
         log.debug("Request to get ApplicationInfo : {}", pageable);
         return appInfoSideEffectRepository.findByGenericNameList(pageable, genericNameList)
             .map(appInfoSideEffectMapper::toDto);
