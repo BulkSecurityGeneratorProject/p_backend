@@ -133,7 +133,7 @@ public class PregnancyResource {
      * @param genericName
      * @return the ResponseEntity with status 200 (OK) and the list of notificationHistories in body
      */
-    @GetMapping("/side-effect/allergy/by-generic-name")
+    @GetMapping("/pregnancies/by-generic-name")
     public ResponseEntity<PregnancyDTO> getPregnancyByGenericName(@RequestBody String genericName) {
         log.debug("REST request to delete SideEffect : {}");
         Optional<PregnancyDTO> pregnancyDTO = pregnancyService.findByGenericName(genericName);
@@ -147,7 +147,7 @@ public class PregnancyResource {
      * @param uriBuilder
      * @return the ResponseEntity with status 200 (OK) and the list of notificationHistories in body
      */
-    @GetMapping("/side-effect/allergy/by-generic-name-list")
+    @GetMapping("/pregnancies/by-generic-name-list")
     public ResponseEntity<List<PregnancyDTO>> getGenericNameListAllergy(Pageable pageable, @RequestBody List<String> genericName, UriComponentsBuilder uriBuilder) {
         log.debug("REST request to delete SideEffect : {}");
         Page<PregnancyDTO> page = pregnancyService.findByGenericNameList(pageable, genericName);
