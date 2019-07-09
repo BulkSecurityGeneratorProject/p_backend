@@ -13,6 +13,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -85,5 +86,16 @@ public class PregnancyServiceImpl implements PregnancyService {
     public void delete(Long id) {
         log.debug("Request to delete Pregnancy : {}", id);
         pregnancyRepository.deleteById(id);
+    }
+
+
+    @Override
+    public Page<PregnancyDTO> findByGenericNameList(Pageable pageable, List<String> genericNameList) {
+        return null;
+    }
+
+    @Override
+    public Optional<PregnancyDTO> findByGenericName(String genericName) {
+        return Optional.empty();
     }
 }

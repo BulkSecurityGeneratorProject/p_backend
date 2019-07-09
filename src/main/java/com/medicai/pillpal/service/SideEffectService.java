@@ -4,6 +4,7 @@ import com.medicai.pillpal.service.dto.AllergyDTO;
 import com.medicai.pillpal.service.dto.GeriatricDTO;
 import com.medicai.pillpal.service.dto.SideEffectDTO;
 
+import org.checkerframework.checker.nullness.Opt;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -53,7 +54,7 @@ public interface SideEffectService {
      * @param
      * @return persisted entity.
      */
-    Page<AllergyDTO> findAllergyByGenericName(Pageable pageable, String genericName);
+    Optional<AllergyDTO> findAllergyByGenericName(String genericName);
 
     /**
      * Get the List of GenericName
@@ -70,7 +71,7 @@ public interface SideEffectService {
      * @param
      * @return the list of entities.
      */
-    Page<GeriatricDTO> findGeriatricByGenericName(Pageable pageable, String genericName);
+    Page<GeriatricDTO> findGeriatricByGenericName(Pageable pageable,List<String> genericName);
 
 
 }

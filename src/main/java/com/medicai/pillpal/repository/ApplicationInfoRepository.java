@@ -19,5 +19,4 @@ import java.util.List;
 public interface ApplicationInfoRepository extends JpaRepository<ApplicationInfo, Long> {
     @Query("select appInfo from ApplicationInfo appInfo where appInfo.genericName in :genericNameList ")
     Page<ApplicationInfo> findByGenericNameList(Pageable pageable , @Param( "genericNameList" )  List<String>genericNameList );
-
 }
