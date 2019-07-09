@@ -1,6 +1,5 @@
 package com.medicai.pillpal.service.impl;
 
-import com.medicai.pillpal.domain.AppInfoSideEffect;
 import com.medicai.pillpal.domain.SideEffect;
 import com.medicai.pillpal.repository.*;
 import com.medicai.pillpal.service.SideEffectService;
