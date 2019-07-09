@@ -153,7 +153,7 @@ public class SideEffectServiceImpl implements SideEffectService {
      * @return list of persisted entity
      */
     @Override
-    public Page<GeriatricDTO> findGeriatricByGenericName(Pageable pageable, List<String> genericName) {
+    public Page<GeriatricDTO> findGeriatricByGenericNameList(Pageable pageable, List<String> genericName) {
         log.debug("Request to get ApplicationInfo : {}", pageable);
         return geriatricRepository.findByGenericNameList(pageable, genericName)
             .map(geriatricMapper::toDto);

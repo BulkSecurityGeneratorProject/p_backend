@@ -73,7 +73,7 @@ public interface SideEffectService {
      * @param
      * @return the list of entities.
      */
-    Page<GeriatricDTO> findGeriatricByGenericName(Pageable pageable,List<String> genericName);
+    Page<GeriatricDTO> findGeriatricByGenericNameList(Pageable pageable,List<String> genericName);
 
     Optional<GeriatricDTO> findGeriatricByGenericName(String genericName);
 
