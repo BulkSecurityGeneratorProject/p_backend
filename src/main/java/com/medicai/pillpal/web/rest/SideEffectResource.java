@@ -3,6 +3,7 @@ package com.medicai.pillpal.web.rest;
 import com.medicai.pillpal.service.SideEffectService;
 import com.medicai.pillpal.service.dto.AllergyDTO;
 import com.medicai.pillpal.service.dto.GeriatricDTO;
+import com.medicai.pillpal.service.dto.PediatricDTO;
 import com.medicai.pillpal.service.dto.SideEffectDTO;
 import com.medicai.pillpal.web.rest.errors.BadRequestAlertException;
 import io.github.jhipster.web.util.HeaderUtil;
@@ -32,7 +33,7 @@ import java.util.Optional;
 @RequestMapping("/api")
 public class SideEffectResource {
 
-    private final Logger log = LoggerFactory.getLogger( SideEffectResource.class );
+    private final Logger log = LoggerFactory.getLogger(SideEffectResource.class);
 
     private static final String ENTITY_NAME = "sideEffect";
 
@@ -54,14 +55,14 @@ public class SideEffectResource {
      */
     @PostMapping("/side-effects")
     public ResponseEntity<SideEffectDTO> createSideEffect(@Valid @RequestBody SideEffectDTO sideEffectDTO) throws URISyntaxException {
-        log.debug( "REST request to save SideEffect : {}", sideEffectDTO );
+        log.debug("REST request to save SideEffect : {}", sideEffectDTO);
         if (sideEffectDTO.getId() != null) {
-            throw new BadRequestAlertException( "A new sideEffect cannot already have an ID", ENTITY_NAME, "idexists" );
+            throw new BadRequestAlertException("A new sideEffect cannot already have an ID", ENTITY_NAME, "idexists");
         }
-        SideEffectDTO result = sideEffectService.save( sideEffectDTO );
-        return ResponseEntity.created( new URI( "/api/side-effects/" + result.getId() ) )
-            .headers( HeaderUtil.createEntityCreationAlert( applicationName, false, ENTITY_NAME, result.getId().toString() ) )
-            .body( result );
+        SideEffectDTO result = sideEffectService.save(sideEffectDTO);
+        return ResponseEntity.created(new URI("/api/side-effects/" + result.getId()))
+            .headers(HeaderUtil.createEntityCreationAlert(applicationName, false, ENTITY_NAME, result.getId().toString()))
+            .body(result);
     }
 
     /**
@@ -75,14 +76,14 @@ public class SideEffectResource {
      */
     @PutMapping("/side-effects")
     public ResponseEntity<SideEffectDTO> updateSideEffect(@Valid @RequestBody SideEffectDTO sideEffectDTO) throws URISyntaxException {
-        log.debug( "REST request to update SideEffect : {}", sideEffectDTO );
+        log.debug("REST request to update SideEffect : {}", sideEffectDTO);
         if (sideEffectDTO.getId() == null) {
-            throw new BadRequestAlertException( "Invalid id", ENTITY_NAME, "idnull" );
+            throw new BadRequestAlertException("Invalid id", ENTITY_NAME, "idnull");
         }
-        SideEffectDTO result = sideEffectService.save( sideEffectDTO );
+        SideEffectDTO result = sideEffectService.save(sideEffectDTO);
         return ResponseEntity.ok()
-            .headers( HeaderUtil.createEntityUpdateAlert( applicationName, false, ENTITY_NAME, sideEffectDTO.getId().toString() ) )
-            .body( result );
+            .headers(HeaderUtil.createEntityUpdateAlert(applicationName, false, ENTITY_NAME, sideEffectDTO.getId().toString()))
+            .body(result);
     }
 
     /**
@@ -95,10 +96,10 @@ public class SideEffectResource {
      */
     @GetMapping("/side-effects")
     public ResponseEntity<List<SideEffectDTO>> getAllSideEffects(Pageable pageable, @RequestParam MultiValueMap<String, String> queryParams, UriComponentsBuilder uriBuilder) {
-        log.debug( "REST request to get a page of SideEffects" );
-        Page<SideEffectDTO> page = sideEffectService.findAll( pageable );
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders( uriBuilder.queryParams( queryParams ), page );
-        return ResponseEntity.ok().headers( headers ).body( page.getContent() );
+        log.debug("REST request to get a page of SideEffects");
+        Page<SideEffectDTO> page = sideEffectService.findAll(pageable);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(uriBuilder.queryParams(queryParams), page);
+        return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
     /**
@@ -109,9 +110,9 @@ public class SideEffectResource {
      */
     @GetMapping("/side-effects/{id}")
     public ResponseEntity<SideEffectDTO> getSideEffect(@PathVariable Long id) {
-        log.debug( "REST request to get SideEffect : {}", id );
-        Optional<SideEffectDTO> sideEffectDTO = sideEffectService.findOne( id );
-        return ResponseUtil.wrapOrNotFound( sideEffectDTO );
+        log.debug("REST request to get SideEffect : {}", id);
+        Optional<SideEffectDTO> sideEffectDTO = sideEffectService.findOne(id);
+        return ResponseUtil.wrapOrNotFound(sideEffectDTO);
     }
 
     /**
@@ -122,27 +123,25 @@ public class SideEffectResource {
      */
     @DeleteMapping("/side-effects/{id}")
     public ResponseEntity<Void> deleteSideEffect(@PathVariable Long id) {
-        log.debug( "REST request to delete SideEffect : {}", id );
-        sideEffectService.delete( id );
-        return ResponseEntity.noContent().headers( HeaderUtil.createEntityDeletionAlert( applicationName, false, ENTITY_NAME, id.toString() ) ).build();
+        log.debug("REST request to delete SideEffect : {}", id);
+        sideEffectService.delete(id);
+        return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString())).build();
     }
 
     /**
      * Get a Generic Name
-     *
      * @param genericName
      * @return the ResponseEntity with status 200 (OK) and the list of notificationHistories in body
      */
     @GetMapping("/side-effects/allergy/by-generic-name")
     public ResponseEntity<AllergyDTO> getAllergyByGenericName(@RequestBody String genericName) {
-        log.debug( "REST request to delete SideEffect : {}" );
-        Optional<AllergyDTO> allergyDTO = sideEffectService.findAllergyByGenericName( genericName );
-        return ResponseUtil.wrapOrNotFound( allergyDTO );
+        log.debug("REST request to delete SideEffect : {}");
+        Optional<AllergyDTO> allergyDTO = sideEffectService.findAllergyByGenericName(genericName);
+        return ResponseUtil.wrapOrNotFound(allergyDTO);
     }
 
     /**
      * Get List of Generic Name
-     *
      * @param pageable
      * @param genericName
      * @param uriBuilder
@@ -150,28 +149,27 @@ public class SideEffectResource {
      */
     @GetMapping("/side-effects/allergy/by-generic-name-list")
     public ResponseEntity<List<AllergyDTO>> getAllergyByGenericNameList(Pageable pageable,
-                                                                        @RequestBody List<String> genericName, UriComponentsBuilder uriBuilder) {
-        log.debug( "REST request to delete SideEffect : {}" );
-        Page<AllergyDTO> page = sideEffectService.findAllergyByGenericNameList( pageable, genericName );
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders( uriBuilder, page );
-        return ResponseEntity.ok().headers( headers ).body( page.getContent() );
+                                                                      @RequestBody List<String> genericName, UriComponentsBuilder uriBuilder) {
+        log.debug("REST request to delete SideEffect : {}");
+        Page<AllergyDTO> page = sideEffectService.findAllergyByGenericNameList(pageable, genericName);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(uriBuilder, page);
+        return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
     /**
      * Get List of Generic Name
-     *
      * @param pageable
      * @param genericName
      * @param uriBuilder
      * @return the ResponseEntity with status 200 (OK) and the list of notificationHistories in body
      */
-    @GetMapping("/side-effects/geriatric/by-generic-name-list")
+    @GetMapping("/side-effects/geriatric")
     public ResponseEntity<List<GeriatricDTO>> getGenericNemeListGeriatric(Pageable pageable,
                                                                           @RequestBody List<String> genericName, UriComponentsBuilder uriBuilder) {
-        log.debug( "REST request to delete SideEffect : {}" );
-        Page<GeriatricDTO> page = sideEffectService.findGeriatricByGenericName( pageable, genericName );
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders( uriBuilder, page );
-        return ResponseEntity.ok().headers( headers ).body( page.getContent() );
+        log.debug("REST request to delete SideEffect : {}");
+        Page<GeriatricDTO> page = sideEffectService.findGeriatricByGenericNameList(pageable, genericName);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(uriBuilder, page);
+        return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 
     /**
@@ -187,4 +185,33 @@ public class SideEffectResource {
         return ResponseUtil.wrapOrNotFound( geriatricDTO );
     }
 
+
+
+    /**
+     * Get a Generic Name
+     * @param genericName
+     * @return the ResponseEntity with status 200 (OK) and the list of notificationHistories in body
+     */
+    @GetMapping("/side-effects/pediatric/by-generic-name")
+    public ResponseEntity<PediatricDTO> getPediatricByGenericName(@RequestBody String genericName) {
+        log.debug("REST request to delete SideEffect : {}");
+        Optional<PediatricDTO> pediatricDTO = sideEffectService.findPediatricByGenericName(genericName);
+        return ResponseUtil.wrapOrNotFound(pediatricDTO);
+    }
+
+    /**
+     * Get List of Generic Name
+     * @param pageable
+     * @param genericName
+     * @param uriBuilder
+     * @return the ResponseEntity with status 200 (OK) and the list of notificationHistories in body
+     */
+    @GetMapping("/side-effects/pediatric/by-generic-name-list")
+    public ResponseEntity<List<PediatricDTO>> getPediatricByGenericNameList(Pageable pageable,
+                                                                        @RequestBody List<String> genericName, UriComponentsBuilder uriBuilder) {
+        log.debug("REST request to delete SideEffect : {}");
+        Page<PediatricDTO> page = sideEffectService.findPediatricByGenericNameList(pageable, genericName);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(uriBuilder, page);
+        return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
 }
