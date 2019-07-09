@@ -51,6 +51,7 @@ public interface PregnancyService {
      * Get all the productionInfos.
      *
      * @param pageable the pagination information.
+     * @param genericNameList the name of applicationInfo generic names
      * @return the list of entities.
      */
     Page<PregnancyDTO> findByGenericNameList(Pageable pageable, List<String> genericNameList);
@@ -59,10 +60,9 @@ public interface PregnancyService {
     /**
      * Get the "id" productionInfo.
      *
-     * @param id the id of the entity.
+     * @param genericName the name of applicationInfo generic name
      * @return the entity.
      */
     Optional<PregnancyDTO> findByGenericName(String genericName);
-
 
 }

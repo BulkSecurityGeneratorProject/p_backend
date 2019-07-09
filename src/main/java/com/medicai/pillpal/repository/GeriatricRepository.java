@@ -9,6 +9,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 
 /**
@@ -22,7 +23,7 @@ public interface GeriatricRepository extends JpaRepository<Geriatric, Long> {
     @Query("select geriatric from Geriatric geriatric" +
         " inner join geriatric.applicationInfo ge" +
         " where ge.genericName = :genericName")
-    Page<Geriatric> findGeriatricByGenericName(Pageable pageable, @Param("genericName") String genericName);
+    Optional<Geriatric> findGeriatricByGenericName(@Param("genericName") String genericName);
 
 
     @Query("select geriatric from Geriatric geriatric " +

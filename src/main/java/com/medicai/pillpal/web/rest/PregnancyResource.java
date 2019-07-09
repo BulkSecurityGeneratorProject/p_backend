@@ -1,6 +1,7 @@
 package com.medicai.pillpal.web.rest;
 
 import com.medicai.pillpal.service.PregnancyService;
+import com.medicai.pillpal.service.dto.AllergyDTO;
 import com.medicai.pillpal.web.rest.errors.BadRequestAlertException;
 import com.medicai.pillpal.service.dto.PregnancyDTO;
 
@@ -126,4 +127,33 @@ public class PregnancyResource {
         pregnancyService.delete(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString())).build();
     }
+
+    /**
+     * Get a Generic Name
+     * @param genericName
+     * @return the ResponseEntity with status 200 (OK) and the list of notificationHistories in body
+     */
+    @GetMapping("/pregnancies/by-generic-name")
+    public ResponseEntity<PregnancyDTO> getPregnancyByGenericName(@RequestBody String genericName) {
+        log.debug("REST request to delete SideEffect : {}");
+        Optional<PregnancyDTO> pregnancyDTO = pregnancyService.findByGenericName(genericName);
+        return ResponseUtil.wrapOrNotFound(pregnancyDTO);
+    }
+
+    /**
+     * Get List of Generic Name
+     * @param pageable
+     * @param genericName
+     * @param uriBuilder
+     * @return the ResponseEntity with status 200 (OK) and the list of notificationHistories in body
+     */
+    @GetMapping("/pregnancies/by-generic-name-list")
+    public ResponseEntity<List<PregnancyDTO>> getGenericNameListAllergy(Pageable pageable, @RequestBody List<String> genericName, UriComponentsBuilder uriBuilder) {
+        log.debug("REST request to delete SideEffect : {}");
+        Page<PregnancyDTO> page = pregnancyService.findByGenericNameList(pageable, genericName);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(uriBuilder, page);
+        return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+
+
 }

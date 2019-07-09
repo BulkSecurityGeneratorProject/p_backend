@@ -1,5 +1,6 @@
 package com.medicai.pillpal.service;
 
+import com.medicai.pillpal.domain.Geriatric;
 import com.medicai.pillpal.service.dto.AllergyDTO;
 import com.medicai.pillpal.service.dto.GeriatricDTO;
 import com.medicai.pillpal.service.dto.SideEffectDTO;
@@ -73,5 +74,6 @@ public interface SideEffectService {
      */
     Page<GeriatricDTO> findGeriatricByGenericName(Pageable pageable,List<String> genericName);
 
+    Optional<GeriatricDTO> findGeriatricByGenericName(String genericName);
 
 }

@@ -91,11 +91,15 @@ public class PregnancyServiceImpl implements PregnancyService {
 
     @Override
     public Page<PregnancyDTO> findByGenericNameList(Pageable pageable, List<String> genericNameList) {
-        return null;
+        log.debug("Request to get ApplicationInfo : {}", pageable);
+        return pregnancyRepository.findByGenericNameList(pageable, genericNameList)
+            .map(pregnancyMapper::toDto);
     }
 
     @Override
     public Optional<PregnancyDTO> findByGenericName(String genericName) {
-        return Optional.empty();
+        log.debug("Request to get ApplicationInfo : {}", genericName);
+        return pregnancyRepository.findByGenericName(genericName)
+            .map(pregnancyMapper::toDto);
     }
 }
