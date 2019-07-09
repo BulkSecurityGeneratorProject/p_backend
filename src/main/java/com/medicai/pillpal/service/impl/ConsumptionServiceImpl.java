@@ -13,6 +13,6 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class ConsumptionServiceImpl implements ConsumptionService {
 
-    private final Logger log = LoggerFactory.getLogger( ConsumptionServiceImpl.class);
+    private final Logger log = LoggerFactory.getLogger(ConsumptionServiceImpl.class);
 
 }

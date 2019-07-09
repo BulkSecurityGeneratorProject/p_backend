@@ -6,5 +6,4 @@ package com.medicai.pillpal.service;
 public interface ConsumptionService {
 
 
-
 }

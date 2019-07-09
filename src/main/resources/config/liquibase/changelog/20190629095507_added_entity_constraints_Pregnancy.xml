@@ -7,7 +7,7 @@
         Added the constraints for entity Pregnancy.
     -->
     <changeSet id="20190629095507-2" author="jhipster">
-        
+
         <addForeignKeyConstraint baseColumnNames="application_info_id"
                                  baseTableName="pregnancy"
                                  constraintName="fk_pregnancy_application_info_id"

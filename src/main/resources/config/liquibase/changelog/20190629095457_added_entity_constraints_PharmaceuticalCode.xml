@@ -7,7 +7,7 @@
         Added the constraints for entity PharmaceuticalCode.
     -->
     <changeSet id="20190629095457-2" author="jhipster">
-        
+
         <addForeignKeyConstraint baseColumnNames="application_info_id"
                                  baseTableName="pharmaceutical_code"
                                  constraintName="fk_pharmaceutical_code_application_info_id"

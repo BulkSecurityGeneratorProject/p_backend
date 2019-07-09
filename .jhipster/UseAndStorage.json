@@ -1,30 +1,30 @@
 {
-    "name": "UseAndStorage",
-    "fields": [
-        {
-            "fieldName": "conclusion",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "useAndStorage",
-            "fieldType": "String"
-        }
-    ],
-    "relationships": [
-        {
-            "relationshipName": "applicationInfo",
-            "otherEntityName": "applicationInfo",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
-        }
-    ],
-    "changelogDate": "20190709151741",
-    "entityTableName": "use_and_storage",
-    "dto": "mapstruct",
-    "pagination": "pagination",
-    "service": "serviceImpl",
-    "jpaMetamodelFiltering": false,
-    "fluentMethods": true,
-    "clientRootFolder": "",
-    "applications": "*"
+  "name": "UseAndStorage",
+  "fields": [
+    {
+      "fieldName": "conclusion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "useAndStorage",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipName": "applicationInfo",
+      "otherEntityName": "applicationInfo",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20190709151741",
+  "entityTableName": "use_and_storage",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "applications": "*"
 }

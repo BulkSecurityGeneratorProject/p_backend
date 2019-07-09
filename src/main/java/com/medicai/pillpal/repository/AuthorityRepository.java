@@ -1,7 +1,6 @@
 package com.medicai.pillpal.repository;
 
 import com.medicai.pillpal.domain.Authority;
-
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**

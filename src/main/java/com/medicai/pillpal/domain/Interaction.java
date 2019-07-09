@@ -1,14 +1,13 @@
 package com.medicai.pillpal.domain;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.medicai.pillpal.domain.enumeration.RecommendationType;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
-import javax.validation.constraints.*;
-
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
-
-import com.medicai.pillpal.domain.enumeration.RecommendationType;
 
 /**
  * a reaction between two (or more) drugs or between

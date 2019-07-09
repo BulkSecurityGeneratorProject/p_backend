@@ -1,6 +1,5 @@
 package com.medicai.pillpal.service.impl;
 
-import com.medicai.pillpal.service.ApplicationInfoService;
 import com.medicai.pillpal.domain.ApplicationInfo;
 import com.medicai.pillpal.repository.ApplicationInfoRepository;
 import com.medicai.pillpal.service.ApplicationInfoService;
@@ -8,7 +7,6 @@ import com.medicai.pillpal.service.dto.ApplicationInfoDTO;
 import com.medicai.pillpal.service.mapper.ApplicationInfoMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -90,7 +88,7 @@ public class ApplicationInfoServiceImpl implements ApplicationInfoService {
     }
 
     /**
-     *  Save a list of applicationInfos
+     * Save a list of applicationInfos
      *
      * @param applicationInfoDTO list of entities..
      * @return list of persisted entities
@@ -106,7 +104,7 @@ public class ApplicationInfoServiceImpl implements ApplicationInfoService {
     @Override
     public Page<ApplicationInfoDTO> findByGenericNameList(Pageable pageable, List<String> genericNameList) {
         log.debug("Request to get ApplicationInfo : {}", pageable);
-        return applicationInfoRepository.findByGenericNameList( pageable, genericNameList )
+        return applicationInfoRepository.findByGenericNameList(pageable, genericNameList)
             .map(applicationInfoMapper::toDto);
     }
- }
+}

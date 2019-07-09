@@ -1,13 +1,12 @@
 package com.medicai.pillpal.domain;
+
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.medicai.pillpal.domain.enumeration.SideEffectType;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
-
 import java.io.Serializable;
-
-import com.medicai.pillpal.domain.enumeration.SideEffectType;
 
 /**
  * A AppInfoSideEffect.

@@ -1,17 +1,15 @@
 package com.medicai.pillpal.domain;
+
+import com.medicai.pillpal.domain.enumeration.Form;
+import com.medicai.pillpal.domain.enumeration.RoutsOfAdministration;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
-import javax.validation.constraints.*;
-
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
-
-import com.medicai.pillpal.domain.enumeration.Form;
-
-import com.medicai.pillpal.domain.enumeration.RoutsOfAdministration;
 
 /**
  * Information about medicine

@@ -15,15 +15,15 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="producer_name" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <column name="manufacturing_country" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <column name="application_info_id" type="bigint">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
@@ -46,9 +46,9 @@
     -->
     <changeSet id="20190629095506-1-data" author="jhipster" context="faker">
         <loadData
-                  file="config/liquibase/data/production_info.csv"
-                  separator=";"
-                  tableName="production_info">
+            file="config/liquibase/data/production_info.csv"
+            separator=";"
+            tableName="production_info">
             <column name="id" type="numeric"/>
             <column name="producer_name" type="string"/>
             <column name="manufacturing_country" type="string"/>

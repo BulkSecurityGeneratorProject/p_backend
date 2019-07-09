@@ -1,27 +1,27 @@
 {
-    "name": "BreastFeeding",
-    "fields": [
-        {
-            "fieldName": "breastFeeding",
-            "fieldType": "String"
-        }
-    ],
-    "relationships": [
-        {
-            "relationshipName": "applicationInfo",
-            "otherEntityName": "applicationInfo",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
-        }
-    ],
-    "changelogDate": "20190709151750",
-    "javadoc": "Drug Information in women breast feeding",
-    "entityTableName": "breast_feeding",
-    "dto": "mapstruct",
-    "pagination": "pagination",
-    "service": "serviceImpl",
-    "jpaMetamodelFiltering": false,
-    "fluentMethods": true,
-    "clientRootFolder": "",
-    "applications": "*"
+  "name": "BreastFeeding",
+  "fields": [
+    {
+      "fieldName": "breastFeeding",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipName": "applicationInfo",
+      "otherEntityName": "applicationInfo",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20190709151750",
+  "javadoc": "Drug Information in women breast feeding",
+  "entityTableName": "breast_feeding",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "applications": "*"
 }

@@ -1,7 +1,6 @@
 package com.medicai.pillpal.service;
 
 import com.medicai.pillpal.service.dto.PregnancyDTO;
-
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -55,7 +54,8 @@ public interface PregnancyService {
     Page<PregnancyDTO> findByGenericNameList(Pageable pageable, List<String> genericNameList);
 
 
-    /**`
+    /**
+     * `
      * Get the "id" productionInfo.
      *
      * @param genericName the name of applicationInfo generic name

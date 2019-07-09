@@ -15,15 +15,15 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="side_effect_type" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <column name="application_info_id" type="bigint">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <column name="side_effect_id" type="bigint">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
@@ -46,9 +46,9 @@
     -->
     <changeSet id="20190629095212-1-data" author="jhipster" context="faker">
         <loadData
-                  file="config/liquibase/data/app_info_side_effect.csv"
-                  separator=";"
-                  tableName="app_info_side_effect">
+            file="config/liquibase/data/app_info_side_effect.csv"
+            separator=";"
+            tableName="app_info_side_effect">
             <column name="id" type="numeric"/>
             <column name="side_effect_type" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->

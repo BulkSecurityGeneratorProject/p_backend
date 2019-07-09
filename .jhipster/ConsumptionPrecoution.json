@@ -1,30 +1,30 @@
 {
-    "name": "ConsumptionPrecoution",
-    "fields": [
-        {
-            "fieldName": "conclusion",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "precoution",
-            "fieldType": "String"
-        }
-    ],
-    "relationships": [
-        {
-            "relationshipName": "applicationInfo",
-            "otherEntityName": "applicationInfo",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
-        }
-    ],
-    "changelogDate": "20190629095504",
-    "entityTableName": "consumption_precoution",
-    "dto": "mapstruct",
-    "pagination": "pagination",
-    "service": "serviceImpl",
-    "jpaMetamodelFiltering": false,
-    "fluentMethods": true,
-    "clientRootFolder": "",
-    "applications": "*"
+  "name": "ConsumptionPrecoution",
+  "fields": [
+    {
+      "fieldName": "conclusion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "precoution",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipName": "applicationInfo",
+      "otherEntityName": "applicationInfo",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20190629095504",
+  "entityTableName": "consumption_precoution",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "applications": "*"
 }

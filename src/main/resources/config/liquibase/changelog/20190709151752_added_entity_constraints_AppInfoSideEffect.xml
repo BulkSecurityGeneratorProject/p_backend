@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity AppInfoSideEffect.
+    -->
+    <changeSet id="20190709151752-2" author="jhipster">
+
+        <addForeignKeyConstraint baseColumnNames="application_info_id"
+                                 baseTableName="app_info_side_effect"
+                                 constraintName="fk_app_info_side_effect_application_info_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="application_info"/>
+
+        <addForeignKeyConstraint baseColumnNames="side_effect_id"
+                                 baseTableName="app_info_side_effect"
+                                 constraintName="fk_app_info_side_effect_side_effect_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="side_effect"/>
+
+    </changeSet>
+</databaseChangeLog>

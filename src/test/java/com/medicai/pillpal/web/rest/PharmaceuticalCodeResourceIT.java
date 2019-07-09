@@ -7,7 +7,6 @@ import com.medicai.pillpal.service.PharmaceuticalCodeService;
 import com.medicai.pillpal.service.dto.PharmaceuticalCodeDTO;
 import com.medicai.pillpal.service.mapper.PharmaceuticalCodeMapper;
 import com.medicai.pillpal.web.rest.errors.ExceptionTranslator;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockitoAnnotations;
@@ -87,7 +86,7 @@ public class PharmaceuticalCodeResourceIT {
 
     /**
      * Create an entity for this test.
-     *
+     * <p>
      * This is a static method, as tests for other entities might also need it,
      * if they test an entity which requires the current entity.
      */
@@ -98,9 +97,10 @@ public class PharmaceuticalCodeResourceIT {
             .phoneNumber(DEFAULT_PHONE_NUMBER);
         return pharmaceuticalCode;
     }
+
     /**
      * Create an updated entity for this test.
-     *
+     * <p>
      * This is a static method, as tests for other entities might also need it,
      * if they test an entity which requires the current entity.
      */
@@ -174,7 +174,7 @@ public class PharmaceuticalCodeResourceIT {
             .andExpect(jsonPath("$.[*].address").value(hasItem(DEFAULT_ADDRESS.toString())))
             .andExpect(jsonPath("$.[*].phoneNumber").value(hasItem(DEFAULT_PHONE_NUMBER.toString())));
     }
-    
+
     @Test
     @Transactional
     public void getPharmaceuticalCode() throws Exception {

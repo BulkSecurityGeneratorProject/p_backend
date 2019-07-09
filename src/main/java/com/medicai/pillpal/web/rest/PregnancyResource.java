@@ -3,8 +3,6 @@ package com.medicai.pillpal.web.rest;
 import com.medicai.pillpal.service.PregnancyService;
 import com.medicai.pillpal.service.dto.PregnancyDTO;
 import com.medicai.pillpal.web.rest.errors.BadRequestAlertException;
-import com.medicai.pillpal.service.dto.PregnancyDTO;
-
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.PaginationUtil;
 import io.github.jhipster.web.util.ResponseUtil;
@@ -87,9 +85,9 @@ public class PregnancyResource {
     /**
      * {@code GET  /pregnancies} : get all the pregnancies.
      *
-     * @param pageable the pagination information.
+     * @param pageable    the pagination information.
      * @param queryParams a {@link MultiValueMap} query parameters.
-     * @param uriBuilder a {@link UriComponentsBuilder} URI builder.
+     * @param uriBuilder  a {@link UriComponentsBuilder} URI builder.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of pregnancies in body.
      */
     @GetMapping("/pregnancies")
@@ -128,6 +126,7 @@ public class PregnancyResource {
 
     /**
      * Get a Generic Name
+     *
      * @param genericName
      * @return the ResponseEntity with status 200 (OK) and the list of notificationHistories in body
      */
@@ -140,6 +139,7 @@ public class PregnancyResource {
 
     /**
      * Get List of Generic Name
+     *
      * @param pageable
      * @param genericName
      * @param uriBuilder

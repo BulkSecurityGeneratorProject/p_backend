@@ -7,7 +7,6 @@ import com.medicai.pillpal.service.ProductionInfoService;
 import com.medicai.pillpal.service.dto.ProductionInfoDTO;
 import com.medicai.pillpal.service.mapper.ProductionInfoMapper;
 import com.medicai.pillpal.web.rest.errors.ExceptionTranslator;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockitoAnnotations;
@@ -84,7 +83,7 @@ public class ProductionInfoResourceIT {
 
     /**
      * Create an entity for this test.
-     *
+     * <p>
      * This is a static method, as tests for other entities might also need it,
      * if they test an entity which requires the current entity.
      */
@@ -94,9 +93,10 @@ public class ProductionInfoResourceIT {
             .manufacturingCountry(DEFAULT_MANUFACTURING_COUNTRY);
         return productionInfo;
     }
+
     /**
      * Create an updated entity for this test.
-     *
+     * <p>
      * This is a static method, as tests for other entities might also need it,
      * if they test an entity which requires the current entity.
      */
@@ -167,7 +167,7 @@ public class ProductionInfoResourceIT {
             .andExpect(jsonPath("$.[*].producerName").value(hasItem(DEFAULT_PRODUCER_NAME.toString())))
             .andExpect(jsonPath("$.[*].manufacturingCountry").value(hasItem(DEFAULT_MANUFACTURING_COUNTRY.toString())));
     }
-    
+
     @Test
     @Transactional
     public void getProductionInfo() throws Exception {

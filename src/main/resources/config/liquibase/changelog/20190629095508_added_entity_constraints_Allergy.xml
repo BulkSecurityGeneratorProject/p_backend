@@ -7,7 +7,7 @@
         Added the constraints for entity Allergy.
     -->
     <changeSet id="20190629095508-2" author="jhipster">
-        
+
         <addForeignKeyConstraint baseColumnNames="application_info_id"
                                  baseTableName="allergy"
                                  constraintName="fk_allergy_application_info_id"

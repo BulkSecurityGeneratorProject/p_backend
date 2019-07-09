@@ -7,7 +7,7 @@
         Added the constraints for entity ConsumptionProperUse.
     -->
     <changeSet id="20190629095505-2" author="jhipster">
-        
+
         <addForeignKeyConstraint baseColumnNames="application_info_id"
                                  baseTableName="consumption_proper_use"
                                  constraintName="fk_consumption_proper_use_application_info_id"

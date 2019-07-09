@@ -7,7 +7,6 @@ import com.medicai.pillpal.service.SideEffectService;
 import com.medicai.pillpal.service.dto.SideEffectDTO;
 import com.medicai.pillpal.service.mapper.SideEffectMapper;
 import com.medicai.pillpal.web.rest.errors.ExceptionTranslator;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockitoAnnotations;
@@ -81,7 +80,7 @@ public class SideEffectResourceIT {
 
     /**
      * Create an entity for this test.
-     *
+     * <p>
      * This is a static method, as tests for other entities might also need it,
      * if they test an entity which requires the current entity.
      */
@@ -90,9 +89,10 @@ public class SideEffectResourceIT {
             .description(DEFAULT_DESCRIPTION);
         return sideEffect;
     }
+
     /**
      * Create an updated entity for this test.
-     *
+     * <p>
      * This is a static method, as tests for other entities might also need it,
      * if they test an entity which requires the current entity.
      */
@@ -179,7 +179,7 @@ public class SideEffectResourceIT {
             .andExpect(jsonPath("$.[*].id").value(hasItem(sideEffect.getId().intValue())))
             .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())));
     }
-    
+
     @Test
     @Transactional
     public void getSideEffect() throws Exception {

@@ -2,9 +2,7 @@ package com.medicai.pillpal;
 
 import com.medicai.pillpal.config.ApplicationProperties;
 import com.medicai.pillpal.config.DefaultProfileUtil;
-
 import io.github.jhipster.config.JHipsterConstants;
-
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

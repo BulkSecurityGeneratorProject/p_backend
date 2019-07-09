@@ -7,7 +7,7 @@
         Added the constraints for entity ConsumptionDosing.
     -->
     <changeSet id="20190629095500-2" author="jhipster">
-        
+
         <addForeignKeyConstraint baseColumnNames="application_info_id"
                                  baseTableName="consumption_dosing"
                                  constraintName="fk_consumption_dosing_application_info_id"

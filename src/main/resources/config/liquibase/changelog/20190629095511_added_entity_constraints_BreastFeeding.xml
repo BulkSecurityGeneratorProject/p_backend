@@ -7,7 +7,7 @@
         Added the constraints for entity BreastFeeding.
     -->
     <changeSet id="20190629095511-2" author="jhipster">
-        
+
         <addForeignKeyConstraint baseColumnNames="application_info_id"
                                  baseTableName="breast_feeding"
                                  constraintName="fk_breast_feeding_application_info_id"

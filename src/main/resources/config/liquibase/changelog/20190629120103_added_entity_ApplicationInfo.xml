@@ -15,47 +15,47 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="fda_application_no" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints nullable="false"/>
             </column>
 
             <column name="name" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <column name="generic_name" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <column name="brand_name" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <column name="over_view" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <column name="strength_amount" type="${floatType}">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <column name="strength_unit" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <column name="product_number" type="integer">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <column name="active_ingredient" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <column name="form" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <column name="routs_of_administration" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
@@ -78,9 +78,9 @@
     -->
     <changeSet id="20190629120103-1-data" author="jhipster" context="faker">
         <loadData
-                  file="config/liquibase/data/application_info.csv"
-                  separator=";"
-                  tableName="application_info">
+            file="config/liquibase/data/application_info.csv"
+            separator=";"
+            tableName="application_info">
             <column name="id" type="numeric"/>
             <column name="fda_application_no" type="string"/>
             <column name="name" type="string"/>

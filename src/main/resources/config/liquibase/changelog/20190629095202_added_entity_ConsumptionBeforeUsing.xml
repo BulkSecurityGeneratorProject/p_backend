@@ -15,15 +15,15 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="conclusion" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <column name="before_using" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <column name="application_info_id" type="bigint">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
@@ -46,9 +46,9 @@
     -->
     <changeSet id="20190629095202-1-data" author="jhipster" context="faker">
         <loadData
-                  file="config/liquibase/data/consumption_before_using.csv"
-                  separator=";"
-                  tableName="consumption_before_using">
+            file="config/liquibase/data/consumption_before_using.csv"
+            separator=";"
+            tableName="consumption_before_using">
             <column name="id" type="numeric"/>
             <column name="conclusion" type="string"/>
             <column name="before_using" type="string"/>

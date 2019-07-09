@@ -10,24 +10,25 @@
         Added the entity PharmaceuticalCode.
     -->
     <changeSet id="20190629095457-1" author="jhipster">
-        <createTable tableName="pharmaceutical_code" remarks="Are used in mediacal classification to uniquely identify medication">
+        <createTable tableName="pharmaceutical_code"
+                     remarks="Are used in mediacal classification to uniquely identify medication">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="name" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <column name="address" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <column name="phone_number" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <column name="application_info_id" type="bigint">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
@@ -50,9 +51,9 @@
     -->
     <changeSet id="20190629095457-1-data" author="jhipster" context="faker">
         <loadData
-                  file="config/liquibase/data/pharmaceutical_code.csv"
-                  separator=";"
-                  tableName="pharmaceutical_code">
+            file="config/liquibase/data/pharmaceutical_code.csv"
+            separator=";"
+            tableName="pharmaceutical_code">
             <column name="id" type="numeric"/>
             <column name="name" type="string"/>
             <column name="address" type="string"/>

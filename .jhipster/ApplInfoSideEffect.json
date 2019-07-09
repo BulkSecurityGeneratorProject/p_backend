@@ -1,33 +1,33 @@
 {
-    "name": "ApplInfoSideEffect",
-    "fields": [
-        {
-            "fieldName": "sideEffectType",
-            "fieldType": "SideEffectType",
-            "fieldValues": "COMMON,RARE"
-        }
-    ],
-    "relationships": [
-        {
-            "relationshipName": "applicationInfo",
-            "otherEntityName": "applicationInfo",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
-        },
-        {
-            "relationshipName": "sideEffect",
-            "otherEntityName": "sideEffect",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
-        }
-    ],
-    "changelogDate": "20190629095513",
-    "entityTableName": "app_info_side_effect",
-    "dto": "mapstruct",
-    "pagination": "pagination",
-    "service": "serviceImpl",
-    "jpaMetamodelFiltering": false,
-    "fluentMethods": true,
-    "clientRootFolder": "",
-    "applications": "*"
+  "name": "ApplInfoSideEffect",
+  "fields": [
+    {
+      "fieldName": "sideEffectType",
+      "fieldType": "SideEffectType",
+      "fieldValues": "COMMON,RARE"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipName": "applicationInfo",
+      "otherEntityName": "applicationInfo",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipName": "sideEffect",
+      "otherEntityName": "sideEffect",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20190629095513",
+  "entityTableName": "app_info_side_effect",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "applications": "*"
 }

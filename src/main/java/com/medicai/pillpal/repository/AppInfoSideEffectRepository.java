@@ -30,6 +30,6 @@ public interface AppInfoSideEffectRepository extends JpaRepository<AppInfoSideEf
         "inner join appInfoSideEffect.sideEffect se " +
         "where ai.genericName in :genericNameList ")
     Page<AppInfoSideEffect> findByGenericNameList(Pageable pageable,
-                                        @Param("genericNameList") List<String> genericNameList);
+                                                  @Param("genericNameList") List<String> genericNameList);
 
 }

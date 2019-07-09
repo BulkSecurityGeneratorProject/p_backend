@@ -15,7 +15,7 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="description" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints nullable="false"/>
             </column>
 
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
@@ -38,9 +38,9 @@
     -->
     <changeSet id="20190629095512-1-data" author="jhipster" context="faker">
         <loadData
-                  file="config/liquibase/data/side_effect.csv"
-                  separator=";"
-                  tableName="side_effect">
+            file="config/liquibase/data/side_effect.csv"
+            separator=";"
+            tableName="side_effect">
             <column name="id" type="numeric"/>
             <column name="description" type="string"/>
             <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->

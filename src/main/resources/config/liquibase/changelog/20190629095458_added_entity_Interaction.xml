@@ -10,16 +10,17 @@
         Added the entity Interaction.
     -->
     <changeSet id="20190629095458-1" author="jhipster">
-        <createTable tableName="interaction" remarks="a reaction between two (or more) drugs or between a drug and a food, beverage, or supplement.">
+        <createTable tableName="interaction"
+                     remarks="a reaction between two (or more) drugs or between a drug and a food, beverage, or supplement.">
             <column name="id" type="bigint" autoIncrement="${autoIncrement}">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="recommendation_type" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints nullable="false"/>
             </column>
 
             <column name="description" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
@@ -42,9 +43,9 @@
     -->
     <changeSet id="20190629095458-1-data" author="jhipster" context="faker">
         <loadData
-                  file="config/liquibase/data/interaction.csv"
-                  separator=";"
-                  tableName="interaction">
+            file="config/liquibase/data/interaction.csv"
+            separator=";"
+            tableName="interaction">
             <column name="id" type="numeric"/>
             <column name="recommendation_type" type="string"/>
             <column name="description" type="string"/>

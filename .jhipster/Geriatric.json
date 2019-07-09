@@ -1,27 +1,27 @@
 {
-    "name": "Geriatric",
-    "fields": [
-        {
-            "fieldName": "geriatric",
-            "fieldType": "String"
-        }
-    ],
-    "relationships": [
-        {
-            "relationshipName": "applicationInfo",
-            "otherEntityName": "applicationInfo",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
-        }
-    ],
-    "changelogDate": "20190709151749",
-    "javadoc": "Information about using drug in  the elderly",
-    "entityTableName": "geriatric",
-    "dto": "mapstruct",
-    "pagination": "pagination",
-    "service": "serviceImpl",
-    "jpaMetamodelFiltering": false,
-    "fluentMethods": true,
-    "clientRootFolder": "",
-    "applications": "*"
+  "name": "Geriatric",
+  "fields": [
+    {
+      "fieldName": "geriatric",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipName": "applicationInfo",
+      "otherEntityName": "applicationInfo",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20190709151749",
+  "javadoc": "Information about using drug in  the elderly",
+  "entityTableName": "geriatric",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "applications": "*"
 }

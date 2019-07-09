@@ -2,12 +2,12 @@ package com.medicai.pillpal.web.rest;
 
 import com.medicai.pillpal.PillpalApp;
 import com.medicai.pillpal.domain.Interaction;
+import com.medicai.pillpal.domain.enumeration.RecommendationType;
 import com.medicai.pillpal.repository.InteractionRepository;
 import com.medicai.pillpal.service.InteractionService;
 import com.medicai.pillpal.service.dto.InteractionDTO;
 import com.medicai.pillpal.service.mapper.InteractionMapper;
 import com.medicai.pillpal.web.rest.errors.ExceptionTranslator;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockitoAnnotations;
@@ -30,7 +30,6 @@ import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-import com.medicai.pillpal.domain.enumeration.RecommendationType;
 /**
  * Integration tests for the {@Link InteractionResource} REST controller.
  */
@@ -85,7 +84,7 @@ public class InteractionResourceIT {
 
     /**
      * Create an entity for this test.
-     *
+     * <p>
      * This is a static method, as tests for other entities might also need it,
      * if they test an entity which requires the current entity.
      */
@@ -95,9 +94,10 @@ public class InteractionResourceIT {
             .description(DEFAULT_DESCRIPTION);
         return interaction;
     }
+
     /**
      * Create an updated entity for this test.
-     *
+     * <p>
      * This is a static method, as tests for other entities might also need it,
      * if they test an entity which requires the current entity.
      */
@@ -187,7 +187,7 @@ public class InteractionResourceIT {
             .andExpect(jsonPath("$.[*].recommendationType").value(hasItem(DEFAULT_RECOMMENDATION_TYPE.toString())))
             .andExpect(jsonPath("$.[*].description").value(hasItem(DEFAULT_DESCRIPTION.toString())));
     }
-    
+
     @Test
     @Transactional
     public void getInteraction() throws Exception {

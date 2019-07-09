@@ -1,29 +1,29 @@
 {
-    "name": "SideEffect",
-    "fields": [
-        {
-            "fieldName": "description",
-            "fieldType": "String",
-            "fieldValidateRules": [
-                "required"
-            ]
-        }
-    ],
-    "relationships": [
-        {
-            "relationshipType": "one-to-many",
-            "otherEntityName": "appInfoSideEffect",
-            "otherEntityRelationshipName": "sideEffect",
-            "relationshipName": "sideEffect"
-        }
-    ],
-    "changelogDate": "20190709151751",
-    "entityTableName": "side_effect",
-    "dto": "mapstruct",
-    "pagination": "pagination",
-    "service": "serviceImpl",
-    "jpaMetamodelFiltering": false,
-    "fluentMethods": true,
-    "clientRootFolder": "",
-    "applications": "*"
+  "name": "SideEffect",
+  "fields": [
+    {
+      "fieldName": "description",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "appInfoSideEffect",
+      "otherEntityRelationshipName": "sideEffect",
+      "relationshipName": "sideEffect"
+    }
+  ],
+  "changelogDate": "20190709151751",
+  "entityTableName": "side_effect",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "applications": "*"
 }

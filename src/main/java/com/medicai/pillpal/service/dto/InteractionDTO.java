@@ -1,9 +1,11 @@
 package com.medicai.pillpal.service.dto;
+
+import com.medicai.pillpal.domain.enumeration.RecommendationType;
 import io.swagger.annotations.ApiModel;
-import javax.validation.constraints.*;
+
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.Objects;
-import com.medicai.pillpal.domain.enumeration.RecommendationType;
 
 /**
  * A DTO for the {@link com.medicai.pillpal.domain.Interaction} entity.

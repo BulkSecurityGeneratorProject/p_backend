@@ -9,8 +9,9 @@ import com.medicai.pillpal.security.AuthoritiesConstants;
 import com.medicai.pillpal.security.SecurityUtils;
 import com.medicai.pillpal.service.dto.UserDTO;
 import com.medicai.pillpal.service.util.RandomUtil;
-import com.medicai.pillpal.web.rest.errors.*;
-
+import com.medicai.pillpal.web.rest.errors.EmailAlreadyUsedException;
+import com.medicai.pillpal.web.rest.errors.InvalidPasswordException;
+import com.medicai.pillpal.web.rest.errors.LoginAlreadyUsedException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.cache.CacheManager;
@@ -123,9 +124,9 @@ public class UserService {
         return newUser;
     }
 
-    private boolean removeNonActivatedUser(User existingUser){
+    private boolean removeNonActivatedUser(User existingUser) {
         if (existingUser.getActivated()) {
-             return false;
+            return false;
         }
         userRepository.delete(existingUser);
         userRepository.flush();
@@ -282,6 +283,7 @@ public class UserService {
 
     /**
      * Gets a list of all the authorities.
+     *
      * @return a list of all the authorities.
      */
     public List<String> getAuthorities() {

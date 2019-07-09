@@ -7,7 +7,6 @@ import com.medicai.pillpal.service.PregnancyService;
 import com.medicai.pillpal.service.dto.PregnancyDTO;
 import com.medicai.pillpal.service.mapper.PregnancyMapper;
 import com.medicai.pillpal.web.rest.errors.ExceptionTranslator;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockitoAnnotations;
@@ -84,7 +83,7 @@ public class PregnancyResourceIT {
 
     /**
      * Create an entity for this test.
-     *
+     * <p>
      * This is a static method, as tests for other entities might also need it,
      * if they test an entity which requires the current entity.
      */
@@ -94,9 +93,10 @@ public class PregnancyResourceIT {
             .preExplanation(DEFAULT_PRE_EXPLANATION);
         return pregnancy;
     }
+
     /**
      * Create an updated entity for this test.
-     *
+     * <p>
      * This is a static method, as tests for other entities might also need it,
      * if they test an entity which requires the current entity.
      */
@@ -167,7 +167,7 @@ public class PregnancyResourceIT {
             .andExpect(jsonPath("$.[*].preCategory").value(hasItem(DEFAULT_PRE_CATEGORY.toString())))
             .andExpect(jsonPath("$.[*].preExplanation").value(hasItem(DEFAULT_PRE_EXPLANATION.toString())));
     }
-    
+
     @Test
     @Transactional
     public void getPregnancy() throws Exception {

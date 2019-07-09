@@ -1,31 +1,31 @@
 {
-    "name": "ProductionInfo",
-    "fields": [
-        {
-            "fieldName": "producerName",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "manufacturingCountry",
-            "fieldType": "String"
-        }
-    ],
-    "relationships": [
-        {
-            "relationshipName": "applicationInfo",
-            "otherEntityName": "applicationInfo",
-            "relationshipType": "many-to-one",
-            "otherEntityField": "id"
-        }
-    ],
-    "changelogDate": "20190709151745",
-    "javadoc": "some information about producer",
-    "entityTableName": "production_info",
-    "dto": "mapstruct",
-    "pagination": "pagination",
-    "service": "serviceImpl",
-    "jpaMetamodelFiltering": false,
-    "fluentMethods": true,
-    "clientRootFolder": "",
-    "applications": "*"
+  "name": "ProductionInfo",
+  "fields": [
+    {
+      "fieldName": "producerName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "manufacturingCountry",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipName": "applicationInfo",
+      "otherEntityName": "applicationInfo",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20190709151745",
+  "javadoc": "some information about producer",
+  "entityTableName": "production_info",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "applications": "*"
 }

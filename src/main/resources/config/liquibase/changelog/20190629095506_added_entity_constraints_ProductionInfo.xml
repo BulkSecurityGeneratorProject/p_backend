@@ -7,7 +7,7 @@
         Added the constraints for entity ProductionInfo.
     -->
     <changeSet id="20190629095506-2" author="jhipster">
-        
+
         <addForeignKeyConstraint baseColumnNames="application_info_id"
                                  baseTableName="production_info"
                                  constraintName="fk_production_info_application_info_id"

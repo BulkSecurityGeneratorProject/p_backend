@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api")
 public class ConsumptionResource {
 
-    private final Logger log = LoggerFactory.getLogger( ConsumptionResource.class);
+    private final Logger log = LoggerFactory.getLogger(ConsumptionResource.class);
 
 
 }

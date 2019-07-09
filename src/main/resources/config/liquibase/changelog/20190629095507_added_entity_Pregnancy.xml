@@ -15,15 +15,15 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="pre_category" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <column name="pre_explanation" type="varchar(255)">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <column name="application_info_id" type="bigint">
-                <constraints nullable="true" />
+                <constraints nullable="true"/>
             </column>
 
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
@@ -46,9 +46,9 @@
     -->
     <changeSet id="20190629095507-1-data" author="jhipster" context="faker">
         <loadData
-                  file="config/liquibase/data/pregnancy.csv"
-                  separator=";"
-                  tableName="pregnancy">
+            file="config/liquibase/data/pregnancy.csv"
+            separator=";"
+            tableName="pregnancy">
             <column name="id" type="numeric"/>
             <column name="pre_category" type="string"/>
             <column name="pre_explanation" type="string"/>

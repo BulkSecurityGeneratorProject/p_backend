@@ -7,7 +7,7 @@
         Added the constraints for entity AppInfoSideEffect.
     -->
     <changeSet id="20190629094901-2" author="jhipster">
-        
+
         <addForeignKeyConstraint baseColumnNames="application_info_id"
                                  baseTableName="app_info_side_effect"
                                  constraintName="fk_app_info_side_effect_application_info_id"

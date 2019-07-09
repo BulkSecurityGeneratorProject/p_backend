@@ -1,43 +1,43 @@
 {
-    "name": "Interaction",
-    "fields": [
-        {
-            "fieldName": "recommendationType",
-            "fieldType": "RecommendationType",
-            "fieldValues": "NOT_RECOMMENDED,USUALLY_NOT_RECOMMENDED",
-            "fieldValidateRules": [
-                "required"
-            ]
-        },
-        {
-            "fieldName": "description",
-            "fieldType": "String"
-        }
-    ],
-    "relationships": [
-        {
-            "relationshipType": "many-to-one",
-            "otherEntityName": "applicationInfo",
-            "otherEntityRelationshipName": "baseInteraction",
-            "relationshipName": "baseApplicationInfo",
-            "otherEntityField": "id"
-        },
-        {
-            "relationshipType": "many-to-one",
-            "otherEntityName": "applicationInfo",
-            "otherEntityRelationshipName": "descInteraction",
-            "relationshipName": "descApplicationInfo",
-            "otherEntityField": "id"
-        }
-    ],
-    "changelogDate": "20190709151737",
-    "javadoc": "a reaction between two (or more) drugs or between\na drug and a food, beverage, or supplement.",
-    "entityTableName": "interaction",
-    "dto": "mapstruct",
-    "pagination": "pagination",
-    "service": "serviceImpl",
-    "jpaMetamodelFiltering": false,
-    "fluentMethods": true,
-    "clientRootFolder": "",
-    "applications": "*"
+  "name": "Interaction",
+  "fields": [
+    {
+      "fieldName": "recommendationType",
+      "fieldType": "RecommendationType",
+      "fieldValues": "NOT_RECOMMENDED,USUALLY_NOT_RECOMMENDED",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldName": "description",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "applicationInfo",
+      "otherEntityRelationshipName": "baseInteraction",
+      "relationshipName": "baseApplicationInfo",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "applicationInfo",
+      "otherEntityRelationshipName": "descInteraction",
+      "relationshipName": "descApplicationInfo",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20190709151737",
+  "javadoc": "a reaction between two (or more) drugs or between\na drug and a food, beverage, or supplement.",
+  "entityTableName": "interaction",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "clientRootFolder": "",
+  "applications": "*"
 }
