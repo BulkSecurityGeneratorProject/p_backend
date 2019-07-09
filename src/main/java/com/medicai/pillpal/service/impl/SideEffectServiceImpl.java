@@ -223,6 +223,5 @@ public class SideEffectServiceImpl implements SideEffectService {
         return appInfoSideEffectRepository.findByGenericNameList(pageable, genericNameList)
             .map(appInfoSideEffectMapper::toDto);
     }
-    //
 
 }
