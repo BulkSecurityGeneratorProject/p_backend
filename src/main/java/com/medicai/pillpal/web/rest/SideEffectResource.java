@@ -129,12 +129,11 @@ public class SideEffectResource {
 
     /**
      * Get a Generic Name
-     *
      * @param genericName
      * @return the ResponseEntity with status 200 (OK) and the list of notificationHistories in body
      */
     @GetMapping("/side-effect/allergy/by-generic-name")
-    public ResponseEntity<AllergyDTO> getGenericNameAllergy(@RequestBody String genericName) {
+    public ResponseEntity<AllergyDTO> getAllergyByGenericName(@RequestBody String genericName) {
         log.debug("REST request to delete SideEffect : {}");
         Optional<AllergyDTO> allergyDTO = sideEffectService.findAllergyByGenericName(genericName);
         return ResponseUtil.wrapOrNotFound(allergyDTO);
@@ -142,14 +141,13 @@ public class SideEffectResource {
 
     /**
      * Get List of Generic Name
-     *
      * @param pageable
      * @param genericName
      * @param uriBuilder
      * @return the ResponseEntity with status 200 (OK) and the list of notificationHistories in body
      */
     @GetMapping("/side-effect/allergy/by-generic-name-list")
-    public ResponseEntity<List<AllergyDTO>> getGenericNameListAllergy(Pageable pageable,
+    public ResponseEntity<List<AllergyDTO>> getAllergyByGenericNameList(Pageable pageable,
                                                                       @RequestBody List<String> genericName, UriComponentsBuilder uriBuilder) {
         log.debug("REST request to delete SideEffect : {}");
         Page<AllergyDTO> page = sideEffectService.findAllergyByGenericNameList(pageable, genericName);
@@ -159,7 +157,6 @@ public class SideEffectResource {
 
     /**
      * Get List of Generic Name
-     *
      * @param pageable
      * @param genericName
      * @param uriBuilder

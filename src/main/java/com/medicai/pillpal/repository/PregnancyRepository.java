@@ -9,6 +9,8 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
+import java.util.OptionalInt;
 
 
 /**
@@ -21,14 +23,13 @@ public interface PregnancyRepository extends JpaRepository<Pregnancy, Long> {
     @Query("select pregnancy from Pregnancy pregnancy " +
         "inner join pregnancy.applicationInfo ai  " +
         "where ai.genericName = :genericName ")
-    Page<Allergy> findByGenericName(Pageable pageable,
-                                           @Param("genericName") String genericName);
+    Optional<Pregnancy> findByGenericName(@Param("genericName") String genericName);
 
     @Query("select pregnancy from Pregnancy pregnancy " +
         "inner join pregnancy.applicationInfo ai  " +
         "where ai.genericName in :genericNameList ")
-    Page<Allergy> findByGenericNameList(Pageable pageable,
-                                               @Param("genericNameList") List<String> genericNameList);
+    Page<Pregnancy> findByGenericNameList(Pageable pageable,
+                                          @Param("genericNameList") List<String> genericNameList);
 
 
 }
