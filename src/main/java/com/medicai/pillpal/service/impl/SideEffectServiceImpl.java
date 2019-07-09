@@ -198,5 +198,4 @@ public class SideEffectServiceImpl implements SideEffectService {
         return pediatricRepository.findByGenericNameList(pageable, genericNameList)
             .map(pediatricMapper::toDto);
     }
-
 }
