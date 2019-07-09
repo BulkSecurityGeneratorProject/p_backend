@@ -1,13 +1,14 @@
 package com.medicai.pillpal.service.dto;
 
 import com.medicai.pillpal.config.Constants;
+
 import com.medicai.pillpal.domain.Authority;
 import com.medicai.pillpal.domain.User;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+
+import javax.validation.constraints.*;
 import java.time.Instant;
 import java.util.Set;
 import java.util.stream.Collectors;

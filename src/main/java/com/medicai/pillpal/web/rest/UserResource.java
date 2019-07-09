@@ -10,9 +10,11 @@ import com.medicai.pillpal.service.dto.UserDTO;
 import com.medicai.pillpal.web.rest.errors.BadRequestAlertException;
 import com.medicai.pillpal.web.rest.errors.EmailAlreadyUsedException;
 import com.medicai.pillpal.web.rest.errors.LoginAlreadyUsedException;
+
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.PaginationUtil;
 import io.github.jhipster.web.util.ResponseUtil;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
@@ -29,8 +31,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 /**
  * REST controller for managing users.
@@ -140,6 +141,8 @@ public class UserResource {
     /**
      * {@code GET /users} : get all users.
      *
+     * @param queryParams a {@link MultiValueMap} query parameters.
+     * @param uriBuilder a {@link UriComponentsBuilder} URI builder.
      * @param pageable the pagination information.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and with body all users.
      */

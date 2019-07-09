@@ -11,41 +11,9 @@
     <property name="floatType" value="float" dbms="mysql, oracle, mssql, mariadb"/>
     <property name="clobType" value="clob" dbms="h2"/>
     <property name="clobType" value="clob" dbms="mysql, oracle, mssql, mariadb, postgresql"/>
-    <property name="uuidType" value="varchar(36)" dbms="h2, mysql"/>
+    <property name="uuidType" value="varchar(36)" dbms="h2, mysql, mariadb"/>
 
-    <include file="config/liquibase/changelog/00_initial_schema.xml;" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095457_added_entity_PharmaceuticalCode.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095458_added_entity_Interaction.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095459_added_entity_ApplicationInfo.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095500_added_entity_ConsumptionDosing.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095501_added_entity_ConsumptionMissedDose.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095502_added_entity_UseAndStorage.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095503_added_entity_ConsumptionBeforeUsing.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095504_added_entity_ConsumptionPrecoution.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095505_added_entity_ConsumptionProperUse.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095506_added_entity_ProductionInfo.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095507_added_entity_Pregnancy.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095508_added_entity_Allergy.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095509_added_entity_Pediatric.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095510_added_entity_Geriatric.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095511_added_entity_BreastFeeding.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095512_added_entity_SideEffect.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095513_added_entity_ApplInfoSideEffect.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
-    <include file="config/liquibase/changelog/20190629095457_added_entity_constraints_PharmaceuticalCode.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095500_added_entity_constraints_ConsumptionDosing.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095501_added_entity_constraints_ConsumptionMissedDose.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095502_added_entity_constraints_UseAndStorage.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095503_added_entity_constraints_ConsumptionBeforeUsing.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095504_added_entity_constraints_ConsumptionPrecoution.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095505_added_entity_constraints_ConsumptionProperUse.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095506_added_entity_constraints_ProductionInfo.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095507_added_entity_constraints_Pregnancy.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095508_added_entity_constraints_Allergy.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095509_added_entity_constraints_Pediatric.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095510_added_entity_constraints_Geriatric.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095511_added_entity_constraints_BreastFeeding.xml" relativeToChangelogFile="false"/>
-    <include file="config/liquibase/changelog/20190629095513_added_entity_constraints_ApplInfoSideEffect.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
-
 </databaseChangeLog>

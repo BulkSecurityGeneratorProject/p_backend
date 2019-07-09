@@ -1,7 +1,6 @@
 package com.medicai.pillpal.web.rest.vm;
 
 import com.medicai.pillpal.service.dto.UserDTO;
-
 import javax.validation.constraints.Size;
 
 /**

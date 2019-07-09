@@ -1,6 +1,7 @@
 package com.medicai.pillpal.web.rest;
 
 import com.medicai.pillpal.service.AuditEventService;
+
 import io.github.jhipster.web.util.PaginationUtil;
 import io.github.jhipster.web.util.ResponseUtil;
 import org.springframework.boot.actuate.audit.AuditEvent;
@@ -33,6 +34,8 @@ public class AuditResource {
     /**
      * {@code GET /audits} : get a page of {@link AuditEvent}s.
      *
+     * @param queryParams a {@link MultiValueMap} query parameters.
+     * @param uriBuilder a {@link UriComponentsBuilder} URI builder.
      * @param pageable the pagination information.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of {@link AuditEvent}s in body.
      */
@@ -48,6 +51,8 @@ public class AuditResource {
      *
      * @param fromDate the start of the time period of {@link AuditEvent} to get.
      * @param toDate the end of the time period of {@link AuditEvent} to get.
+     * @param queryParams a {@link MultiValueMap} query parameters.
+     * @param uriBuilder a {@link UriComponentsBuilder} URI builder.
      * @param pageable the pagination information.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of {@link AuditEvent} in body.
      */

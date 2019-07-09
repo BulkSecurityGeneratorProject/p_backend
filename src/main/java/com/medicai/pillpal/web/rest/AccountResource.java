@@ -8,12 +8,10 @@ import com.medicai.pillpal.service.MailService;
 import com.medicai.pillpal.service.UserService;
 import com.medicai.pillpal.service.dto.PasswordChangeDTO;
 import com.medicai.pillpal.service.dto.UserDTO;
-import com.medicai.pillpal.web.rest.errors.EmailAlreadyUsedException;
-import com.medicai.pillpal.web.rest.errors.EmailNotFoundException;
-import com.medicai.pillpal.web.rest.errors.InvalidPasswordException;
-import com.medicai.pillpal.web.rest.errors.LoginAlreadyUsedException;
+import com.medicai.pillpal.web.rest.errors.*;
 import com.medicai.pillpal.web.rest.vm.KeyAndPasswordVM;
 import com.medicai.pillpal.web.rest.vm.ManagedUserVM;
+
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -22,7 +20,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
-import java.util.Optional;
+import java.util.*;
 
 /**
  * REST controller for managing the current user's account.
