@@ -163,8 +163,8 @@ public class SideEffectResource {
      * @param uriBuilder
      * @return the ResponseEntity with status 200 (OK) and the list of notificationHistories in body
      */
-    @GetMapping("/side-effects/geriatric")
-    public ResponseEntity<List<GeriatricDTO>> getGenericNemeListGeriatric(Pageable pageable,
+    @GetMapping("/side-effects/geriatric/by-generic-name-list")
+    public ResponseEntity<List<GeriatricDTO>> getGenericNameListGeriatric(Pageable pageable,
                                                                           @RequestBody List<String> genericName, UriComponentsBuilder uriBuilder) {
         log.debug("REST request to delete SideEffect : {}");
         Page<GeriatricDTO> page = sideEffectService.findGeriatricByGenericNameList(pageable, genericName);
@@ -179,7 +179,7 @@ public class SideEffectResource {
      * @return the ResponseEntity with status 200 (OK) and the list of notificationHistories in body
      */
     @GetMapping("/side-effects/geriatric/by-generic-name")
-    public ResponseEntity<GeriatricDTO> getGenericNemeGeriatric(@RequestBody String genericName) {
+    public ResponseEntity<GeriatricDTO> getGenericNameGeriatric(@RequestBody String genericName) {
         log.debug( "REST request to delete SideEffect : {}" );
         Optional<GeriatricDTO> geriatricDTO = sideEffectService.findGeriatricByGenericName( genericName );
         return ResponseUtil.wrapOrNotFound( geriatricDTO );
