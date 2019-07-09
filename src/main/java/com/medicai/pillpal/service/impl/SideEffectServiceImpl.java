@@ -1,19 +1,11 @@
 package com.medicai.pillpal.service.impl;
 
+import com.medicai.pillpal.domain.AppInfoSideEffect;
 import com.medicai.pillpal.domain.SideEffect;
-import com.medicai.pillpal.repository.AllergyRepository;
-import com.medicai.pillpal.repository.GeriatricRepository;
-import com.medicai.pillpal.repository.PediatricRepository;
-import com.medicai.pillpal.repository.SideEffectRepository;
+import com.medicai.pillpal.repository.*;
 import com.medicai.pillpal.service.SideEffectService;
-import com.medicai.pillpal.service.dto.AllergyDTO;
-import com.medicai.pillpal.service.dto.GeriatricDTO;
-import com.medicai.pillpal.service.dto.PediatricDTO;
-import com.medicai.pillpal.service.dto.SideEffectDTO;
-import com.medicai.pillpal.service.mapper.AllergyMapper;
-import com.medicai.pillpal.service.mapper.GeriatricMapper;
-import com.medicai.pillpal.service.mapper.PediatricMapper;
-import com.medicai.pillpal.service.mapper.SideEffectMapper;
+import com.medicai.pillpal.service.dto.*;
+import com.medicai.pillpal.service.mapper.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -36,33 +28,38 @@ public class SideEffectServiceImpl implements SideEffectService {
     private final AllergyRepository allergyRepository;
     private final GeriatricRepository geriatricRepository;
     private final PediatricRepository pediatricRepository;
-
+    private final AppInfoSideEffectRepository appInfoSideEffectRepository;
 
     private final AllergyMapper allergyMapper;
     private final SideEffectMapper sideEffectMapper;
     private final GeriatricMapper geriatricMapper;
     private final PediatricMapper pediatricMapper;
+    private final ApplInfoSideEffectMapper appInfoSideEffectMapper;
+
 
     public SideEffectServiceImpl(SideEffectRepository sideEffectRepository,
                                  AllergyRepository allergyRepository,
                                  GeriatricRepository geriatricRepository,
                                  PediatricRepository pediatricRepository,
+                                 AppInfoSideEffectRepository appInfoSideEffectRepository,
 
                                  SideEffectMapper sideEffectMapper,
                                  AllergyMapper allergyMapper,
                                  GeriatricMapper geriatricMapper,
-                                 PediatricMapper pediatricMapper
-
+                                 PediatricMapper pediatricMapper,
+                                 ApplInfoSideEffectMapper appInfoSideEffectMapper
     ) {
         this.sideEffectRepository = sideEffectRepository;
         this.allergyRepository = allergyRepository;
         this.geriatricRepository = geriatricRepository;
         this.pediatricRepository = pediatricRepository;
+        this.appInfoSideEffectRepository = appInfoSideEffectRepository;
 
         this.sideEffectMapper = sideEffectMapper;
         this.allergyMapper = allergyMapper;
         this.geriatricMapper = geriatricMapper;
         this.pediatricMapper = pediatricMapper;
+        this.appInfoSideEffectMapper = appInfoSideEffectMapper;
     }
 
     /**
@@ -148,6 +145,7 @@ public class SideEffectServiceImpl implements SideEffectService {
 
     /**
      * get the list os generic names
+     *
      * @param pageable
      * @param genericName
      * @return list of persisted entity
@@ -161,6 +159,7 @@ public class SideEffectServiceImpl implements SideEffectService {
 
     /**
      * get a generic name
+     *
      * @param genericName
      * @return a persisted entity
      */
@@ -198,5 +197,33 @@ public class SideEffectServiceImpl implements SideEffectService {
         return pediatricRepository.findByGenericNameList(pageable, genericNameList)
             .map(pediatricMapper::toDto);
     }
+
+    /**
+     * get a generic names
+     *
+     * @param genericName
+     * @return a persisted entity
+     */
+    @Override
+    public Optional<ApplInfoSideEffectDTO> findAppInfoSideEffectByGenericName(String genericName) {
+        log.debug("Request to get ApplicationInfo : {}", genericName);
+        return appInfoSideEffectRepository.findByGenericName(genericName)
+            .map(appInfoSideEffectMapper::toDto);
+    }
+
+    /**
+     * get a list of generic names
+     *
+     * @param pageable
+     * @param genericNameList
+     * @return list of persisted entities
+     */
+    @Override
+    public Page<ApplInfoSideEffectDTO> findAppInfoSideEffectByGenericNameList(Pageable pageable, List<String> genericNameList) {
+        log.debug("Request to get ApplicationInfo : {}", pageable);
+        return appInfoSideEffectRepository.findByGenericNameList(pageable, genericNameList)
+            .map(appInfoSideEffectMapper::toDto);
+    }
+
 
 }

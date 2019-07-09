@@ -29,7 +29,7 @@ public class SideEffect implements Serializable {
 
     @OneToMany(mappedBy = "sideEffect")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<ApplInfoSideEffect> sideEffets = new HashSet<>();
+    private Set<AppInfoSideEffect> sideEffets = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -53,29 +53,29 @@ public class SideEffect implements Serializable {
         this.description = description;
     }
 
-    public Set<ApplInfoSideEffect> getSideEffets() {
+    public Set<AppInfoSideEffect> getSideEffets() {
         return sideEffets;
     }
 
-    public SideEffect sideEffets(Set<ApplInfoSideEffect> applInfoSideEffects) {
-        this.sideEffets = applInfoSideEffects;
+    public SideEffect sideEffets(Set<AppInfoSideEffect> appInfoSideEffects) {
+        this.sideEffets = appInfoSideEffects;
         return this;
     }
 
-    public SideEffect addSideEffet(ApplInfoSideEffect applInfoSideEffect) {
-        this.sideEffets.add(applInfoSideEffect);
-        applInfoSideEffect.setSideEffect(this);
+    public SideEffect addSideEffet(AppInfoSideEffect appInfoSideEffect) {
+        this.sideEffets.add(appInfoSideEffect);
+        appInfoSideEffect.setSideEffect(this);
         return this;
     }
 
-    public SideEffect removeSideEffet(ApplInfoSideEffect applInfoSideEffect) {
-        this.sideEffets.remove(applInfoSideEffect);
-        applInfoSideEffect.setSideEffect(null);
+    public SideEffect removeSideEffet(AppInfoSideEffect appInfoSideEffect) {
+        this.sideEffets.remove(appInfoSideEffect);
+        appInfoSideEffect.setSideEffect(null);
         return this;
     }
 
-    public void setSideEffets(Set<ApplInfoSideEffect> applInfoSideEffects) {
-        this.sideEffets = applInfoSideEffects;
+    public void setSideEffets(Set<AppInfoSideEffect> appInfoSideEffects) {
+        this.sideEffets = appInfoSideEffects;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

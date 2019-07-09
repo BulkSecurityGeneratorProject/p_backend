@@ -99,7 +99,7 @@ entity SideEffect {
 	description String required
 }
 
-entity ApplInfoSideEffect {
+entity AppInfoSideEffect {
  sideEffectType SideEffectType
 }
 
@@ -160,7 +160,7 @@ enum RoutsOfAdministration{
 
  relationship OneToMany {
  	ApplicationInfo{productionInfo} to ProductionInfo
-    ApplicationInfo{pharmaceuticalcode} to PharmaceuticalCode
+    ApplicationInfo{pharmaceuticalCode} to PharmaceuticalCode
     //ApplicationInfo{baseInteraction} to Interaction
     //ApplicationInfo{descInteraction} to Interaction
     ApplicationInfo{dosing} to ConsumptionDosing
@@ -174,8 +174,8 @@ enum RoutsOfAdministration{
     ApplicationInfo{pediatric} to Pediatric
     ApplicationInfo{geriatric} to Geriatric
     ApplicationInfo{breastfeeding} to BreastFeeding
-    ApplicationInfo{applInfoSideEffect} to ApplInfoSideEffect
-    SideEffect{SideEffect} to ApplInfoSideEffect
+    ApplicationInfo{AppInfoSideEffect} to AppInfoSideEffect
+    SideEffect{SideEffect} to AppInfoSideEffect
  }
  
  

@@ -69,7 +69,7 @@ public class ApplicationInfo implements Serializable {
 
     @OneToMany(mappedBy = "applicationInfo")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<PharmaceuticalCode> pharmaceuticalcodes = new HashSet<>();
+    private Set<PharmaceuticalCode> pharmaceuticalCodes = new HashSet<>();
 
     @OneToMany(mappedBy = "applicationInfo")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -117,7 +117,7 @@ public class ApplicationInfo implements Serializable {
 
     @OneToMany(mappedBy = "applicationInfo")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<ApplInfoSideEffect> applInfoSideEffects = new HashSet<>();
+    private Set<AppInfoSideEffect> appInfoSideEffects = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -297,28 +297,28 @@ public class ApplicationInfo implements Serializable {
     }
 
     public Set<PharmaceuticalCode> getPharmaceuticalcodes() {
-        return pharmaceuticalcodes;
+        return pharmaceuticalCodes;
     }
 
-    public ApplicationInfo pharmaceuticalcodes(Set<PharmaceuticalCode> pharmaceuticalCodes) {
-        this.pharmaceuticalcodes = pharmaceuticalCodes;
+    public ApplicationInfo pharmaceuticalCodes(Set<PharmaceuticalCode> pharmaceuticalCodes) {
+        this.pharmaceuticalCodes = pharmaceuticalCodes;
         return this;
     }
 
     public ApplicationInfo addPharmaceuticalcode(PharmaceuticalCode pharmaceuticalCode) {
-        this.pharmaceuticalcodes.add(pharmaceuticalCode);
+        this.pharmaceuticalCodes.add(pharmaceuticalCode);
         pharmaceuticalCode.setApplicationInfo(this);
         return this;
     }
 
     public ApplicationInfo removePharmaceuticalcode(PharmaceuticalCode pharmaceuticalCode) {
-        this.pharmaceuticalcodes.remove(pharmaceuticalCode);
+        this.pharmaceuticalCodes.remove(pharmaceuticalCode);
         pharmaceuticalCode.setApplicationInfo(null);
         return this;
     }
 
     public void setPharmaceuticalcodes(Set<PharmaceuticalCode> pharmaceuticalCodes) {
-        this.pharmaceuticalcodes = pharmaceuticalCodes;
+        this.pharmaceuticalCodes = pharmaceuticalCodes;
     }
 
     public Set<ConsumptionDosing> getDosings() {
@@ -596,29 +596,29 @@ public class ApplicationInfo implements Serializable {
         this.breastfeedings = breastFeedings;
     }
 
-    public Set<ApplInfoSideEffect> getApplInfoSideEffects() {
-        return applInfoSideEffects;
+    public Set<AppInfoSideEffect> getAppInfoSideEffects() {
+        return appInfoSideEffects;
     }
 
-    public ApplicationInfo applInfoSideEffects(Set<ApplInfoSideEffect> applInfoSideEffects) {
-        this.applInfoSideEffects = applInfoSideEffects;
+    public ApplicationInfo applInfoSideEffects(Set<AppInfoSideEffect> appInfoSideEffects) {
+        this.appInfoSideEffects = appInfoSideEffects;
         return this;
     }
 
-    public ApplicationInfo addApplInfoSideEffect(ApplInfoSideEffect applInfoSideEffect) {
-        this.applInfoSideEffects.add(applInfoSideEffect);
-        applInfoSideEffect.setApplicationInfo(this);
+    public ApplicationInfo addApplInfoSideEffect(AppInfoSideEffect appInfoSideEffect) {
+        this.appInfoSideEffects.add(appInfoSideEffect);
+        appInfoSideEffect.setApplicationInfo(this);
         return this;
     }
 
-    public ApplicationInfo removeApplInfoSideEffect(ApplInfoSideEffect applInfoSideEffect) {
-        this.applInfoSideEffects.remove(applInfoSideEffect);
-        applInfoSideEffect.setApplicationInfo(null);
+    public ApplicationInfo removeApplInfoSideEffect(AppInfoSideEffect appInfoSideEffect) {
+        this.appInfoSideEffects.remove(appInfoSideEffect);
+        appInfoSideEffect.setApplicationInfo(null);
         return this;
     }
 
-    public void setApplInfoSideEffects(Set<ApplInfoSideEffect> applInfoSideEffects) {
-        this.applInfoSideEffects = applInfoSideEffects;
+    public void setAppInfoSideEffects(Set<AppInfoSideEffect> appInfoSideEffects) {
+        this.appInfoSideEffects = appInfoSideEffects;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

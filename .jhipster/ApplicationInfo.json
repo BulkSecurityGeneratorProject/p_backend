@@ -62,7 +62,7 @@
             "relationshipType": "one-to-many",
             "otherEntityName": "pharmaceuticalCode",
             "otherEntityRelationshipName": "applicationInfo",
-            "relationshipName": "pharmaceuticalcode"
+            "relationshipName": "pharmaceuticalCode"
         },
         {
             "relationshipType": "one-to-many",

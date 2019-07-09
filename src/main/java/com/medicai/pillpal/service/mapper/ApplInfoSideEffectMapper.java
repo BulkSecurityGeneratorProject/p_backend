@@ -6,25 +6,25 @@ import com.medicai.pillpal.service.dto.ApplInfoSideEffectDTO;
 import org.mapstruct.*;
 
 /**
- * Mapper for the entity {@link ApplInfoSideEffect} and its DTO {@link ApplInfoSideEffectDTO}.
+ * Mapper for the entity {@link AppInfoSideEffect} and its DTO {@link ApplInfoSideEffectDTO}.
  */
 @Mapper(componentModel = "spring", uses = {ApplicationInfoMapper.class, SideEffectMapper.class})
-public interface ApplInfoSideEffectMapper extends EntityMapper<ApplInfoSideEffectDTO, ApplInfoSideEffect> {
+public interface ApplInfoSideEffectMapper extends EntityMapper<ApplInfoSideEffectDTO, AppInfoSideEffect> {
 
     @Mapping(source = "applicationInfo.id", target = "applicationInfoId")
     @Mapping(source = "sideEffect.id", target = "sideEffectId")
-    ApplInfoSideEffectDTO toDto(ApplInfoSideEffect applInfoSideEffect);
+    ApplInfoSideEffectDTO toDto(AppInfoSideEffect appInfoSideEffect);
 
     @Mapping(source = "applicationInfoId", target = "applicationInfo")
     @Mapping(source = "sideEffectId", target = "sideEffect")
-    ApplInfoSideEffect toEntity(ApplInfoSideEffectDTO applInfoSideEffectDTO);
+    AppInfoSideEffect toEntity(ApplInfoSideEffectDTO applInfoSideEffectDTO);
 
-    default ApplInfoSideEffect fromId(Long id) {
+    default AppInfoSideEffect fromId(Long id) {
         if (id == null) {
             return null;
         }
-        ApplInfoSideEffect applInfoSideEffect = new ApplInfoSideEffect();
-        applInfoSideEffect.setId(id);
-        return applInfoSideEffect;
+        AppInfoSideEffect appInfoSideEffect = new AppInfoSideEffect();
+        appInfoSideEffect.setId(id);
+        return appInfoSideEffect;
     }
 }

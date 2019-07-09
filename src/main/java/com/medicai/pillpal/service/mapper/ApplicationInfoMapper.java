@@ -14,7 +14,7 @@ public interface ApplicationInfoMapper extends EntityMapper<ApplicationInfoDTO, 
 
     @Mapping(target = "productionInfos", ignore = true)
     @Mapping(target = "removeProductionInfo", ignore = true)
-    @Mapping(target = "pharmaceuticalcodes", ignore = true)
+    @Mapping(target = "pharmaceuticalCodes", ignore = true)
     @Mapping(target = "removePharmaceuticalcode", ignore = true)
     @Mapping(target = "dosings", ignore = true)
     @Mapping(target = "removeDosing", ignore = true)

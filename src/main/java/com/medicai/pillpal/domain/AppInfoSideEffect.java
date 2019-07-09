@@ -10,12 +10,12 @@ import java.io.Serializable;
 import com.medicai.pillpal.domain.enumeration.SideEffectType;
 
 /**
- * A ApplInfoSideEffect.
+ * A AppInfoSideEffect.
  */
 @Entity
 @Table(name = "appl_info_side_effect")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-public class ApplInfoSideEffect implements Serializable {
+public class AppInfoSideEffect implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -48,7 +48,7 @@ public class ApplInfoSideEffect implements Serializable {
         return sideEffectType;
     }
 
-    public ApplInfoSideEffect sideEffectType(SideEffectType sideEffectType) {
+    public AppInfoSideEffect sideEffectType(SideEffectType sideEffectType) {
         this.sideEffectType = sideEffectType;
         return this;
     }
@@ -61,7 +61,7 @@ public class ApplInfoSideEffect implements Serializable {
         return applicationInfo;
     }
 
-    public ApplInfoSideEffect applicationInfo(ApplicationInfo applicationInfo) {
+    public AppInfoSideEffect applicationInfo(ApplicationInfo applicationInfo) {
         this.applicationInfo = applicationInfo;
         return this;
     }
@@ -74,7 +74,7 @@ public class ApplInfoSideEffect implements Serializable {
         return sideEffect;
     }
 
-    public ApplInfoSideEffect sideEffect(SideEffect sideEffect) {
+    public AppInfoSideEffect sideEffect(SideEffect sideEffect) {
         this.sideEffect = sideEffect;
         return this;
     }
@@ -89,10 +89,10 @@ public class ApplInfoSideEffect implements Serializable {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof ApplInfoSideEffect)) {
+        if (!(o instanceof AppInfoSideEffect)) {
             return false;
         }
-        return id != null && id.equals(((ApplInfoSideEffect) o).id);
+        return id != null && id.equals(((AppInfoSideEffect) o).id);
     }
 
     @Override
@@ -102,7 +102,7 @@ public class ApplInfoSideEffect implements Serializable {
 
     @Override
     public String toString() {
-        return "ApplInfoSideEffect{" +
+        return "AppInfoSideEffect{" +
             "id=" + getId() +
             ", sideEffectType='" + getSideEffectType() + "'" +
             "}";
