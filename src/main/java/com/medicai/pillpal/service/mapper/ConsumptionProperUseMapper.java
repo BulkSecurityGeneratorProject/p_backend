@@ -1,9 +1,9 @@
 package com.medicai.pillpal.service.mapper;
 
-import com.medicai.pillpal.domain.ConsumptionProperUse;
+import com.medicai.pillpal.domain.*;
 import com.medicai.pillpal.service.dto.ConsumptionProperUseDTO;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
+
+import org.mapstruct.*;
 
 /**
  * Mapper for the entity {@link ConsumptionProperUse} and its DTO {@link ConsumptionProperUseDTO}.

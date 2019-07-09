@@ -2,13 +2,12 @@ package com.medicai.pillpal.web.rest;
 
 import com.medicai.pillpal.PillpalApp;
 import com.medicai.pillpal.domain.ApplicationInfo;
-import com.medicai.pillpal.domain.enumeration.Form;
-import com.medicai.pillpal.domain.enumeration.RoutsOfAdministration;
 import com.medicai.pillpal.repository.ApplicationInfoRepository;
 import com.medicai.pillpal.service.ApplicationInfoService;
 import com.medicai.pillpal.service.dto.ApplicationInfoDTO;
 import com.medicai.pillpal.service.mapper.ApplicationInfoMapper;
 import com.medicai.pillpal.web.rest.errors.ExceptionTranslator;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockitoAnnotations;
@@ -30,6 +29,9 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+
+import com.medicai.pillpal.domain.enumeration.Form;
+import com.medicai.pillpal.domain.enumeration.RoutsOfAdministration;
 /**
  * Integration tests for the {@Link ApplicationInfoResource} REST controller.
  */
@@ -57,16 +59,16 @@ public class ApplicationInfoResourceIT {
     private static final String DEFAULT_STRENGTH_UNIT = "AAAAAAAAAA";
     private static final String UPDATED_STRENGTH_UNIT = "BBBBBBBBBB";
 
-    private static final Integer DEFAULT_PRODUCT_NUMBER = Integer.valueOf( String.valueOf(1) );
-    private static final Integer UPDATED_PRODUCT_NUMBER = Integer.valueOf( String.valueOf(2) );
+    private static final Integer DEFAULT_PRODUCT_NUMBER = 1;
+    private static final Integer UPDATED_PRODUCT_NUMBER = 2;
 
     private static final String DEFAULT_ACTIVE_INGREDIENT = "AAAAAAAAAA";
     private static final String UPDATED_ACTIVE_INGREDIENT = "BBBBBBBBBB";
 
     private static final Form DEFAULT_FORM = Form.AEROSOL;
-    private static final Form UPDATED_FORM = Form.AEROSOL;
+    private static final Form UPDATED_FORM = Form.BAR;
 
-    private static final RoutsOfAdministration DEFAULT_ROUTS_OF_ADMINISTRATION = RoutsOfAdministration.BUCCAL_SUBLINGUAL;
+    private static final RoutsOfAdministration DEFAULT_ROUTS_OF_ADMINISTRATION = RoutsOfAdministration.BLOCK_INFILTRATION;
     private static final RoutsOfAdministration UPDATED_ROUTS_OF_ADMINISTRATION = RoutsOfAdministration.BUCCAL;
 
     @Autowired
@@ -90,7 +92,7 @@ public class ApplicationInfoResourceIT {
     @Autowired
     private EntityManager em;
 
-
+    @Autowired
     private Validator validator;
 
     private MockMvc restApplicationInfoMockMvc;

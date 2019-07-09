@@ -1,12 +1,10 @@
 package com.medicai.pillpal.service.dto;
-
-import com.medicai.pillpal.domain.enumeration.Form;
-import com.medicai.pillpal.domain.enumeration.RoutsOfAdministration;
 import io.swagger.annotations.ApiModel;
-
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.util.Objects;
+import com.medicai.pillpal.domain.enumeration.Form;
+import com.medicai.pillpal.domain.enumeration.RoutsOfAdministration;
 
 /**
  * A DTO for the {@link com.medicai.pillpal.domain.ApplicationInfo} entity.

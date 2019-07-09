@@ -1,11 +1,11 @@
 id;recommendation_type;description
-1;USUALLY_NOT_RECOMMENDED;world-class Frozen IB
+1;NOT_RECOMMENDED;world-class Frozen IB
 2;USUALLY_NOT_RECOMMENDED;moratorium moratorium
-3;NOT_RECOMMENDED;Frozen bus
+3;USUALLY_NOT_RECOMMENDED;Frozen bus
 4;USUALLY_NOT_RECOMMENDED;Poland
 5;NOT_RECOMMENDED;Outdoors
 6;NOT_RECOMMENDED;Corporate Phased relationships
 7;USUALLY_NOT_RECOMMENDED;Salad Web virtual
-8;USUALLY_NOT_RECOMMENDED;maroon
+8;NOT_RECOMMENDED;maroon
 9;USUALLY_NOT_RECOMMENDED;support Gorgeous
 10;USUALLY_NOT_RECOMMENDED;copying

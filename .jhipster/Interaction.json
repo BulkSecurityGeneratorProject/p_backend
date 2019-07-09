@@ -14,8 +14,23 @@
             "fieldType": "String"
         }
     ],
-    "relationships": [],
-    "changelogDate": "20190629095458",
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "applicationInfo",
+            "otherEntityRelationshipName": "baseInteraction",
+            "relationshipName": "baseApplicationInfo",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "applicationInfo",
+            "otherEntityRelationshipName": "descInteraction",
+            "relationshipName": "descApplicationInfo",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20190709151737",
     "javadoc": "a reaction between two (or more) drugs or between\na drug and a food, beverage, or supplement.",
     "entityTableName": "interaction",
     "dto": "mapstruct",

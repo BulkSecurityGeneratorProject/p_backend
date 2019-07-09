@@ -7,6 +7,7 @@ import com.medicai.pillpal.service.SideEffectService;
 import com.medicai.pillpal.service.dto.SideEffectDTO;
 import com.medicai.pillpal.service.mapper.SideEffectMapper;
 import com.medicai.pillpal.web.rest.errors.ExceptionTranslator;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockitoAnnotations;

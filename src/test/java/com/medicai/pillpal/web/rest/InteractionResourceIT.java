@@ -2,12 +2,12 @@ package com.medicai.pillpal.web.rest;
 
 import com.medicai.pillpal.PillpalApp;
 import com.medicai.pillpal.domain.Interaction;
-import com.medicai.pillpal.domain.enumeration.RecommendationType;
 import com.medicai.pillpal.repository.InteractionRepository;
 import com.medicai.pillpal.service.InteractionService;
 import com.medicai.pillpal.service.dto.InteractionDTO;
 import com.medicai.pillpal.service.mapper.InteractionMapper;
 import com.medicai.pillpal.web.rest.errors.ExceptionTranslator;
+
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.MockitoAnnotations;
@@ -29,6 +29,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+
+import com.medicai.pillpal.domain.enumeration.RecommendationType;
 /**
  * Integration tests for the {@Link InteractionResource} REST controller.
  */

@@ -18,7 +18,7 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20190629095507",
+    "changelogDate": "20190709151746",
     "javadoc": "Some information using drug while pregnancy",
     "entityTableName": "pregnancy",
     "dto": "mapstruct",

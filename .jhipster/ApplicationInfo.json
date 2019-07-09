@@ -66,6 +66,18 @@
         },
         {
             "relationshipType": "one-to-many",
+            "otherEntityName": "interaction",
+            "otherEntityRelationshipName": "baseApplicationInfo",
+            "relationshipName": "baseInteraction"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "interaction",
+            "otherEntityRelationshipName": "descApplicationInfo",
+            "relationshipName": "descInteraction"
+        },
+        {
+            "relationshipType": "one-to-many",
             "otherEntityName": "consumptionDosing",
             "otherEntityRelationshipName": "applicationInfo",
             "relationshipName": "dosing"
@@ -90,9 +102,9 @@
         },
         {
             "relationshipType": "one-to-many",
-            "otherEntityName": "consumptionPrecoution",
+            "otherEntityName": "consumptionPrecaution",
             "otherEntityRelationshipName": "applicationInfo",
-            "relationshipName": "precoution"
+            "relationshipName": "precaution"
         },
         {
             "relationshipType": "one-to-many",
@@ -132,12 +144,12 @@
         },
         {
             "relationshipType": "one-to-many",
-            "otherEntityName": "applInfoSideEffect",
+            "otherEntityName": "appInfoSideEffect",
             "otherEntityRelationshipName": "applicationInfo",
-            "relationshipName": "applInfoSideEffect"
+            "relationshipName": "appInfoSideEffect"
         }
     ],
-    "changelogDate": "20190629095459",
+    "changelogDate": "20190709151738",
     "javadoc": "Information about medicine",
     "entityTableName": "application_info",
     "dto": "mapstruct",

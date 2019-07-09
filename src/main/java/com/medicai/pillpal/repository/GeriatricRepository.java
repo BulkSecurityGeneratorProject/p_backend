@@ -34,4 +34,3 @@ public interface GeriatricRepository extends JpaRepository<Geriatric, Long> {
 
 
 }
-

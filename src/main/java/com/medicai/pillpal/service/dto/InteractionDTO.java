@@ -1,11 +1,9 @@
 package com.medicai.pillpal.service.dto;
-
-import com.medicai.pillpal.domain.enumeration.RecommendationType;
 import io.swagger.annotations.ApiModel;
-
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.util.Objects;
+import com.medicai.pillpal.domain.enumeration.RecommendationType;
 
 /**
  * A DTO for the {@link com.medicai.pillpal.domain.Interaction} entity.
@@ -20,6 +18,10 @@ public class InteractionDTO implements Serializable {
 
     private String description;
 
+
+    private Long baseApplicationInfoId;
+
+    private Long descApplicationInfoId;
 
     public Long getId() {
         return id;
@@ -43,6 +45,22 @@ public class InteractionDTO implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Long getBaseApplicationInfoId() {
+        return baseApplicationInfoId;
+    }
+
+    public void setBaseApplicationInfoId(Long applicationInfoId) {
+        this.baseApplicationInfoId = applicationInfoId;
+    }
+
+    public Long getDescApplicationInfoId() {
+        return descApplicationInfoId;
+    }
+
+    public void setDescApplicationInfoId(Long applicationInfoId) {
+        this.descApplicationInfoId = applicationInfoId;
     }
 
     @Override
@@ -72,6 +90,8 @@ public class InteractionDTO implements Serializable {
             "id=" + getId() +
             ", recommendationType='" + getRecommendationType() + "'" +
             ", description='" + getDescription() + "'" +
+            ", baseApplicationInfo=" + getBaseApplicationInfoId() +
+            ", descApplicationInfo=" + getDescApplicationInfoId() +
             "}";
     }
 }

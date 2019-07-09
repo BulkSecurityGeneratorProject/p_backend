@@ -3,6 +3,8 @@ package com.medicai.pillpal.web.rest;
 import com.medicai.pillpal.service.PregnancyService;
 import com.medicai.pillpal.service.dto.PregnancyDTO;
 import com.medicai.pillpal.web.rest.errors.BadRequestAlertException;
+import com.medicai.pillpal.service.dto.PregnancyDTO;
+
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.PaginationUtil;
 import io.github.jhipster.web.util.ResponseUtil;

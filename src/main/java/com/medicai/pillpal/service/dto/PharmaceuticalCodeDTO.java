@@ -1,14 +1,12 @@
 package com.medicai.pillpal.service.dto;
-
 import io.swagger.annotations.ApiModel;
-
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * A DTO for the {@link com.medicai.pillpal.domain.PharmaceuticalCode} entity.
  */
-@ApiModel(description = "Are used in mediacal classification to uniquely identify medication")
+@ApiModel(description = "Are used in medical classification to uniquely identify medication")
 public class PharmaceuticalCodeDTO implements Serializable {
 
     private Long id;

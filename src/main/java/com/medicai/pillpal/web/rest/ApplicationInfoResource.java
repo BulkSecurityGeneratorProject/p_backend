@@ -1,8 +1,9 @@
 package com.medicai.pillpal.web.rest;
 
 import com.medicai.pillpal.service.ApplicationInfoService;
-import com.medicai.pillpal.service.dto.ApplicationInfoDTO;
 import com.medicai.pillpal.web.rest.errors.BadRequestAlertException;
+import com.medicai.pillpal.service.dto.ApplicationInfoDTO;
+
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.PaginationUtil;
 import io.github.jhipster.web.util.ResponseUtil;
@@ -12,14 +13,16 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
 import org.springframework.util.MultiValueMap;
-import org.springframework.web.bind.annotation.*;
 import org.springframework.web.util.UriComponentsBuilder;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
+
 import java.util.List;
 import java.util.Optional;
 
@@ -38,7 +41,6 @@ public class ApplicationInfoResource {
     private String applicationName;
 
     private final ApplicationInfoService applicationInfoService;
-    private Object List;
 
     public ApplicationInfoResource(ApplicationInfoService applicationInfoService) {
         this.applicationInfoService = applicationInfoService;
@@ -87,9 +89,9 @@ public class ApplicationInfoResource {
     /**
      * {@code GET  /application-infos} : get all the applicationInfos.
      *
-     * @param pageable    the pagination information.
+     * @param pageable the pagination information.
      * @param queryParams a {@link MultiValueMap} query parameters.
-     * @param uriBuilder  a {@link UriComponentsBuilder} URI builder.
+     * @param uriBuilder a {@link UriComponentsBuilder} URI builder.
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of applicationInfos in body.
      */
     @GetMapping("/application-infos")
@@ -124,20 +126,5 @@ public class ApplicationInfoResource {
         log.debug("REST request to delete ApplicationInfo : {}", id);
         applicationInfoService.delete(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString())).build();
-    }
-
-    /**
-     * GET  /notification-histories : get all the notificationHistories.
-     *
-     * @param pageable the pagination information
-     * @param genericName
-     * @return the ResponseEntity with status 200 (OK) and the list of notificationHistories in body
-     */
-    @GetMapping("/application-infos/by-generic-name")
-    public ResponseEntity<List<ApplicationInfoDTO>> getGenericName(Pageable pageable, @RequestBody List<String> genericName, UriComponentsBuilder uriBuilder) {
-        log.debug("REST request to get a page of ApplicationInfos");
-        Page<ApplicationInfoDTO> page = applicationInfoService.findByGenericNameList(pageable, genericName);
-        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(uriBuilder, page);
-        return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
 }

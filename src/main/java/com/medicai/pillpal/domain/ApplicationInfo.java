@@ -1,15 +1,17 @@
 package com.medicai.pillpal.domain;
-
-import com.medicai.pillpal.domain.enumeration.Form;
-import com.medicai.pillpal.domain.enumeration.RoutsOfAdministration;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
+
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
+
+import com.medicai.pillpal.domain.enumeration.Form;
+
+import com.medicai.pillpal.domain.enumeration.RoutsOfAdministration;
 
 /**
  * Information about medicine
@@ -69,6 +71,14 @@ public class ApplicationInfo implements Serializable {
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<PharmaceuticalCode> pharmaceuticalCodes = new HashSet<>();
 
+    @OneToMany(mappedBy = "baseApplicationInfo")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Interaction> baseInteractions = new HashSet<>();
+
+    @OneToMany(mappedBy = "descApplicationInfo")
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Interaction> descInteractions = new HashSet<>();
+
     @OneToMany(mappedBy = "applicationInfo")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<ConsumptionDosing> dosings = new HashSet<>();
@@ -87,7 +97,7 @@ public class ApplicationInfo implements Serializable {
 
     @OneToMany(mappedBy = "applicationInfo")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<ConsumptionPrecoution> precoutions = new HashSet<>();
+    private Set<ConsumptionPrecaution> precautions = new HashSet<>();
 
     @OneToMany(mappedBy = "applicationInfo")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
@@ -294,7 +304,7 @@ public class ApplicationInfo implements Serializable {
         this.productionInfos = productionInfos;
     }
 
-    public Set<PharmaceuticalCode> getPharmaceuticalcodes() {
+    public Set<PharmaceuticalCode> getPharmaceuticalCodes() {
         return pharmaceuticalCodes;
     }
 
@@ -303,20 +313,70 @@ public class ApplicationInfo implements Serializable {
         return this;
     }
 
-    public ApplicationInfo addPharmaceuticalcode(PharmaceuticalCode pharmaceuticalCode) {
+    public ApplicationInfo addPharmaceuticalCode(PharmaceuticalCode pharmaceuticalCode) {
         this.pharmaceuticalCodes.add(pharmaceuticalCode);
         pharmaceuticalCode.setApplicationInfo(this);
         return this;
     }
 
-    public ApplicationInfo removePharmaceuticalcode(PharmaceuticalCode pharmaceuticalCode) {
+    public ApplicationInfo removePharmaceuticalCode(PharmaceuticalCode pharmaceuticalCode) {
         this.pharmaceuticalCodes.remove(pharmaceuticalCode);
         pharmaceuticalCode.setApplicationInfo(null);
         return this;
     }
 
-    public void setPharmaceuticalcodes(Set<PharmaceuticalCode> pharmaceuticalCodes) {
+    public void setPharmaceuticalCodes(Set<PharmaceuticalCode> pharmaceuticalCodes) {
         this.pharmaceuticalCodes = pharmaceuticalCodes;
+    }
+
+    public Set<Interaction> getBaseInteractions() {
+        return baseInteractions;
+    }
+
+    public ApplicationInfo baseInteractions(Set<Interaction> interactions) {
+        this.baseInteractions = interactions;
+        return this;
+    }
+
+    public ApplicationInfo addBaseInteraction(Interaction interaction) {
+        this.baseInteractions.add(interaction);
+        interaction.setBaseApplicationInfo(this);
+        return this;
+    }
+
+    public ApplicationInfo removeBaseInteraction(Interaction interaction) {
+        this.baseInteractions.remove(interaction);
+        interaction.setBaseApplicationInfo(null);
+        return this;
+    }
+
+    public void setBaseInteractions(Set<Interaction> interactions) {
+        this.baseInteractions = interactions;
+    }
+
+    public Set<Interaction> getDescInteractions() {
+        return descInteractions;
+    }
+
+    public ApplicationInfo descInteractions(Set<Interaction> interactions) {
+        this.descInteractions = interactions;
+        return this;
+    }
+
+    public ApplicationInfo addDescInteraction(Interaction interaction) {
+        this.descInteractions.add(interaction);
+        interaction.setDescApplicationInfo(this);
+        return this;
+    }
+
+    public ApplicationInfo removeDescInteraction(Interaction interaction) {
+        this.descInteractions.remove(interaction);
+        interaction.setDescApplicationInfo(null);
+        return this;
+    }
+
+    public void setDescInteractions(Set<Interaction> interactions) {
+        this.descInteractions = interactions;
     }
 
     public Set<ConsumptionDosing> getDosings() {
@@ -419,29 +479,29 @@ public class ApplicationInfo implements Serializable {
         this.beforeUses = consumptionBeforeUsings;
     }
 
-    public Set<ConsumptionPrecoution> getPrecoutions() {
-        return precoutions;
+    public Set<ConsumptionPrecaution> getPrecautions() {
+        return precautions;
     }
 
-    public ApplicationInfo precoutions(Set<ConsumptionPrecoution> consumptionPrecoutions) {
-        this.precoutions = consumptionPrecoutions;
+    public ApplicationInfo precautions(Set<ConsumptionPrecaution> consumptionPrecautions) {
+        this.precautions = consumptionPrecautions;
         return this;
     }
 
-    public ApplicationInfo addPrecoution(ConsumptionPrecoution consumptionPrecoution) {
-        this.precoutions.add(consumptionPrecoution);
-        consumptionPrecoution.setApplicationInfo(this);
+    public ApplicationInfo addPrecaution(ConsumptionPrecaution consumptionPrecaution) {
+        this.precautions.add(consumptionPrecaution);
+        consumptionPrecaution.setApplicationInfo(this);
         return this;
     }
 
-    public ApplicationInfo removePrecoution(ConsumptionPrecoution consumptionPrecoution) {
-        this.precoutions.remove(consumptionPrecoution);
-        consumptionPrecoution.setApplicationInfo(null);
+    public ApplicationInfo removePrecaution(ConsumptionPrecaution consumptionPrecaution) {
+        this.precautions.remove(consumptionPrecaution);
+        consumptionPrecaution.setApplicationInfo(null);
         return this;
     }
 
-    public void setPrecoutions(Set<ConsumptionPrecoution> consumptionPrecoutions) {
-        this.precoutions = consumptionPrecoutions;
+    public void setPrecautions(Set<ConsumptionPrecaution> consumptionPrecautions) {
+        this.precautions = consumptionPrecautions;
     }
 
     public Set<ConsumptionProperUse> getProperUses() {
@@ -598,18 +658,18 @@ public class ApplicationInfo implements Serializable {
         return appInfoSideEffects;
     }
 
-    public ApplicationInfo applInfoSideEffects(Set<AppInfoSideEffect> appInfoSideEffects) {
+    public ApplicationInfo appInfoSideEffects(Set<AppInfoSideEffect> appInfoSideEffects) {
         this.appInfoSideEffects = appInfoSideEffects;
         return this;
     }
 
-    public ApplicationInfo addApplInfoSideEffect(AppInfoSideEffect appInfoSideEffect) {
+    public ApplicationInfo addAppInfoSideEffect(AppInfoSideEffect appInfoSideEffect) {
         this.appInfoSideEffects.add(appInfoSideEffect);
         appInfoSideEffect.setApplicationInfo(this);
         return this;
     }
 
-    public ApplicationInfo removeApplInfoSideEffect(AppInfoSideEffect appInfoSideEffect) {
+    public ApplicationInfo removeAppInfoSideEffect(AppInfoSideEffect appInfoSideEffect) {
         this.appInfoSideEffects.remove(appInfoSideEffect);
         appInfoSideEffect.setApplicationInfo(null);
         return this;

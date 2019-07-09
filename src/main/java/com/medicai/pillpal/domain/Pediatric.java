@@ -1,14 +1,14 @@
 package com.medicai.pillpal.domain;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
+
 import java.io.Serializable;
 
 /**
- * Information about using drug in childern younger than 10
+ * Information about using drug in children younger than 10
  */
 @Entity
 @Table(name = "pediatric")

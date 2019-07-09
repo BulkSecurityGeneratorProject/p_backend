@@ -1,7 +1,5 @@
 package com.medicai.pillpal.service.dto;
-
 import io.swagger.annotations.ApiModel;
-
 import java.io.Serializable;
 import java.util.Objects;
 

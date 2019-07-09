@@ -1,19 +1,17 @@
 package com.medicai.pillpal.service.dto;
-
 import io.swagger.annotations.ApiModel;
-
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * A DTO for the {@link com.medicai.pillpal.domain.Geriatric} entity.
  */
-@ApiModel(description = "Information about using drug in  the eldery")
+@ApiModel(description = "Information about using drug in  the elderly")
 public class GeriatricDTO implements Serializable {
 
     private Long id;
 
-    private String geriatic;
+    private String geriatric;
 
 
     private Long applicationInfoId;
@@ -26,12 +24,12 @@ public class GeriatricDTO implements Serializable {
         this.id = id;
     }
 
-    public String getGeriatic() {
-        return geriatic;
+    public String getGeriatric() {
+        return geriatric;
     }
 
-    public void setGeriatic(String geriatic) {
-        this.geriatic = geriatic;
+    public void setGeriatric(String geriatric) {
+        this.geriatric = geriatric;
     }
 
     public Long getApplicationInfoId() {
@@ -67,7 +65,7 @@ public class GeriatricDTO implements Serializable {
     public String toString() {
         return "GeriatricDTO{" +
             "id=" + getId() +
-            ", geriatic='" + getGeriatic() + "'" +
+            ", geriatric='" + getGeriatric() + "'" +
             ", applicationInfo=" + getApplicationInfoId() +
             "}";
     }

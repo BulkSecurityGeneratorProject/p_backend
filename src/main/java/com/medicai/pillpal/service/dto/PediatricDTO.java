@@ -1,14 +1,12 @@
 package com.medicai.pillpal.service.dto;
-
 import io.swagger.annotations.ApiModel;
-
 import java.io.Serializable;
 import java.util.Objects;
 
 /**
  * A DTO for the {@link com.medicai.pillpal.domain.Pediatric} entity.
  */
-@ApiModel(description = "Information about using drug in childern younger than 10")
+@ApiModel(description = "Information about using drug in children younger than 10")
 public class PediatricDTO implements Serializable {
 
     private Long id;

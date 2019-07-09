@@ -1,9 +1,9 @@
 package com.medicai.pillpal.service.mapper;
 
-import com.medicai.pillpal.domain.Geriatric;
+import com.medicai.pillpal.domain.*;
 import com.medicai.pillpal.service.dto.GeriatricDTO;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
+
+import org.mapstruct.*;
 
 /**
  * Mapper for the entity {@link Geriatric} and its DTO {@link GeriatricDTO}.

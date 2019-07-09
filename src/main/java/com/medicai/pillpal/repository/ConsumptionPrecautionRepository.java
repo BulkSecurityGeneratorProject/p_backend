@@ -1,7 +1,7 @@
 package com.medicai.pillpal.repository;
 
 import com.medicai.pillpal.domain.ConsumptionPrecaution;
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.*;
 import org.springframework.stereotype.Repository;
 
 

@@ -1,12 +1,14 @@
 package com.medicai.pillpal.domain;
-
-import com.medicai.pillpal.domain.enumeration.RecommendationType;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
+
 import java.io.Serializable;
+
+import com.medicai.pillpal.domain.enumeration.RecommendationType;
 
 /**
  * a reaction between two (or more) drugs or between
@@ -30,6 +32,14 @@ public class Interaction implements Serializable {
 
     @Column(name = "description")
     private String description;
+
+    @ManyToOne
+    @JsonIgnoreProperties("baseInteractions")
+    private ApplicationInfo baseApplicationInfo;
+
+    @ManyToOne
+    @JsonIgnoreProperties("descInteractions")
+    private ApplicationInfo descApplicationInfo;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -64,6 +74,32 @@ public class Interaction implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public ApplicationInfo getBaseApplicationInfo() {
+        return baseApplicationInfo;
+    }
+
+    public Interaction baseApplicationInfo(ApplicationInfo applicationInfo) {
+        this.baseApplicationInfo = applicationInfo;
+        return this;
+    }
+
+    public void setBaseApplicationInfo(ApplicationInfo applicationInfo) {
+        this.baseApplicationInfo = applicationInfo;
+    }
+
+    public ApplicationInfo getDescApplicationInfo() {
+        return descApplicationInfo;
+    }
+
+    public Interaction descApplicationInfo(ApplicationInfo applicationInfo) {
+        this.descApplicationInfo = applicationInfo;
+        return this;
+    }
+
+    public void setDescApplicationInfo(ApplicationInfo applicationInfo) {
+        this.descApplicationInfo = applicationInfo;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

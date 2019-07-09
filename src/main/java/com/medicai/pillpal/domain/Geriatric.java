@@ -1,14 +1,14 @@
 package com.medicai.pillpal.domain;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
+
 import java.io.Serializable;
 
 /**
- * Information about using drug in  the eldery
+ * Information about using drug in  the elderly
  */
 @Entity
 @Table(name = "geriatric")
@@ -21,8 +21,8 @@ public class Geriatric implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "geriatic")
-    private String geriatic;
+    @Column(name = "geriatric")
+    private String geriatric;
 
     @ManyToOne
     @JsonIgnoreProperties("geriatrics")
@@ -37,17 +37,17 @@ public class Geriatric implements Serializable {
         this.id = id;
     }
 
-    public String getGeriatic() {
-        return geriatic;
+    public String getGeriatric() {
+        return geriatric;
     }
 
-    public Geriatric geriatic(String geriatic) {
-        this.geriatic = geriatic;
+    public Geriatric geriatric(String geriatric) {
+        this.geriatric = geriatric;
         return this;
     }
 
-    public void setGeriatic(String geriatic) {
-        this.geriatic = geriatic;
+    public void setGeriatric(String geriatric) {
+        this.geriatric = geriatric;
     }
 
     public ApplicationInfo getApplicationInfo() {
@@ -84,7 +84,7 @@ public class Geriatric implements Serializable {
     public String toString() {
         return "Geriatric{" +
             "id=" + getId() +
-            ", geriatic='" + getGeriatic() + "'" +
+            ", geriatric='" + getGeriatric() + "'" +
             "}";
     }
 }

@@ -1,14 +1,14 @@
 package com.medicai.pillpal.domain;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
+
 import java.io.Serializable;
 
 /**
- * Are used in mediacal classification
+ * Are used in medical classification
  * to uniquely identify medication
  */
 @Entity

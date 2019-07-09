@@ -2,7 +2,7 @@
     "name": "Geriatric",
     "fields": [
         {
-            "fieldName": "geriatic",
+            "fieldName": "geriatric",
             "fieldType": "String"
         }
     ],
@@ -14,8 +14,8 @@
             "otherEntityField": "id"
         }
     ],
-    "changelogDate": "20190629095510",
-    "javadoc": "Information about using drug in  the eldery",
+    "changelogDate": "20190709151749",
+    "javadoc": "Information about using drug in  the elderly",
     "entityTableName": "geriatric",
     "dto": "mapstruct",
     "pagination": "pagination",

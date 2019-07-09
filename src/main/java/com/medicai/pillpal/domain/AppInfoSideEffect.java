@@ -1,12 +1,13 @@
 package com.medicai.pillpal.domain;
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.medicai.pillpal.domain.enumeration.SideEffectType;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
+
 import java.io.Serializable;
+
+import com.medicai.pillpal.domain.enumeration.SideEffectType;
 
 /**
  * A AppInfoSideEffect.
@@ -27,11 +28,11 @@ public class AppInfoSideEffect implements Serializable {
     private SideEffectType sideEffectType;
 
     @ManyToOne
-    @JsonIgnoreProperties("applInfoSideEffects")
+    @JsonIgnoreProperties("appInfoSideEffects")
     private ApplicationInfo applicationInfo;
 
     @ManyToOne
-    @JsonIgnoreProperties("applInfoSideEffects")
+    @JsonIgnoreProperties("appInfoSideEffects")
     private SideEffect sideEffect;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove

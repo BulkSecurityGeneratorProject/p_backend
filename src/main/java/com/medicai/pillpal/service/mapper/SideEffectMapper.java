@@ -1,9 +1,9 @@
 package com.medicai.pillpal.service.mapper;
 
-import com.medicai.pillpal.domain.SideEffect;
+import com.medicai.pillpal.domain.*;
 import com.medicai.pillpal.service.dto.SideEffectDTO;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
+
+import org.mapstruct.*;
 
 /**
  * Mapper for the entity {@link SideEffect} and its DTO {@link SideEffectDTO}.
@@ -12,8 +12,8 @@ import org.mapstruct.Mapping;
 public interface SideEffectMapper extends EntityMapper<SideEffectDTO, SideEffect> {
 
 
-    @Mapping(target = "sideEffets", ignore = true)
-    @Mapping(target = "removeSideEffet", ignore = true)
+    @Mapping(target = "sideEffects", ignore = true)
+    @Mapping(target = "removeSideEffect", ignore = true)
     SideEffect toEntity(SideEffectDTO sideEffectDTO);
 
     default SideEffect fromId(Long id) {

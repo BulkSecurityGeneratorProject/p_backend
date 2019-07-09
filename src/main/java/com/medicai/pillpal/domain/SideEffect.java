@@ -1,10 +1,10 @@
 package com.medicai.pillpal.domain;
-
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.*;
+
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
@@ -29,7 +29,7 @@ public class SideEffect implements Serializable {
 
     @OneToMany(mappedBy = "sideEffect")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-    private Set<AppInfoSideEffect> sideEffets = new HashSet<>();
+    private Set<AppInfoSideEffect> sideEffects = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public Long getId() {
@@ -53,29 +53,29 @@ public class SideEffect implements Serializable {
         this.description = description;
     }
 
-    public Set<AppInfoSideEffect> getSideEffets() {
-        return sideEffets;
+    public Set<AppInfoSideEffect> getSideEffects() {
+        return sideEffects;
     }
 
-    public SideEffect sideEffets(Set<AppInfoSideEffect> appInfoSideEffects) {
-        this.sideEffets = appInfoSideEffects;
+    public SideEffect sideEffects(Set<AppInfoSideEffect> appInfoSideEffects) {
+        this.sideEffects = appInfoSideEffects;
         return this;
     }
 
-    public SideEffect addSideEffet(AppInfoSideEffect appInfoSideEffect) {
-        this.sideEffets.add(appInfoSideEffect);
+    public SideEffect addSideEffect(AppInfoSideEffect appInfoSideEffect) {
+        this.sideEffects.add(appInfoSideEffect);
         appInfoSideEffect.setSideEffect(this);
         return this;
     }
 
-    public SideEffect removeSideEffet(AppInfoSideEffect appInfoSideEffect) {
-        this.sideEffets.remove(appInfoSideEffect);
+    public SideEffect removeSideEffect(AppInfoSideEffect appInfoSideEffect) {
+        this.sideEffects.remove(appInfoSideEffect);
         appInfoSideEffect.setSideEffect(null);
         return this;
     }
 
-    public void setSideEffets(Set<AppInfoSideEffect> appInfoSideEffects) {
-        this.sideEffets = appInfoSideEffects;
+    public void setSideEffects(Set<AppInfoSideEffect> appInfoSideEffects) {
+        this.sideEffects = appInfoSideEffects;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 

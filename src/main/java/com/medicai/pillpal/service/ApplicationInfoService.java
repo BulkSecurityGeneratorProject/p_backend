@@ -1,6 +1,7 @@
 package com.medicai.pillpal.service;
 
 import com.medicai.pillpal.service.dto.ApplicationInfoDTO;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -57,7 +58,7 @@ public interface ApplicationInfoService {
      *
      * @return list of persisted entites
      */
-    Page<ApplicationInfoDTO> findByGenericNameList(Pageable pageable,List<String> genericNameList);
+    Page<ApplicationInfoDTO> findByGenericNameList(Pageable pageable, List<String> genericNameList);
 
 
 }
