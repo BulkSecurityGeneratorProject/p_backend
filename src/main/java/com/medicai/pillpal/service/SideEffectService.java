@@ -111,5 +111,18 @@ public interface SideEffectService {
      */
     Page<ApplInfoSideEffectDTO> findAppInfoSideEffectByGenericNameList(Pageable pageable, List<String> genericNameList);
 
+    /**
+     * Get a GenericName
+     * @param genericName
+     * @return the list of entities.
+     */
+    Optional<BreastFeedingDTO> findBreastFeedingByGenericName(String genericName);
 
+    /**
+     * Get the List of GenericName
+     *
+     * @param
+     * @return the list of entities.
+     */
+    Page<BreastFeedingDTO> findBreastFeedingByGenericNameList(Pageable pageable, List<String> genericNameList);
 }

@@ -1,10 +1,8 @@
 package com.medicai.pillpal.web.rest;
 
+import com.medicai.pillpal.domain.BreastFeeding;
 import com.medicai.pillpal.service.SideEffectService;
-import com.medicai.pillpal.service.dto.AllergyDTO;
-import com.medicai.pillpal.service.dto.GeriatricDTO;
-import com.medicai.pillpal.service.dto.PediatricDTO;
-import com.medicai.pillpal.service.dto.SideEffectDTO;
+import com.medicai.pillpal.service.dto.*;
 import com.medicai.pillpal.web.rest.errors.BadRequestAlertException;
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.PaginationUtil;
@@ -208,9 +206,37 @@ public class SideEffectResource {
      */
     @GetMapping("/side-effects/pediatric/by-generic-name-list")
     public ResponseEntity<List<PediatricDTO>> getPediatricByGenericNameList(Pageable pageable,
-                                                                        @RequestBody List<String> genericName, UriComponentsBuilder uriBuilder) {
+                                                                            @RequestBody List<String> genericName, UriComponentsBuilder uriBuilder) {
         log.debug("REST request to delete SideEffect : {}");
         Page<PediatricDTO> page = sideEffectService.findPediatricByGenericNameList(pageable, genericName);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(uriBuilder, page);
+        return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+
+    /**
+     * Get a Generic Name
+     * @param genericName
+     * @return the ResponseEntity with status 200 (OK) and the list of notificationHistories in body
+     */
+    @GetMapping("/side-effects/breast-feeding/by-generic-name")
+    public ResponseEntity<BreastFeedingDTO> getBreastFeedingByGenericName(@RequestBody String genericName) {
+        log.debug("REST request to delete SideEffect : {}");
+        Optional<BreastFeedingDTO> breastFeedingDTO = sideEffectService.findBreastFeedingByGenericName(genericName);
+        return ResponseUtil.wrapOrNotFound(breastFeedingDTO);
+    }
+
+    /**
+     * Get List of Generic Name
+     * @param pageable
+     * @param genericName
+     * @param uriBuilder
+     * @return the ResponseEntity with status 200 (OK) and the list of notificationHistories in body
+     */
+    @GetMapping("/side-effects/breast-feeding/by-generic-name-list")
+    public ResponseEntity<List<BreastFeedingDTO>> getBreastFeedingByGenericNameList(Pageable pageable,
+                                                                            @RequestBody List<String> genericName, UriComponentsBuilder uriBuilder) {
+        log.debug("REST request to delete SideEffect : {}");
+        Page<BreastFeedingDTO> page = sideEffectService.findBreastFeedingByGenericNameList(pageable, genericName);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(uriBuilder, page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }

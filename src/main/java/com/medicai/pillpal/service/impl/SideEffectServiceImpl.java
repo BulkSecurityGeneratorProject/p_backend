@@ -28,12 +28,14 @@ public class SideEffectServiceImpl implements SideEffectService {
     private final GeriatricRepository geriatricRepository;
     private final PediatricRepository pediatricRepository;
     private final AppInfoSideEffectRepository appInfoSideEffectRepository;
+    private final BreastFeedingRepository breastFeedingRepository;
 
     private final AllergyMapper allergyMapper;
     private final SideEffectMapper sideEffectMapper;
     private final GeriatricMapper geriatricMapper;
     private final PediatricMapper pediatricMapper;
     private final ApplInfoSideEffectMapper appInfoSideEffectMapper;
+    private final BreastFeedingMapper breastFeedingMapper ;
 
 
     public SideEffectServiceImpl(SideEffectRepository sideEffectRepository,
@@ -42,23 +44,25 @@ public class SideEffectServiceImpl implements SideEffectService {
                                  PediatricRepository pediatricRepository,
                                  AppInfoSideEffectRepository appInfoSideEffectRepository,
 
-                                 SideEffectMapper sideEffectMapper,
+                                 BreastFeedingRepository breastFeedingRepository, SideEffectMapper sideEffectMapper,
                                  AllergyMapper allergyMapper,
                                  GeriatricMapper geriatricMapper,
                                  PediatricMapper pediatricMapper,
-                                 ApplInfoSideEffectMapper appInfoSideEffectMapper
-    ) {
+                                 ApplInfoSideEffectMapper appInfoSideEffectMapper,
+                                 BreastFeedingMapper breastFeedingMapper) {
         this.sideEffectRepository = sideEffectRepository;
         this.allergyRepository = allergyRepository;
         this.geriatricRepository = geriatricRepository;
         this.pediatricRepository = pediatricRepository;
         this.appInfoSideEffectRepository = appInfoSideEffectRepository;
+        this.breastFeedingRepository = breastFeedingRepository;
 
         this.sideEffectMapper = sideEffectMapper;
         this.allergyMapper = allergyMapper;
         this.geriatricMapper = geriatricMapper;
         this.pediatricMapper = pediatricMapper;
         this.appInfoSideEffectMapper = appInfoSideEffectMapper;
+        this.breastFeedingMapper = breastFeedingMapper;
     }
 
     /**
@@ -224,4 +228,30 @@ public class SideEffectServiceImpl implements SideEffectService {
             .map(appInfoSideEffectMapper::toDto);
     }
 
+    /**
+     * get a generic names
+     *
+     * @param genericName
+     * @return a persisted entity
+     */
+    @Override
+    public Optional<BreastFeedingDTO> findBreastFeedingByGenericName(String genericName) {
+        log.debug("Request to get ApplicationInfo : {}", genericName);
+        return breastFeedingRepository.findBreastFeedingByGenericName(genericName)
+            .map(breastFeedingMapper::toDto);
+    }
+
+    /**
+     * get a list of generic names
+     *
+     * @param pageable
+     * @param genericNameList
+     * @return list of persisted entities
+     */
+    @Override
+    public Page<BreastFeedingDTO> findBreastFeedingByGenericNameList(Pageable pageable, List<String> genericNameList) {
+        log.debug("Request to get ApplicationInfo : {}", pageable);
+        return breastFeedingRepository.findBreastFeedingByGenericNameList(pageable, genericNameList)
+            .map(breastFeedingMapper::toDto);
+    }
 }

@@ -28,5 +28,4 @@ public interface BreastFeedingRepository extends JpaRepository<BreastFeeding, Lo
         "where bfi.genericName in :genericNameList ")
     Page<BreastFeeding> findBreastFeedingByGenericNameList(Pageable pageable,
                                                            @Param("genericNameList") List<String> genericNameList);
-
 }
