@@ -123,4 +123,34 @@ public class ConsumptionBeforeUsingResource {
         consumptionBeforeUsingService.delete(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString())).build();
     }
+
+    /**
+     * Get a Generic Name
+     *
+     * @param genericName
+     * @return the ResponseEntity with status 200 (OK) and the list of notificationHistories in body
+     */
+    @GetMapping("/consumption-before-usings/by-generic-name")
+    public ResponseEntity<ConsumptionBeforeUsingDTO> getAllergyByGenericName(@RequestBody String genericName) {
+        log.debug("REST request to delete SideEffect : {}");
+        Optional<ConsumptionBeforeUsingDTO> consumptionBeforeUsingDTO = consumptionBeforeUsingService.findAllergyByGenericName(genericName);
+        return ResponseUtil.wrapOrNotFound(consumptionBeforeUsingDTO);
+    }
+
+    /**
+     * Get List of Generic Name
+     *
+     * @param pageable
+     * @param genericName
+     * @param uriBuilder
+     * @return the ResponseEntity with status 200 (OK) and the list of notificationHistories in body
+     */
+    @GetMapping("/consumption-before-usings/by-generic-name-list")
+    public ResponseEntity<List<ConsumptionBeforeUsingDTO>> getAllergyByGenericNameList(Pageable pageable,
+                                                                                       @RequestBody List<String> genericName, UriComponentsBuilder uriBuilder) {
+        log.debug("REST request to delete SideEffect : {}");
+        Page<ConsumptionBeforeUsingDTO> page = consumptionBeforeUsingService.findAllergyByGenericNameList(pageable, genericName);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(uriBuilder, page);
+        return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
 }

@@ -4,6 +4,7 @@ import com.medicai.pillpal.service.dto.ConsumptionMissedDoseDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -42,4 +43,21 @@ public interface ConsumptionMissedDoseService {
      * @param id the id of the entity.
      */
     void delete(Long id);
+
+    /**
+     * Get a GenericName
+     *
+     * @param
+     * @return persisted entity.
+     */
+    Optional<ConsumptionMissedDoseDTO> findAllergyByGenericName(String genericName);
+
+    /**
+     * Get the List of GenericName
+     *
+     * @param
+     * @return the list of entities.
+     */
+    Page<ConsumptionMissedDoseDTO> findAllergyByGenericNameList(Pageable pageable, List<String> genericNameList);
+
 }

@@ -123,4 +123,34 @@ public class ConsumptionDosingResource {
         consumptionDosingService.delete(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString())).build();
     }
+
+    /**
+     * Get a Generic Name
+     *
+     * @param genericName
+     * @return the ResponseEntity with status 200 (OK) and the list of notificationHistories in body
+     */
+    @GetMapping("/consumption-dosings/by-generic-name")
+    public ResponseEntity<ConsumptionDosingDTO> getAllergyByGenericName(@RequestBody String genericName) {
+        log.debug("REST request to delete SideEffect : {}");
+        Optional<ConsumptionDosingDTO> consumptionDosingDTO = consumptionDosingService.findAllergyByGenericName(genericName);
+        return ResponseUtil.wrapOrNotFound(consumptionDosingDTO);
+    }
+
+    /**
+     * Get List of Generic Name
+     *
+     * @param pageable
+     * @param genericName
+     * @param uriBuilder
+     * @return the ResponseEntity with status 200 (OK) and the list of notificationHistories in body
+     */
+    @GetMapping("/consumption-dosings/by-generic-name-list")
+    public ResponseEntity<List<ConsumptionDosingDTO>> getAllergyByGenericNameList(Pageable pageable,
+                                                                                  @RequestBody List<String> genericName, UriComponentsBuilder uriBuilder) {
+        log.debug("REST request to delete SideEffect : {}");
+        Page<ConsumptionDosingDTO> page = consumptionDosingService.findAllergyByGenericNameList(pageable, genericName);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(uriBuilder, page);
+        return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
 }

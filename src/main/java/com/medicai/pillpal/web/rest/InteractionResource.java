@@ -126,13 +126,14 @@ public class InteractionResource {
     }
 
     /**
-     *get a genericName
-     * @param  genericName
+     * get a genericName
+     *
+     * @param genericName
      * @return persisted entity
      */
 
     @GetMapping("/interactions/by-generic-name")
-    public ResponseEntity<InteractionDTO> getInteractionByGenericName(@RequestBody String genericName){
+    public ResponseEntity<InteractionDTO> getInteractionByGenericName(@RequestBody String genericName) {
         log.debug("REST request to delete SideEffect : {}");
         Optional<InteractionDTO> interactionDTO = interactionService.findInteractionByGenericName(genericName);
         return ResponseUtil.wrapOrNotFound(interactionDTO);
@@ -140,6 +141,7 @@ public class InteractionResource {
 
     /**
      * get a list of GenericName
+     *
      * @param pageable
      * @param genericName
      * @param uriBuilder
@@ -147,14 +149,13 @@ public class InteractionResource {
      */
 
     @GetMapping("/interactions/by-generic-name-list")
-    public ResponseEntity<List<InteractionDTO>> getInteractionByGenericNameList(Pageable pageable ,
-                                                                               @RequestBody List<String> genericName , UriComponentsBuilder uriBuilder){
+    public ResponseEntity<List<InteractionDTO>> getInteractionByGenericNameList(Pageable pageable,
+                                                                                @RequestBody List<String> genericName, UriComponentsBuilder uriBuilder) {
         log.debug("REST request to delete SideEffect : {}");
         Page<InteractionDTO> page = interactionService.findInteractionByGenericNameList(pageable, genericName);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(uriBuilder, page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
-
 
 
 }

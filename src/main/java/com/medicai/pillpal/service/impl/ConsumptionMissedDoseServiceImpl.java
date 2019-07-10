@@ -12,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -84,5 +85,32 @@ public class ConsumptionMissedDoseServiceImpl implements ConsumptionMissedDoseSe
     public void delete(Long id) {
         log.debug("Request to delete ConsumptionMissedDose : {}", id);
         consumptionMissedDoseRepository.deleteById(id);
+    }
+
+    /**
+     * get a generic names
+     *
+     * @param genericName
+     * @return a persisted entity
+     */
+    @Override
+    public Optional<ConsumptionMissedDoseDTO> findAllergyByGenericName(String genericName) {
+        log.debug("Request to get ApplicationInfo : {}", genericName);
+        return consumptionMissedDoseRepository.findByGenericName(genericName)
+            .map(consumptionMissedDoseMapper::toDto);
+    }
+
+    /**
+     * get a list of generic names
+     *
+     * @param pageable
+     * @param genericNameList
+     * @return list of persisted entities
+     */
+    @Override
+    public Page<ConsumptionMissedDoseDTO> findAllergyByGenericNameList(Pageable pageable, List<String> genericNameList) {
+        log.debug("Request to get ApplicationInfo : {}", pageable);
+        return consumptionMissedDoseRepository.findByGenericNameList(pageable, genericNameList)
+            .map(consumptionMissedDoseMapper::toDto);
     }
 }

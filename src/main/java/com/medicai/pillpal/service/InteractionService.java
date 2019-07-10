@@ -46,6 +46,7 @@ public interface InteractionService {
 
     /**
      * get a generic name
+     *
      * @param genericName
      * @return a list of persisted entity
      */
@@ -53,9 +54,10 @@ public interface InteractionService {
 
     /**
      * get a generic name
+     *
      * @param pageable
      * @param genericNameList
      * @return a list of persisted entity
      */
-    Page<InteractionDTO> findInteractionByGenericNameList(Pageable pageable , List<String> genericNameList);
+    Page<InteractionDTO> findInteractionByGenericNameList(Pageable pageable, List<String> genericNameList);
 }

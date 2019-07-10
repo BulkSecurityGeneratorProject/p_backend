@@ -1,8 +1,15 @@
 package com.medicai.pillpal.repository;
 
 import com.medicai.pillpal.domain.ConsumptionPrecaution;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
 
 
 /**
@@ -11,5 +18,16 @@ import org.springframework.stereotype.Repository;
 @SuppressWarnings("unused")
 @Repository
 public interface ConsumptionPrecautionRepository extends JpaRepository<ConsumptionPrecaution, Long> {
+
+    @Query("select cp from ConsumptionPrecaution cp " +
+        "inner join cp.applicationInfo ai  " +
+        "where ai.genericName = :genericName ")
+    Optional<ConsumptionPrecaution> findByGenericName(@Param("genericName") String genericName);
+
+    @Query("select cp from ConsumptionPrecaution cp " +
+        "inner join cp.applicationInfo ai  " +
+        "where ai.genericName in :genericNameList ")
+    Page<ConsumptionPrecaution> findByGenericNameList(Pageable pageable,
+                                                      @Param("genericNameList") List<String> genericNameList);
 
 }
