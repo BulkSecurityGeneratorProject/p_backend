@@ -4,6 +4,7 @@ import com.medicai.pillpal.service.dto.InteractionDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -42,4 +43,18 @@ public interface InteractionService {
      * @param id the id of the entity.
      */
     void delete(Long id);
+
+    /**
+     * get a generic name
+     * @param genericName
+     * @return a list of persisted entity
+     */
+    Optional<InteractionDTO> findInteractionByGenericName(String genericName);
+
+    /**
+     * get a generic name
+     * @param pageable
+     * @return a list of persisted entity
+     */
+    Page<InteractionDTO> findInteractionByGenericNameList(Pageable pageable , List<String> genericName);
 }

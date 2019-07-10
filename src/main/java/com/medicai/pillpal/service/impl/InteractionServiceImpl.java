@@ -12,6 +12,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -84,5 +85,25 @@ public class InteractionServiceImpl implements InteractionService {
     public void delete(Long id) {
         log.debug("Request to delete Interaction : {}", id);
         interactionRepository.deleteById(id);
+    }
+
+    /**
+     * get a generricName
+     * @param genericName
+     * @return persisted entity
+     */
+    public Optional<InteractionDTO> findInteractionByGenericName(String genericName){
+        log.debug("Request to delete Interaction : {}" , genericName);
+        return interactionRepository.findInteractionByGenericName(genericName)
+            .map(interactionMapper::toDto);
+
+    }
+
+
+    @Override
+    public Page<InteractionDTO> findInteractionByGenericNameList(Pageable pageable, List<String> genericNameList) {
+        log.debug("Request to delete Interaction : {}" , pageable);
+        return interactionRepository.findInteractionByGenericNameList(pageable , genericNameList)
+            .map(interactionMapper::toDto);
     }
 }

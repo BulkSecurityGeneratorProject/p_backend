@@ -124,4 +124,37 @@ public class InteractionResource {
         interactionService.delete(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, false, ENTITY_NAME, id.toString())).build();
     }
+
+    /**
+     *get a genericName
+     * @param  genericName
+     * @return persisted entity
+     */
+
+    @GetMapping("/interactions/genericName")
+    public ResponseEntity<InteractionDTO> getInteractionByGenericName(@RequestBody String genericName){
+        log.debug("REST request to delete SideEffect : {}");
+        Optional<InteractionDTO> interactionDTO = interactionService.findInteractionByGenericName(genericName);
+        return ResponseUtil.wrapOrNotFound(interactionDTO);
+    }
+
+    /**
+     * get a list of GenericName
+     * @param pageable
+     * @param genericName
+     * @param uriBuilder
+     * @return persisted entities
+     */
+
+    @GetMapping("/interactions/generic-name-list")
+    public ResponseEntity<List<InteractionDTO>> getInteractionByGenericNameList(Pageable pageable ,
+                                                                               @RequestBody List<String> genericName , UriComponentsBuilder uriBuilder){
+        log.debug("REST request to delete SideEffect : {}");
+        Page<InteractionDTO> page = interactionService.findInteractionByGenericNameList(pageable, genericName);
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(uriBuilder, page);
+        return ResponseEntity.ok().headers(headers).body(page.getContent());
+    }
+
+
+
 }

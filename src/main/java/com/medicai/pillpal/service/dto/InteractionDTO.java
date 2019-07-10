@@ -20,7 +20,6 @@ public class InteractionDTO implements Serializable {
 
     private String description;
 
-
     private Long baseApplicationInfoId;
 
     private Long descApplicationInfoId;

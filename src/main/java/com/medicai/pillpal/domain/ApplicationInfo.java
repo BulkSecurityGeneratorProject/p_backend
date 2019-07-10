@@ -9,6 +9,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 /**
@@ -678,20 +679,31 @@ public class ApplicationInfo implements Serializable {
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
+
     @Override
     public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (!(o instanceof ApplicationInfo)) {
-            return false;
-        }
-        return id != null && id.equals(((ApplicationInfo) o).id);
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ApplicationInfo that = (ApplicationInfo) o;
+        return Objects.equals(id, that.id) &&
+            Objects.equals(fdaApplicationNo, that.fdaApplicationNo) &&
+            Objects.equals(name, that.name) &&
+            Objects.equals(genericName, that.genericName) &&
+            Objects.equals(brandName, that.brandName) &&
+            Objects.equals(overView, that.overView) &&
+            Objects.equals(strengthAmount, that.strengthAmount) &&
+            Objects.equals(strengthUnit, that.strengthUnit) &&
+            Objects.equals(productNumber, that.productNumber) &&
+            Objects.equals(activeIngredient, that.activeIngredient) &&
+            form == that.form &&
+            routsOfAdministration == that.routsOfAdministration;
     }
 
     @Override
     public int hashCode() {
-        return 31;
+        return Objects.hash(id, fdaApplicationNo, name, genericName, brandName,
+            overView, strengthAmount, strengthUnit, productNumber, activeIngredient,
+            form, routsOfAdministration);
     }
 
     @Override
