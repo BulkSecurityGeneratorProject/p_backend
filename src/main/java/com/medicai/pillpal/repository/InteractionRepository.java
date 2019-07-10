@@ -20,17 +20,16 @@ import java.util.Optional;
 public interface InteractionRepository extends JpaRepository<Interaction, Long> {
 
     @Query("select intraction from Interaction interaction " +
-        "inner join fetch interaction.baseApplicarionInfo baseapp" +
-        "inner join fetch interaction.descApplicarionInfo descapp" +
-        "where baseapp.genericName in :genericName" )
-
+        "inner join interaction.baseApplicarionInfo baseapp " +
+        "inner join interaction.descApplicarionInfo descapp " +
+        "where baseapp.genericName in :genericName")
     Page<Interaction> findInteractionByGenericNameList(Pageable pageable
-        , @Param("genericName")List<String> genericName);
+        , @Param("genericName") List<String> genericName);
 
 
     @Query("select intraction from Interaction interaction " +
-        "inner join fetch interaction.baseApplicarionInfo baseapp" +
-        "inner join fetch interaction.descApplicarionInfo descapp" +
-        "where baseapp.genericName = :genericName" )
-    Optional<Interaction> findInteractionByGenericName( @Param("genericName")String genericName);
+        "inner join interaction.baseApplicarionInfo baseapp " +
+        "inner join interaction.descApplicarionInfo descapp " +
+        "where baseapp.genericName = :genericName")
+    Optional<Interaction> findInteractionByGenericName(@Param("genericName") String genericName);
 }

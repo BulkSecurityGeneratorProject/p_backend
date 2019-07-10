@@ -131,7 +131,7 @@ public class InteractionResource {
      * @return persisted entity
      */
 
-    @GetMapping("/interactions/genericName")
+    @GetMapping("/interactions/by-generic-name")
     public ResponseEntity<InteractionDTO> getInteractionByGenericName(@RequestBody String genericName){
         log.debug("REST request to delete SideEffect : {}");
         Optional<InteractionDTO> interactionDTO = interactionService.findInteractionByGenericName(genericName);
@@ -146,7 +146,7 @@ public class InteractionResource {
      * @return persisted entities
      */
 
-    @GetMapping("/interactions/generic-name-list")
+    @GetMapping("/interactions/by-generic-name-list")
     public ResponseEntity<List<InteractionDTO>> getInteractionByGenericNameList(Pageable pageable ,
                                                                                @RequestBody List<String> genericName , UriComponentsBuilder uriBuilder){
         log.debug("REST request to delete SideEffect : {}");
