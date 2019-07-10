@@ -128,15 +128,15 @@ public class GeriatricResource {
      * Get List of Generic Name
      *
      * @param pageable
-     * @param genericName
+     * @param genericNameList
      * @param uriBuilder
      * @return the ResponseEntity with status 200 (OK) and the list of notificationHistories in body
      */
     @GetMapping("/geriatric/by-generic-name-list")
     public ResponseEntity<List<GeriatricDTO>> getGenericNameListGeriatric(Pageable pageable,
-                                                                          @RequestBody List<String> genericName, UriComponentsBuilder uriBuilder) {
+                                                                          @RequestBody List<String> genericNameList, UriComponentsBuilder uriBuilder) {
         log.debug("REST request to delete SideEffect : {}");
-        Page<GeriatricDTO> page = geriatricService.findGeriatricByGenericNameList(pageable, genericName);
+        Page<GeriatricDTO> page = geriatricService.findGeriatricByGenericNameList(pageable, genericNameList);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(uriBuilder, page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }

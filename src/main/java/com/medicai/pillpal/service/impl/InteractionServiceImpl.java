@@ -88,22 +88,30 @@ public class InteractionServiceImpl implements InteractionService {
     }
 
     /**
-     * get a generricName
+     * get a  genericName
+     *
      * @param genericName
      * @return persisted entity
      */
-    public Optional<InteractionDTO> findInteractionByGenericName(String genericName){
-        log.debug("Request to delete Interaction : {}" , genericName);
+    public Optional<InteractionDTO> findInteractionByGenericName(String genericName) {
+        log.debug("Request to delete Interaction : {}", genericName);
         return interactionRepository.findInteractionByGenericName(genericName)
             .map(interactionMapper::toDto);
 
     }
 
+    /**
+     * get a  genericName
+     *
+     * @param genericNameList
+     * @param pageable
+     * @return persisted entity
+     */
 
     @Override
     public Page<InteractionDTO> findInteractionByGenericNameList(Pageable pageable, List<String> genericNameList) {
-        log.debug("Request to delete Interaction : {}" , pageable);
-        return interactionRepository.findInteractionByGenericNameList(pageable , genericNameList)
+        log.debug("Request to delete Interaction : {}", pageable);
+        return interactionRepository.findInteractionByGenericNameList(pageable, genericNameList)
             .map(interactionMapper::toDto);
     }
 }
