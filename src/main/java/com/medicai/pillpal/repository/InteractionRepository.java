@@ -1,6 +1,7 @@
 package com.medicai.pillpal.repository;
 
 import com.medicai.pillpal.domain.Interaction;
+import com.medicai.pillpal.domain.enumeration.RecommendationType;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -27,7 +28,12 @@ public interface InteractionRepository extends JpaRepository<Interaction, Long> 
     // Interaction
     // all attributes
 
-    @Query("select interaction from Interaction interaction " +
+    @Query("select new InteractionListDTO(interaction.id, " +
+        "interaction.recommendationType, " +
+        "interaction.description, " +
+        "descapp.fdaApplicationNo, " +
+        "descapp.genericName )" +
+        "from Interaction interaction " +
         "inner join interaction.baseApplicationInfo baseapp " +
         "inner join interaction.descApplicationInfo descapp " +
         "where baseapp.genericName in :genericName")
@@ -35,7 +41,12 @@ public interface InteractionRepository extends JpaRepository<Interaction, Long> 
         , @Param("genericName") List<String> genericName);
 
 
-    @Query("select interaction from Interaction interaction " +
+    @Query("select new InteractionListDTO(interaction.id, " +
+        "interaction.recommendationType, " +
+        "interaction.description, " +
+        "descapp.fdaApplicationNo, " +
+        "descapp.genericName )" +
+        "from Interaction interaction " +
         "inner join interaction.baseApplicationInfo baseapp " +
         "inner join interaction.descApplicationInfo descapp " +
         "where baseapp.genericName = :genericName")

@@ -7,9 +7,18 @@ public class InteractionListDTO {
     private Long id;
     private RecommendationType recommendationType;
     private String description;
-    private Long baseApplicationInfoId;
     private Long descApplicationInfoId;
-    private ApplicationInfoDTO applicationInfoDTO;
+    private String fdaApplicationNo;
+    private String genericName;
+
+    public InteractionListDTO(Long id, RecommendationType recommendationType, String description, Long descApplicationInfoId, String fdaApplicationNo, String genericName) {
+        this.id = id;
+        this.recommendationType = recommendationType;
+        this.description = description;
+        this.descApplicationInfoId = descApplicationInfoId;
+        this.fdaApplicationNo = fdaApplicationNo;
+        this.genericName = genericName;
+    }
 
     public Long getId() {
         return id;
@@ -35,14 +44,6 @@ public class InteractionListDTO {
         this.description = description;
     }
 
-    public Long getBaseApplicationInfoId() {
-        return baseApplicationInfoId;
-    }
-
-    public void setBaseApplicationInfoId(Long baseApplicationInfoId) {
-        this.baseApplicationInfoId = baseApplicationInfoId;
-    }
-
     public Long getDescApplicationInfoId() {
         return descApplicationInfoId;
     }
@@ -51,20 +52,19 @@ public class InteractionListDTO {
         this.descApplicationInfoId = descApplicationInfoId;
     }
 
-    public ApplicationInfoDTO getApplicationInfoDTO() {
-        return applicationInfoDTO;
+    public String getFdaApplicationNo() {
+        return fdaApplicationNo;
     }
 
-    public void setApplicationInfoDTO(ApplicationInfoDTO applicationInfoDTO) {
-        this.applicationInfoDTO = applicationInfoDTO;
+    public void setFdaApplicationNo(String fdaApplicationNo) {
+        this.fdaApplicationNo = fdaApplicationNo;
     }
 
-    public InteractionListDTO(Long id, RecommendationType recommendationType, String description, Long baseApplicationInfoId, Long descApplicationInfoId, ApplicationInfoDTO applicationInfoDTO) {
-        this.id = id;
-        this.recommendationType = recommendationType;
-        this.description = description;
-        this.baseApplicationInfoId = baseApplicationInfoId;
-        this.descApplicationInfoId = descApplicationInfoId;
-        this.applicationInfoDTO = applicationInfoDTO;
+    public String getGenericName() {
+        return genericName;
+    }
+
+    public void setGenericName(String genericName) {
+        this.genericName = genericName;
     }
 }
