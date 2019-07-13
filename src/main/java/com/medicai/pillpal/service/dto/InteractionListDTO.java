@@ -11,11 +11,10 @@ public class InteractionListDTO {
     private String fdaApplicationNo;
     private String genericName;
 
-    public InteractionListDTO(Long id, RecommendationType recommendationType, String description, Long descApplicationInfoId, String fdaApplicationNo, String genericName) {
+    public InteractionListDTO(Long id, RecommendationType recommendationType, String description,  String fdaApplicationNo, String genericName) {
         this.id = id;
         this.recommendationType = recommendationType;
         this.description = description;
-        this.descApplicationInfoId = descApplicationInfoId;
         this.fdaApplicationNo = fdaApplicationNo;
         this.genericName = genericName;
     }
