@@ -2,6 +2,7 @@ package com.medicai.pillpal.web.rest;
 
 import com.medicai.pillpal.service.InteractionService;
 import com.medicai.pillpal.service.dto.InteractionDTO;
+import com.medicai.pillpal.service.dto.InteractionListDTO;
 import com.medicai.pillpal.web.rest.errors.BadRequestAlertException;
 import io.github.jhipster.web.util.HeaderUtil;
 import io.github.jhipster.web.util.PaginationUtil;
@@ -133,10 +134,10 @@ public class InteractionResource {
      */
 
     @GetMapping("/interactions/by-generic-name")
-    public ResponseEntity<InteractionDTO> getInteractionByGenericName(@RequestBody String genericName) {
+    public ResponseEntity<InteractionListDTO> getInteractionByGenericName(@RequestBody String genericName) {
         log.debug("REST request to delete SideEffect : {}");
-        Optional<InteractionDTO> interactionDTO = interactionService.findInteractionByGenericName(genericName);
-        return ResponseUtil.wrapOrNotFound(interactionDTO);
+        Optional<InteractionListDTO> interactionListDTO = interactionService.findInteractionByGenericName(genericName);
+        return ResponseUtil.wrapOrNotFound(interactionListDTO);
     }
 
     /**
@@ -149,10 +150,10 @@ public class InteractionResource {
      */
 
     @GetMapping("/interactions/by-generic-name-list")
-    public ResponseEntity<List<InteractionDTO>> getInteractionByGenericNameList(Pageable pageable,
+    public ResponseEntity<List<InteractionListDTO>> getInteractionByGenericNameList(Pageable pageable,
                                                                                 @RequestBody List<String> genericName, UriComponentsBuilder uriBuilder) {
         log.debug("REST request to delete SideEffect : {}");
-        Page<InteractionDTO> page = interactionService.findInteractionByGenericNameList(pageable, genericName);
+        Page<InteractionListDTO> page = interactionService.findInteractionByGenericNameList(pageable, genericName);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(uriBuilder, page);
         return ResponseEntity.ok().headers(headers).body(page.getContent());
     }
