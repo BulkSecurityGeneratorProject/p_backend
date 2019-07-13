@@ -1,6 +1,7 @@
 package com.medicai.pillpal.service;
 
 import com.medicai.pillpal.service.dto.InteractionDTO;
+import com.medicai.pillpal.service.dto.InteractionListDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -50,7 +51,7 @@ public interface InteractionService {
      * @param genericName
      * @return a list of persisted entity
      */
-    Optional<InteractionDTO> findInteractionByGenericName(String genericName);
+    Optional<InteractionListDTO> findInteractionByGenericName(String genericName);
 
     /**
      * get a generic name
@@ -59,5 +60,5 @@ public interface InteractionService {
      * @param genericNameList
      * @return a list of persisted entity
      */
-    Page<InteractionDTO> findInteractionByGenericNameList(Pageable pageable, List<String> genericNameList);
+    Page<InteractionListDTO> findInteractionByGenericNameList(Pageable pageable, List<String> genericNameList);
 }

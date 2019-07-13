@@ -4,6 +4,7 @@ import com.medicai.pillpal.domain.Interaction;
 import com.medicai.pillpal.repository.InteractionRepository;
 import com.medicai.pillpal.service.InteractionService;
 import com.medicai.pillpal.service.dto.InteractionDTO;
+import com.medicai.pillpal.service.dto.InteractionListDTO;
 import com.medicai.pillpal.service.mapper.InteractionMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -93,10 +94,9 @@ public class InteractionServiceImpl implements InteractionService {
      * @param genericName
      * @return persisted entity
      */
-    public Optional<InteractionDTO> findInteractionByGenericName(String genericName) {
+    public Optional<InteractionListDTO> findInteractionByGenericName(String genericName) {
         log.debug("Request to delete Interaction : {}", genericName);
-        return interactionRepository.findInteractionByGenericName(genericName)
-            .map(interactionMapper::toDto);
+        return interactionRepository.findInteractionByGenericName(genericName);
 
     }
 
@@ -109,9 +109,8 @@ public class InteractionServiceImpl implements InteractionService {
      */
 
     @Override
-    public Page<InteractionDTO> findInteractionByGenericNameList(Pageable pageable, List<String> genericNameList) {
+    public Page<InteractionListDTO> findInteractionByGenericNameList(Pageable pageable, List<String> genericNameList) {
         log.debug("Request to delete Interaction : {}", pageable);
-        return interactionRepository.findInteractionByGenericNameList(pageable, genericNameList)
-            .map(interactionMapper::toDto);
+        return interactionRepository.findInteractionByGenericNameList(pageable, genericNameList);
     }
 }
