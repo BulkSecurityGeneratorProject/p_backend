@@ -29,11 +29,11 @@ public interface InteractionRepository extends JpaRepository<Interaction, Long> 
     // Interaction
     // all attributes
 
-    @Query("select new InteractionListDTO(interaction.id, " +
+    @Query("select new com.medicai.pillpal.service.dto.InteractionListDTO(interaction.id, " +
         "interaction.recommendationType, " +
         "interaction.description, " +
         "descapp.fdaApplicationNo, " +
-        "descapp.genericName )" +
+        "descapp.genericName) " +
         "from Interaction interaction " +
         "inner join interaction.baseApplicationInfo baseapp " +
         "inner join interaction.descApplicationInfo descapp " +
@@ -42,11 +42,11 @@ public interface InteractionRepository extends JpaRepository<Interaction, Long> 
         , @Param("genericName") List<String> genericName);
 
 
-    @Query("select new InteractionListDTO(interaction.id, " +
+    @Query("select new com.medicai.pillpal.service.dto.InteractionListDTO(interaction.id, " +
         "interaction.recommendationType, " +
         "interaction.description, " +
         "descapp.fdaApplicationNo, " +
-        "descapp.genericName )" +
+        "descapp.genericName) " +
         "from Interaction interaction " +
         "inner join interaction.baseApplicationInfo baseapp " +
         "inner join interaction.descApplicationInfo descapp " +
